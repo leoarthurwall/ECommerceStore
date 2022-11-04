@@ -12,10 +12,22 @@ align-items: center;
 
 cursor: pointer;
 `;
-
+const Header = styled.h1`
+width: 70%;
+color: white;
+font-family: inter;
+font-weight: 600;
+font-size: 6rem;
+text-align: center;
+@media (max-width: 1024px) {
+font-size: 42px;
+}
+`
 const SectionOne = () => {
   return (
-    <SectionOneImage></SectionOneImage>
+    <SectionOneImage>
+        <Header>The ultimate experience</Header>
+    </SectionOneImage>
   )
 }
 
