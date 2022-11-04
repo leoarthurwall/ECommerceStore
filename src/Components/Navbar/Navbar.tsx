@@ -16,7 +16,9 @@ color: #fff;
 const LinkContainer = styled.ul`
 display: flex;
 list-style-type: none;
-gap: 1rem
+gap: 1.5rem;
+font-size: 18px;
+
 `
 const SearchBar = styled.input`
 background-color: rgba(0, 0, 0, 0) !important;
@@ -24,7 +26,7 @@ border: none !important;
 border-bottom: 1px solid #fff !important;
 box-shadow: none !important;
 height: 40px;
-font-size: 22px;
+font-size: 18px;
 font-weight: 400;
 color: #fff;
 padding: 0 15px;
@@ -41,6 +43,7 @@ const Links = styled.li`
     margin: 0;
     padding: 0;
     color: #fff;
+
 
 `
 const Navbar = () => {
