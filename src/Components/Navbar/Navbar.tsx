@@ -3,7 +3,6 @@ const NavContainer = styled.nav`
 width: 100vw;
 height: 80px;
 display: flex;
-background: red;
 align-items: center;
 justify-content: space-between;
 padding: 0 40px;
