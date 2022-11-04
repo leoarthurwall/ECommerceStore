@@ -6,20 +6,42 @@ display: flex;
 background: red;
 align-items: center;
 justify-content: space-between;
+padding: 0 40px;
+box-sizing: border-box;
 `
 const Logo = styled.h1`
+color: #fff;
+
 `
 const LinkContainer = styled.ul`
 display: flex;
 list-style-type: none;
 gap: 1rem
 `
-const SearchContainer = styled.input`
+const SearchBar = styled.input`
+background-color: rgba(0, 0, 0, 0) !important;
+border: none !important;
+border-bottom: 1px solid #fff !important;
+box-shadow: none !important;
+height: 40px;
+font-size: 22px;
+font-weight: 400;
+color: #fff;
+padding: 0 15px;
+max-width: 150px;
 
+&:focus {
+  outline: none;
+}
+::placeholder {
+  color: #fff;
+}
 `
 const Links = styled.li`
     margin: 0;
     padding: 0;
+    color: #fff;
+
 `
 const Navbar = () => {
   return (
@@ -29,7 +51,7 @@ const Navbar = () => {
             <Links>Men</Links>
             <Links>Women</Links>
         </LinkContainer>
-        <SearchContainer></SearchContainer>
+        <SearchBar type="text" placeholder="Search..."></SearchBar>
     </NavContainer>
   )
 }
