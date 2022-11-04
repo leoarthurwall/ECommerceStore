@@ -9,8 +9,6 @@ background-image: url("https://static.zara.net/photos///contents/mkt/spots/aw22-
 display: flex;
 justify-content: center;
 align-items: center;
-
-cursor: pointer;
 `;
 const Header = styled.h1`
 width: 70%;

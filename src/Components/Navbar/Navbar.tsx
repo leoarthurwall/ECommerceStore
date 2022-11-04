@@ -13,6 +13,7 @@ z-index: 10;
 `
 const Logo = styled.h1`
 color: #fff;
+cursor: pointer;
 
 `
 const LinkContainer = styled.ul`
@@ -46,6 +47,7 @@ const Links = styled.li`
     padding: 0;
     color: #fff;
 
+    cursor: pointer;
 
 `
 const Navbar = () => {
