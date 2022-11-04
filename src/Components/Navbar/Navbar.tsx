@@ -3,10 +3,13 @@ const NavContainer = styled.nav`
 width: 100vw;
 height: 80px;
 display: flex;
+position: fixed;
 align-items: center;
 justify-content: space-between;
 padding: 0 40px;
 box-sizing: border-box;
+z-index: 10;
+
 `
 const Logo = styled.h1`
 color: #fff;
