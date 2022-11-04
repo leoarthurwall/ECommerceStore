@@ -1,25 +1,22 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import styled from "styled-components"
 
+const AppContainer = styled.div`
+display: flex;
+height: 100vh;
+width: 100VW;
+`
+const Header = styled.header`
+font-size: 30px;
+font-weight: bold;
+text-align: center;
+`
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <AppContainer >
+      <Header className="App-header">
+        <h1>hello ecommerce store</h1>
+      </Header>
+    </AppContainer>
   );
 }
 
