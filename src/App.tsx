@@ -1,4 +1,5 @@
 import styled from "styled-components"
+import Navbar from "./Components/Navbar/Navbar"
 
 const AppContainer = styled.div`
 display: flex;
@@ -13,6 +14,7 @@ text-align: center;
 function App() {
   return (
     <AppContainer >
+      <Navbar />
       <Header className="App-header">
         <h1>hello ecommerce store</h1>
       </Header>
