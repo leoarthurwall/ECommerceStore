@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { HiOutlineArrowNarrowRight } from "react-icons/hi";
 
 const SectionOneImage = styled.div`
   height: 100vh;
@@ -13,13 +14,12 @@ const SectionOneImage = styled.div`
   align-items: center;
 `;
 const LeftContainer = styled.div`
-display: flex;
-flex-direction: column;
-width: 40%;
-gap: 1rem;
-padding: 40px;
-
-`
+  display: flex;
+  flex-direction: column;
+  width: 40%;
+  gap: 1rem;
+  padding: 40px;
+`;
 const Header = styled.h1`
   color: white;
   font-family: inter;
@@ -35,7 +35,7 @@ const ShopButton = styled.button`
   background-color: white;
   border: none;
   color: black;
-  padding: 15px 32px;
+  padding: 15px 20px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
@@ -43,14 +43,24 @@ const ShopButton = styled.button`
   font-family: inter;
   max-width: fit-content;
   font-weight: 500;
+
+  display: flex;
+  align-items: center;
+  gap: 10px;
 `;
 const SectionOne = () => {
   return (
     <SectionOneImage>
       <LeftContainer>
         <Header>The ultimate experience</Header>
-        <ShopButton>Shop Mens</ShopButton>
-        <ShopButton>Shop Womens</ShopButton>
+        <ShopButton>
+          Shop Mens
+          <HiOutlineArrowNarrowRight />
+        </ShopButton>
+        <ShopButton>
+          Shop Womens
+          <HiOutlineArrowNarrowRight />
+        </ShopButton>
       </LeftContainer>
     </SectionOneImage>
   );
