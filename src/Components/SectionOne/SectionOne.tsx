@@ -12,13 +12,21 @@ const SectionOneImage = styled.div`
   justify-content: left;
   align-items: center;
 `;
+const LeftContainer = styled.div`
+display: flex;
+flex-direction: column;
+width: 40%;
+gap: 1rem;
+padding: 40px;
+
+`
 const Header = styled.h1`
-  width: 30%;
   color: white;
   font-family: inter;
   font-weight: 600;
   font-size: 3.5rem;
-  text-align: center;
+  text-align: left;
+  margin: 0;
   @media (max-width: 1024px) {
     font-size: 42px;
   }
@@ -33,13 +41,16 @@ const ShopButton = styled.button`
   display: inline-block;
   font-size: 16px;
   font-family: inter;
+  max-width: fit-content;
 `;
 const SectionOne = () => {
   return (
     <SectionOneImage>
-      <Header>The ultimate experience</Header>
-      <ShopButton>Shop Mens</ShopButton>
-      <ShopButton>Shopw Womens</ShopButton>
+      <LeftContainer>
+        <Header>The ultimate experience</Header>
+        <ShopButton>Shop Mens</ShopButton>
+        <ShopButton>Shop Womens</ShopButton>
+      </LeftContainer>
     </SectionOneImage>
   );
 };
