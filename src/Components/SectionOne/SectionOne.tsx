@@ -47,6 +47,12 @@ const ShopButton = styled.button`
   display: flex;
   align-items: center;
   gap: 10px;
+
+  cursor: pointer; 
+
+  &:hover {
+    color: grey;
+}
 `;
 const SectionOne = () => {
   return (
