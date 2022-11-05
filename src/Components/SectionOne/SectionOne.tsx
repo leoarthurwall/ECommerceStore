@@ -18,7 +18,7 @@ const LeftContainer = styled.div`
   flex-direction: column;
   width: 40%;
   gap: 1rem;
-  padding: 40px;
+  padding: 50px;
 `;
 const Header = styled.h1`
   color: white;
