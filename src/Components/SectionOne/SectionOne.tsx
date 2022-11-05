@@ -42,6 +42,7 @@ const ShopButton = styled.button`
   font-size: 16px;
   font-family: inter;
   max-width: fit-content;
+  font-weight: 500;
 `;
 const SectionOne = () => {
   return (
