@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import  { useState, useEffect } from "react";
 import styled from "styled-components";
 
 const SearchResultsContainer = styled.section`
@@ -9,10 +9,20 @@ const SearchResultsContainer = styled.section`
 
 const SearchResults = () => {
 
+    const[data, setData] = useState([])
+
+
   useEffect(() => {
     fetch("https://fakestoreapi.com/products")
       .then((res) => res.json())
-      .then((json) => console.log(json));
+      .then(json => {
+        console.log(json);
+        setData([json]);
+    })
+
+
+
+    
   }, []);
 
   return <SearchResultsContainer>SearchResults</SearchResultsContainer>;
