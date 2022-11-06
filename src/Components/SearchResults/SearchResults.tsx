@@ -1,9 +1,13 @@
-import React from 'react'
+import React from "react";
+import styled from "styled-components";
+const SearchResultsContainer = styled.section`
+  height: 100vh;
+  width: 100%;
+  background-color: blue;
+`;
 
 const SearchResults = () => {
-  return (
-    <div>SearchResults</div>
-  )
-}
+  return <SearchResultsContainer>SearchResults</SearchResultsContainer>;
+};
 
-export default SearchResults
+export default SearchResults;

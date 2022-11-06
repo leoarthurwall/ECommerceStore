@@ -11,6 +11,7 @@ const NavContainer = styled.nav`
   padding: 0 50px;
   box-sizing: border-box;
   z-index: 10;
+  background: red;
 `;
 const Logo = styled.h1`
   color: #fff;
