@@ -71,8 +71,8 @@ const Navbar = () => {
       </LinkContainer>
       <RightContainer>
         <SearchBar type="text" placeholder="Search..."></SearchBar>
-        <HiOutlineHeart />
-        <HiOutlineShoppingBag />
+        <HiOutlineHeart size="24" />
+        <HiOutlineShoppingBag size="24" />
       </RightContainer>
     </NavContainer>
   );
