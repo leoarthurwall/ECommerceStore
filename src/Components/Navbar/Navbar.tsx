@@ -1,7 +1,6 @@
 import styled from "styled-components";
 import { HiOutlineHeart, HiOutlineShoppingBag } from "react-icons/hi";
 
-
 const NavContainer = styled.nav`
   width: 100vw;
   height: 80px;
@@ -23,13 +22,22 @@ const LinkContainer = styled.ul`
   gap: 1.5rem;
   font-size: 18px;
 `;
+
+const RightContainer = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  color: white;
+`;
 const SearchBar = styled.input`
   background-color: rgba(0, 0, 0, 0) !important;
   border: none !important;
   border-bottom: 1px solid #fff !important;
   box-shadow: none !important;
-  height: 40px;
-  font-size: 18px;
+  height: 30px;
+  font-size: 16px;
   font-weight: 400;
   color: #fff;
   padding: 0 15px;
@@ -61,9 +69,11 @@ const Navbar = () => {
         <Links>Men</Links>
         <Links>Women</Links>
       </LinkContainer>
-      <SearchBar type="text" placeholder="Search..."></SearchBar>
-      <HiOutlineHeart />
-      <HiOutlineShoppingBag />
+      <RightContainer>
+        <SearchBar type="text" placeholder="Search..."></SearchBar>
+        <HiOutlineHeart />
+        <HiOutlineShoppingBag />
+      </RightContainer>
     </NavContainer>
   );
 };
