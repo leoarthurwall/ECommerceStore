@@ -50,6 +50,13 @@ const SearchBar = styled.input`
     color: #fff;
   }
 `;
+const IconContainer = styled.div`
+cursor: pointer;
+
+&:hover {
+    color: #e8eaed;
+  }
+`
 const Links = styled.li`
   margin: 0;
   padding: 0;
@@ -71,8 +78,12 @@ const Navbar = () => {
       </LinkContainer>
       <RightContainer>
         <SearchBar type="text" placeholder="Search..."></SearchBar>
-        <HiOutlineHeart size="24" />
-        <HiOutlineShoppingBag size="24" />
+        <IconContainer>
+          <HiOutlineHeart size="24" />
+        </IconContainer>
+        <IconContainer>
+          <HiOutlineShoppingBag size="24" />
+        </IconContainer>
       </RightContainer>
     </NavContainer>
   );
