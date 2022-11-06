@@ -1,4 +1,7 @@
 import styled from "styled-components";
+import { HiOutlineHeart, HiOutlineShoppingBag } from "react-icons/hi";
+
+
 const NavContainer = styled.nav`
   width: 100vw;
   height: 80px;
@@ -59,6 +62,8 @@ const Navbar = () => {
         <Links>Women</Links>
       </LinkContainer>
       <SearchBar type="text" placeholder="Search..."></SearchBar>
+      <HiOutlineHeart />
+      <HiOutlineShoppingBag />
     </NavContainer>
   );
 };
