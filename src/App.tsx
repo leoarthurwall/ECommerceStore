@@ -1,5 +1,6 @@
 import styled from "styled-components"
 import Navbar from "./Components/Navbar/Navbar"
+import SearchResults from "./Components/SearchResults/SearchResults";
 import SectionOne from "./Components/SectionOne/SectionOne";
 
 const AppContainer = styled.div`
@@ -13,7 +14,8 @@ function App() {
   return (
     <AppContainer >
       <Navbar />
-      <SectionOne />
+      {/* <SectionOne /> */}
+      <SearchResults />
     </AppContainer>
   );
 }

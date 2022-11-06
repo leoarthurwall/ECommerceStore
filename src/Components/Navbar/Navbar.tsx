@@ -51,12 +51,12 @@ const SearchBar = styled.input`
   }
 `;
 const IconContainer = styled.div`
-cursor: pointer;
+  cursor: pointer;
 
-&:hover {
+  &:hover {
     color: #e8eaed;
   }
-`
+`;
 const Links = styled.li`
   margin: 0;
   padding: 0;
