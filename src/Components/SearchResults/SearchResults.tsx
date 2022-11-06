@@ -1,5 +1,6 @@
 import  { useState, useEffect } from "react";
 import styled from "styled-components";
+import { iClothes } from "../../iClothes";
 
 const SearchResultsContainer = styled.section`
   height: 100vh;
@@ -9,7 +10,7 @@ const SearchResultsContainer = styled.section`
 
 const SearchResults = () => {
 
-    const[data, setData] = useState([])
+    const[data, setData]= useState<iClothes[]> ([])
 
 
   useEffect(() => {
