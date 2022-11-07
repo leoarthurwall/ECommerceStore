@@ -50,12 +50,13 @@ const ItemPrice = styled.h3`
 `;
 const ItemBasketSaveContainer = styled.div`
   display: flex;
-  aligh-items: center;
-  justify-content: center;
+  gap: 0.5rem;
 `;
 const ItemBottomRowContainer = styled.div`
-
-`
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+`;
 const SearchResults = () => {
   const [data, setData] = useState<iClothes[]>([]);
   console.log({ data });
@@ -79,12 +80,11 @@ const SearchResults = () => {
             <ItemTextContainer>
               <ItemTitle>{item.title}</ItemTitle>
               <ItemBottomRowContainer>
-              <ItemPrice>£{item.price}</ItemPrice>
-              <ItemBasketSaveContainer>
-                <HiOutlineHeart />
-                <HiOutlineShoppingBag />
-              </ItemBasketSaveContainer>
-
+                <ItemPrice>£{item.price}</ItemPrice>
+                <ItemBasketSaveContainer>
+                  <HiOutlineHeart size={20}/>
+                  <HiOutlineShoppingBag size={20}/>
+                </ItemBasketSaveContainer>
               </ItemBottomRowContainer>
             </ItemTextContainer>
           </ItemCard>
