@@ -15,24 +15,26 @@ const ItemCard = styled.div`
   height: 400px;
   background: pink;
   margin: 10px;
+  padding: 5px;
 `;
 
 const ItemImage = styled.img`
   width: 100%;
   height: 70%;
-  padding: 10px;
 `;
 
 const ItemTitle = styled.h1`
     color: black;
-    font-size: 20px;
+    font-size: 14px;
     font-weight: 500;
     font-family: inter;
+    margin: 0;
 `
 const ItemPrice = styled.h3`
-    font-size: 18px;
-    font-weight: 600;
+    font-size: 16px;
+    font-weight: 800;
     font-family: inter;
+    margin: 0;
 `
 const SearchResults = () => {
   const [data, setData] = useState<iClothes[]>([]);
@@ -53,7 +55,7 @@ const SearchResults = () => {
         <ItemCard key={index}>
           <ItemImage src={item.image} alt={item.title}></ItemImage>
           <ItemTitle>{item.title}</ItemTitle>
-          <ItemPrice>{item.price}</ItemPrice>
+          <ItemPrice>£{item.price}</ItemPrice>
         </ItemCard>
       ))}
     </SearchResultsContainer>
