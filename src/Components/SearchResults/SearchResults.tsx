@@ -12,8 +12,7 @@ const SearchResultsContainer = styled.section`
 
 const ItemCard = styled.div`
   width: 250px;
-  height: 400px;
-  background: pink;
+  height: 380px;
   margin: 10px;
   padding: 5px;
 `;
@@ -22,20 +21,26 @@ const ItemImage = styled.img`
   width: 100%;
   height: 70%;
 `;
-
+const ItemTextContainer = styled.div`
+display: flex;
+flex-direction: column;
+height: 25%;
+justify-content: space-between;
+padding: 10px 0;
+`
 const ItemTitle = styled.h1`
-    color: black;
-    font-size: 14px;
-    font-weight: 500;
-    font-family: inter;
-    margin: 0;
-`
+  color: black;
+  font-size: 14px;
+  font-weight: 500;
+  font-family: inter;
+  margin: 0;
+`;
 const ItemPrice = styled.h3`
-    font-size: 16px;
-    font-weight: 800;
-    font-family: inter;
-    margin: 0;
-`
+  font-size: 16px;
+  font-weight: 800;
+  font-family: inter;
+  margin: 0;
+`;
 const SearchResults = () => {
   const [data, setData] = useState<iClothes[]>([]);
   console.log({ data });
@@ -54,8 +59,10 @@ const SearchResults = () => {
       {data.map((item, index) => (
         <ItemCard key={index}>
           <ItemImage src={item.image} alt={item.title}></ItemImage>
-          <ItemTitle>{item.title}</ItemTitle>
-          <ItemPrice>£{item.price}</ItemPrice>
+          <ItemTextContainer>
+            <ItemTitle>{item.title}</ItemTitle>
+            <ItemPrice>£{item.price}</ItemPrice>
+          </ItemTextContainer>
         </ItemCard>
       ))}
     </SearchResultsContainer>
