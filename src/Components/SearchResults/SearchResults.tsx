@@ -31,17 +31,11 @@ const SearchResults = () => {
   }, []);
 
   return (
-    <>
-      <SearchResultsContainer>
-        {data.map((item) => {
-          return (
-            <>
-              <ItemCard>{item.title}</ItemCard>
-            </>
-          );
-        })}
-      </SearchResultsContainer>
-    </>
+    <SearchResultsContainer>
+      {data.map((item, index) => (
+        <ItemCard key={index}>{item.title}</ItemCard>
+      ))}
+    </SearchResultsContainer>
   );
 };
 
