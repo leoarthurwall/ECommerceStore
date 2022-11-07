@@ -6,11 +6,12 @@ const SearchResultsContainer = styled.section`
   height: 100vh;
   width: 100%;
   padding-top: 80px;
+  display: flex;
+  flex-wrap: wrap;
 `;
 
 const ItemCard = styled.div`
-  display: flex;
-  flex-wrap: wrap;
+  
   width: 250px;
   height: 400px;
   background: pink;
