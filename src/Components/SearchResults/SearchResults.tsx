@@ -5,10 +5,15 @@ import { iClothes } from "../../iClothes";
 const SearchResultsContainer = styled.section`
   height: 100vh;
   width: 100%;
-  padding-top: 80px;
   display: flex;
   flex-wrap: wrap;
 `;
+const ResultsTitle = styled.h1`
+padding-top: 90px;
+padding-left: 10px;
+margin: 0;
+font-size: 24px;
+`
 
 const ItemCard = styled.div`
   width: 250px;
@@ -56,6 +61,8 @@ const SearchResults = () => {
   }, []);
 
   return (
+    <>
+    <ResultsTitle>Men's clothing</ResultsTitle>
     <SearchResultsContainer>
       {data.map((item, index) => (
         <ItemCard key={index}>
@@ -67,6 +74,7 @@ const SearchResults = () => {
         </ItemCard>
       ))}
     </SearchResultsContainer>
+    </>
   );
 };
 
