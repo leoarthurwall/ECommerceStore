@@ -15,6 +15,7 @@ const ItemCard = styled.div`
   height: 380px;
   margin: 10px;
   padding: 5px;
+  border: 1px solid rgba(0,0,0,0.1)
 `;
 
 const ItemImage = styled.img`
