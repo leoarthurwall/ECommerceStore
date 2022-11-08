@@ -72,13 +72,12 @@ const Links = styled.li`
 `;
 
 type Props = {
-    category: String;
     setResultsToggle: (val: Boolean) => void;
     setCategory: (val: string) => void;
   };
 
 const Navbar: React.FC<Props>  = (Props):ReactElement => {
-    const { category, setResultsToggle, setCategory } = Props
+    const { setResultsToggle, setCategory } = Props
 
     const handleMenClick = () => {
         setResultsToggle(true);
@@ -88,10 +87,14 @@ const Navbar: React.FC<Props>  = (Props):ReactElement => {
         setResultsToggle(true);
         setCategory("women's%20clothing");
       };
+      const handleHomeClick = () => {
+        setResultsToggle(false);
+        setCategory("");
+      }
       
 
   return (
-    <NavContainer>
+    <NavContainer onClick={handleHomeClick}>
       <Logo>E Commerce Store</Logo>
       <LinkContainer>
         <Links onClick={handleMenClick}>Men</Links>
