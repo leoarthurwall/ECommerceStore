@@ -70,6 +70,10 @@ const handleMenClick = () => {
   setResultsToggle(true);
   setCategory("men's%20clothing");
 }
+const handleWomenClick = () => {
+  setResultsToggle(true);
+  setCategory("women's%20clothing");
+}
 
   return (
     <SectionOneImage>
@@ -79,7 +83,7 @@ const handleMenClick = () => {
           Shop Mens
           <HiOutlineArrowNarrowRight />
         </ShopButton>
-        <ShopButton>
+        <ShopButton onClick={handleWomenClick}>
           Shop Womens
           <HiOutlineArrowNarrowRight />
         </ShopButton>
