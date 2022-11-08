@@ -12,7 +12,7 @@ const NavContainer = styled.nav`
   padding: 0 50px;
   box-sizing: border-box;
   z-index: 10;
-  background: red;
+  //   background: red;
 `;
 const Logo = styled.h1`
   color: #fff;
@@ -72,30 +72,31 @@ const Links = styled.li`
 `;
 
 type Props = {
-    setResultsToggle: (val: Boolean) => void;
-    setCategory: (val: string) => void;
+  setResultsToggle: (val: Boolean) => void;
+  setCategory: (val: string) => void;
+  resultsToggle: Boolean;
+};
+
+const Navbar: React.FC<Props> = (Props): ReactElement => {
+  const { setResultsToggle, setCategory, resultsToggle } = Props;
+
+  const handleMenClick = () => {
+    setResultsToggle(true);
+    setCategory("men's%20clothing");
   };
 
-const Navbar: React.FC<Props>  = (Props):ReactElement => {
-    const { setResultsToggle, setCategory } = Props
-
-    const handleMenClick = () => {
-        setResultsToggle(true);
-        setCategory("men's%20clothing");
-      };
-      const handleWomenClick = () => {
-        setResultsToggle(true);
-        setCategory("women's%20clothing");
-      };
-      const handleHomeClick = () => {
-        setResultsToggle(false);
-        setCategory("");
-      }
-      
+  const handleWomenClick = () => {
+    setResultsToggle(true);
+    setCategory("women's%20clothing");
+  };
+  const handleHomeClick = () => {
+    setResultsToggle(false);
+    setCategory("");
+  };
 
   return (
-    <NavContainer onClick={handleHomeClick}>
-      <Logo>E Commerce Store</Logo>
+    <NavContainer >
+      <Logo onClick={handleHomeClick}>E Commerce Store</Logo >
       <LinkContainer>
         <Links onClick={handleMenClick}>Men</Links>
         <Links onClick={handleWomenClick}>Women</Links>

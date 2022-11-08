@@ -19,6 +19,7 @@ function App() {
       <Navbar 
        setResultsToggle={setResultsToggle}
        setCategory={setCategory}
+       resultsToggle={resultsToggle}
        />
       {!resultsToggle ? (
         <SectionOne
