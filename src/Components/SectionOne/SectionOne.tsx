@@ -49,31 +49,29 @@ const ShopButton = styled.button`
   align-items: center;
   gap: 10px;
 
-  cursor: pointer; 
+  cursor: pointer;
 
   &:hover {
     color: grey;
-}
+  }
 `;
 
 type Props = {
-  resultsToggle: Boolean;
   setResultsToggle: (val: Boolean) => void;
-  category: String;
   setCategory: (val: string) => void;
 };
 
-const SectionOne: React.FC<Props>  = (Props):ReactElement => {
-  const { resultsToggle, setResultsToggle, category, setCategory } = Props
+const SectionOne: React.FC<Props> = (Props): ReactElement => {
+  const { setResultsToggle, setCategory } = Props;
 
-const handleMenClick = () => {
-  setResultsToggle(true);
-  setCategory("men's%20clothing");
-}
-const handleWomenClick = () => {
-  setResultsToggle(true);
-  setCategory("women's%20clothing");
-}
+  const handleMenClick = () => {
+    setResultsToggle(true);
+    setCategory("men's%20clothing");
+  };
+  const handleWomenClick = () => {
+    setResultsToggle(true);
+    setCategory("women's%20clothing");
+  };
 
   return (
     <SectionOneImage>

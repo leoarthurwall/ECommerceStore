@@ -16,12 +16,14 @@ function App() {
   const [resultsToggle, setResultsToggle] = useState<Boolean>(false);
   return (
     <AppContainer>
-      <Navbar />
+      <Navbar 
+       setResultsToggle={setResultsToggle}
+       setCategory={setCategory}
+       category={category}
+       />
       {!resultsToggle ? (
         <SectionOne
-          resultsToggle={resultsToggle}
           setResultsToggle={setResultsToggle}
-          category={category}
           setCategory={setCategory}
         />
       ) : (

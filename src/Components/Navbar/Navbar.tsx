@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { HiOutlineHeart, HiOutlineShoppingBag } from "react-icons/hi";
+import { ReactElement } from "react";
 
 const NavContainer = styled.nav`
   width: 100vw;
@@ -69,7 +70,17 @@ const Links = styled.li`
     color: #e8eaed;
   }
 `;
-const Navbar = () => {
+
+type Props = {
+    category: String;
+    setResultsToggle: (val: Boolean) => void;
+    setCategory: (val: string) => void;
+  };
+
+const Navbar: React.FC<Props>  = (Props):ReactElement => {
+    const { category, setResultsToggle, setCategory } = Props
+
+
   return (
     <NavContainer>
       <Logo>E Commerce Store</Logo>
