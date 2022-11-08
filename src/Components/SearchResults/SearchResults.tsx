@@ -10,10 +10,12 @@ const SearchResultsContainer = styled.section`
   width: 100%;
   display: flex;
   flex-wrap: wrap;
+  padding: 0 40px;
+  box-sizing: border-box;
+
 `;
 const ResultsTitle = styled.h1`
-  padding-top: 90px;
-  padding-left: 10px;
+  padding: 90px 40px 0 50px;
   margin: 0;
   font-size: 24px;
 `;
