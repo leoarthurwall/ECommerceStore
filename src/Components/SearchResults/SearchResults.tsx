@@ -63,7 +63,7 @@ const ItemBottomRowContainer = styled.div`
 type Props = {
     category: String;
   };
-const SearchResults:  React.FC<Props>  = (Props):ReactElement = () => {
+const SearchResults: React.FC<Props>  = (Props):ReactElement => {
     const { category } = Props
     
   const [data, setData] = useState<iClothes[]>([]);
@@ -78,7 +78,7 @@ const SearchResults:  React.FC<Props>  = (Props):ReactElement = () => {
         console.log(json);
         setData(json);
       });
-  }, []);
+  }, [category]);
 
   return (
     <>
