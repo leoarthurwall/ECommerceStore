@@ -25,13 +25,14 @@ const LinkContainer = styled.ul`
   font-size: 18px;
 `;
 
-const RightContainer = styled.div`
+const RightContainer = styled.div<IColor>`
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
   gap: 1rem;
-  color: white;
+  color: ${({ resultsToggle }) => (resultsToggle ? "black" : "#fff")};
+
 `;
 const SearchBar = styled.input`
   background-color: rgba(0, 0, 0, 0) !important;
@@ -107,7 +108,7 @@ const Navbar: React.FC<Props> = (Props): ReactElement => {
         <Links resultsToggle={resultsToggle} onClick={handleMenClick}>Men</Links>
         <Links resultsToggle={resultsToggle} onClick={handleWomenClick}>Women</Links>
       </LinkContainer>
-      <RightContainer>
+      <RightContainer resultsToggle={resultsToggle}>
         <SearchBar type="text" placeholder="Search..."></SearchBar>
         <IconContainer>
           <HiOutlineHeart size="24" />
