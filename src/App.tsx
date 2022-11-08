@@ -12,12 +12,12 @@ const AppContainer = styled.div`
 `;
 
 function App() {
-  const [category, setCategory] = useState("");
-  const [resultsToggle, setResultsToggle] = useState(false);
+  const [category, setCategory] = useState<String>("");
+  const [resultsToggle, setResultsToggle] = useState<Boolean>(false);
   return (
     <AppContainer>
       <Navbar />
-      {!resultsToggle ? <SectionOne /> : <SearchResults />}
+      {!resultsToggle ? <SectionOne resultsToggle={resultsToggle} setResultsToggle={setResultsToggle} category={category} setCategory={setCategory}/> : <SearchResults />}
     </AppContainer>
   );
 }

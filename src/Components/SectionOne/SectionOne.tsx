@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { HiOutlineArrowNarrowRight } from "react-icons/hi";
+import { ReactElement } from "react";
 
 const SectionOneImage = styled.div`
   height: 100vh;
@@ -54,8 +55,16 @@ const ShopButton = styled.button`
     color: grey;
 }
 `;
-const SectionOne = () => {
- 
+
+type Props = {
+  resultsToggle: Boolean;
+  setResultsToggle: (val: Boolean) => void;
+  category: String;
+  setCategory: (val: string) => void;
+};
+
+const SectionOne: React.FC<Props>  = (Props):ReactElement => {
+  const { resultsToggle, setResultsToggle, category, setCategory } = Props
 
 const handleMenClick = () => {
 
