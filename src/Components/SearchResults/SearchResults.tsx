@@ -2,6 +2,8 @@ import { useState, useEffect } from "react";
 import styled from "styled-components";
 import { iClothes } from "../../iClothes";
 import { HiOutlineHeart, HiOutlineShoppingBag } from "react-icons/hi";
+import { ReactElement } from "react";
+
 
 const SearchResultsContainer = styled.section`
   height: 100vh;
@@ -57,12 +59,20 @@ const ItemBottomRowContainer = styled.div`
   width: 100%;
   justify-content: space-between;
 `;
-const SearchResults = () => {
+
+type Props = {
+    category: String;
+  };
+const SearchResults:  React.FC<Props>  = (Props):ReactElement = () => {
+    const { category } = Props
+    
   const [data, setData] = useState<iClothes[]>([]);
   console.log({ data });
 
   useEffect(() => {
-    fetch("https://fakestoreapi.com/products/category/men's%20clothing")
+    // fetch("https://fakestoreapi.com/products/category/men's%20clothing")
+    fetch(`https://fakestoreapi.com/products/category/${category}`)
+
       .then((res) => res.json())
       .then((json) => {
         console.log(json);

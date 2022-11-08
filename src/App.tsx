@@ -17,7 +17,16 @@ function App() {
   return (
     <AppContainer>
       <Navbar />
-      {!resultsToggle ? <SectionOne resultsToggle={resultsToggle} setResultsToggle={setResultsToggle} category={category} setCategory={setCategory}/> : <SearchResults />}
+      {!resultsToggle ? (
+        <SectionOne
+          resultsToggle={resultsToggle}
+          setResultsToggle={setResultsToggle}
+          category={category}
+          setCategory={setCategory}
+        />
+      ) : (
+        <SearchResults category={category}/>
+      )}
     </AppContainer>
   );
 }
