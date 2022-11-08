@@ -67,7 +67,8 @@ const SectionOne: React.FC<Props>  = (Props):ReactElement => {
   const { resultsToggle, setResultsToggle, category, setCategory } = Props
 
 const handleMenClick = () => {
-
+  setResultsToggle(true);
+  setCategory("men's%20clothing");
 }
 
   return (
