@@ -32,17 +32,16 @@ const RightContainer = styled.div<IColor>`
   justify-content: center;
   gap: 1rem;
   color: ${({ resultsToggle }) => (resultsToggle ? "black" : "#fff")};
-
 `;
-const SearchBar = styled.input`
+const SearchBar = styled.input<IColor>`
   background-color: rgba(0, 0, 0, 0) !important;
   border: none !important;
-  border-bottom: 1px solid #fff !important;
+  border-bottom: 1px solid  ${({ resultsToggle }) => (resultsToggle ? "black" : "#fff")} !important;
   box-shadow: none !important;
   height: 30px;
   font-size: 16px;
   font-weight: 400;
-  color: #fff;
+  color: ${({ resultsToggle }) => (resultsToggle ? "black" : "#fff")};
   padding: 0 15px;
   max-width: 150px;
 
@@ -50,14 +49,14 @@ const SearchBar = styled.input`
     outline: none;
   }
   ::placeholder {
-    color: #fff;
+    color: ${({ resultsToggle }) => (resultsToggle ? "black" : "#fff")};
   }
 `;
-const IconContainer = styled.div`
+const IconContainer = styled.div<IColor>`
   cursor: pointer;
 
   &:hover {
-    color: #e8eaed;
+    color: ${({ resultsToggle }) => (resultsToggle ? "grey" : "#e8eaed")};
   }
 `;
 const Links = styled.li<IColor>`
@@ -73,7 +72,7 @@ const Links = styled.li<IColor>`
 `;
 
 interface IColor {
-    resultsToggle: Boolean;
+  resultsToggle: Boolean;
 }
 
 type Props = {
@@ -101,19 +100,27 @@ const Navbar: React.FC<Props> = (Props): ReactElement => {
 
   return (
     <NavContainer>
-      <Logo onClick={handleHomeClick} resultsToggle={resultsToggle} >
+      <Logo onClick={handleHomeClick} resultsToggle={resultsToggle}>
         E Commerce Store
       </Logo>
       <LinkContainer>
-        <Links resultsToggle={resultsToggle} onClick={handleMenClick}>Men</Links>
-        <Links resultsToggle={resultsToggle} onClick={handleWomenClick}>Women</Links>
+        <Links resultsToggle={resultsToggle} onClick={handleMenClick}>
+          Men
+        </Links>
+        <Links resultsToggle={resultsToggle} onClick={handleWomenClick}>
+          Women
+        </Links>
       </LinkContainer>
       <RightContainer resultsToggle={resultsToggle}>
-        <SearchBar type="text" placeholder="Search..."></SearchBar>
-        <IconContainer>
+        <SearchBar
+          type="text"
+          placeholder="Search..."
+          resultsToggle={resultsToggle}
+        ></SearchBar>
+        <IconContainer resultsToggle={resultsToggle}>
           <HiOutlineHeart size="24" />
         </IconContainer>
-        <IconContainer>
+        <IconContainer resultsToggle={resultsToggle}>
           <HiOutlineShoppingBag size="24" />
         </IconContainer>
       </RightContainer>
