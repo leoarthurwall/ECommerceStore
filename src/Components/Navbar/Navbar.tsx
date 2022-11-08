@@ -80,13 +80,22 @@ type Props = {
 const Navbar: React.FC<Props>  = (Props):ReactElement => {
     const { category, setResultsToggle, setCategory } = Props
 
+    const handleMenClick = () => {
+        setResultsToggle(true);
+        setCategory("men's%20clothing");
+      };
+      const handleWomenClick = () => {
+        setResultsToggle(true);
+        setCategory("women's%20clothing");
+      };
+      
 
   return (
     <NavContainer>
       <Logo>E Commerce Store</Logo>
       <LinkContainer>
-        <Links>Men</Links>
-        <Links>Women</Links>
+        <Links onClick={handleMenClick}>Men</Links>
+        <Links onClick={handleWomenClick}>Women</Links>
       </LinkContainer>
       <RightContainer>
         <SearchBar type="text" placeholder="Search..."></SearchBar>
