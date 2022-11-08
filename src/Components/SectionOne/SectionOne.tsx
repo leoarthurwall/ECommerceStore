@@ -55,11 +55,17 @@ const ShopButton = styled.button`
 }
 `;
 const SectionOne = () => {
+ 
+
+const handleMenClick = () => {
+
+}
+
   return (
     <SectionOneImage>
       <LeftContainer>
         <Header>The ultimate experience</Header>
-        <ShopButton>
+        <ShopButton onClick={handleMenClick}>
           Shop Mens
           <HiOutlineArrowNarrowRight />
         </ShopButton>
