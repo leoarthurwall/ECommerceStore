@@ -14,8 +14,8 @@ const NavContainer = styled.nav`
   z-index: 10;
   //   background: red;
 `;
-const Logo = styled.h1`
-  color: #fff;
+const Logo = styled.h1<IColor>`
+  color: ${({ resultsToggle }) => (resultsToggle ? "black" : "#fff")};
   cursor: pointer;
 `;
 const LinkContainer = styled.ul`
@@ -59,17 +59,21 @@ const IconContainer = styled.div`
     color: #e8eaed;
   }
 `;
-const Links = styled.li`
+const Links = styled.li<IColor>`
   margin: 0;
   padding: 0;
-  color: #fff;
+  color: ${({ resultsToggle }) => (resultsToggle ? "black" : "#fff")};
 
   cursor: pointer;
 
   &:hover {
-    color: #e8eaed;
+    color: ${({ resultsToggle }) => (resultsToggle ? "grey" : "#e8eaed")};
   }
 `;
+
+interface IColor {
+    resultsToggle: Boolean;
+}
 
 type Props = {
   setResultsToggle: (val: Boolean) => void;
@@ -95,11 +99,13 @@ const Navbar: React.FC<Props> = (Props): ReactElement => {
   };
 
   return (
-    <NavContainer >
-      <Logo onClick={handleHomeClick}>E Commerce Store</Logo >
+    <NavContainer>
+      <Logo onClick={handleHomeClick} resultsToggle={resultsToggle} >
+        E Commerce Store
+      </Logo>
       <LinkContainer>
-        <Links onClick={handleMenClick}>Men</Links>
-        <Links onClick={handleWomenClick}>Women</Links>
+        <Links resultsToggle={resultsToggle} onClick={handleMenClick}>Men</Links>
+        <Links resultsToggle={resultsToggle} onClick={handleWomenClick}>Women</Links>
       </LinkContainer>
       <RightContainer>
         <SearchBar type="text" placeholder="Search..."></SearchBar>
