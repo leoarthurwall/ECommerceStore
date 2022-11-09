@@ -43,6 +43,11 @@ const ItemImage = styled.img`
   width: 100%;
   height: 70%;
   object-fit: contain;
+  transition: all 0.5s;
+
+  &:hover {
+    transform: scale(1.05);
+  }
 `;
 const ItemTextContainer = styled.div`
   display: flex;
