@@ -21,11 +21,12 @@ const ResultsTitle = styled.h1`
 `;
 
 const ItemCard = styled.div`
-  width: 250px;
+  width: 25%;
   height: 380px;
-  margin: 10px;
-  padding: 5px;
+  padding: 15px;
   border: 1px solid rgba(0, 0, 0, 0.1);
+  box-sizing: border-box;
+
 `;
 
 const ItemImage = styled.img`
