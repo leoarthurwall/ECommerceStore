@@ -102,6 +102,7 @@ const Navbar: React.FC<Props> = (Props): ReactElement => {
   const handleHomeClick = () => {
     setResultsToggle(false);
     setCategory("");
+    setIsClosed(true)
   };
 
   const handleBagClick = () => {
