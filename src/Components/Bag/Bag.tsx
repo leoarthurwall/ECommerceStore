@@ -27,7 +27,8 @@ gap: 0.5rem;
 padding-left: 25px;
 `;
 const HeaderText = styled.h2`
-font-weight: 400;
+font-weight: 300;
+font-size: 22px;
 `;
 const BagHeaderBox = styled.div`
   width: 100%;
@@ -38,6 +39,9 @@ const BagHeaderBox = styled.div`
 `;
 const IconContainer = styled.div`
   cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `;
 const IconMainContainer = styled.div`
   height: 80px;
@@ -69,7 +73,7 @@ const Bag: React.FC<Props> = (Props): ReactElement => {
     <BagContainer isClosed={isClosed}>
       <IconMainContainer>
         <HeaderContainer>
-          <HiOutlineShoppingBag size="25" color="white" />
+          <HiOutlineShoppingBag size="24" color="white" />
           <HeaderText> Your Bag </HeaderText>
         </HeaderContainer>
         <IconContainer onClick={handleCloseClick}>
