@@ -13,7 +13,6 @@ const SideBarContainer = styled.div<IisClosed>`
   transition: 0.5s;
   width: 350px;
   background: #1e1e1e;
-  border-radius: 5px 0 0 0; /*TL TR BR BL*/
 
   display: flex;
   flex-direction: column;
