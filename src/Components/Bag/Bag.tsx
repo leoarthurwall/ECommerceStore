@@ -7,7 +7,8 @@ const BagContainer = styled.div<IisClosed>`
     position: absolute;
     top: 80px;
     bottom:0px;
-    right: ${({ isClosed}) => isClosed ? '0' : '-300px'}
+    right: ${({ isClosed}) => isClosed ? '-300px' : '0px'};
+
     transition: .6s;
     width: 300px;
     background: red;
