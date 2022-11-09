@@ -17,14 +17,18 @@ const SideBarContainer = styled.div<IisClosed>`
 
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   z-index: 10;
+
+  padding: 0 45px 40px 25px;
+  box-sizing: border-box;
+
 `;
 const HeaderContainer = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
   gap: 0.5rem;
-  padding-left: 25px;
 `;
 const HeaderText = styled.h2`
   font-weight: 300;
@@ -37,9 +41,8 @@ const IconContainer = styled.div`
   justify-content: center;
   align-items: center;
 `;
-const IconMainContainer = styled.div`
+const SideBarUpperContainer = styled.div`
   height: 80px;
-  padding-right: 45px;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -47,7 +50,21 @@ const IconMainContainer = styled.div`
   gap: 1rem;
   color: #fff;
 `;
+const SideBarMainSection = styled.div`
+  height: 40%;
+  width: 100%;
 
+  background: #0c0b10;
+  border-radius: 5px;
+`;
+
+const SideBarLowerSection = styled.div`
+  height: 30%;
+  width: 100%;
+
+  background: #0c0b10;
+  border-radius: 5px;
+`;
 interface IisClosed {
   isClosed: Boolean;
 }
@@ -72,7 +89,7 @@ const SideBar: React.FC<Props> = (Props): ReactElement => {
   };
   return (
     <SideBarContainer isClosed={isClosed}>
-      <IconMainContainer>
+      <SideBarUpperContainer>
         {showBag && (
           <HeaderContainer>
             <HiOutlineShoppingBag size="24" color="white" />
@@ -85,11 +102,12 @@ const SideBar: React.FC<Props> = (Props): ReactElement => {
             <HeaderText> Your Favourites </HeaderText>
           </HeaderContainer>
         )}
-
         <IconContainer onClick={handleCloseClick}>
           <RiCloseLine size="30" />
         </IconContainer>
-      </IconMainContainer>
+      </SideBarUpperContainer>
+      <SideBarMainSection></SideBarMainSection>
+      <SideBarLowerSection></SideBarLowerSection>
     </SideBarContainer>
   );
 };
