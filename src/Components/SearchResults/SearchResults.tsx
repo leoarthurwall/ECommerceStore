@@ -54,7 +54,7 @@ const ItemTextContainer = styled.div`
 const ItemTitle = styled.h1`
   color: black;
   font-size: 14px;
-  font-weight: 500;
+  font-weight: 400;
   font-family: inter;
   margin: 0;
 `;
