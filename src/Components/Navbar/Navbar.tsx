@@ -13,7 +13,6 @@ const NavContainer = styled.nav<IColor>`
   box-sizing: border-box;
   z-index: 10;
   background: ${({ resultsToggle }) => (resultsToggle ? "#fff" : "")};
-
 `;
 const Logo = styled.h1<IColor>`
   color: ${({ resultsToggle }) => (resultsToggle ? "black" : "#fff")};
@@ -37,7 +36,8 @@ const RightContainer = styled.div<IColor>`
 const SearchBar = styled.input<IColor>`
   background-color: rgba(0, 0, 0, 0) !important;
   border: none !important;
-  border-bottom: 1px solid  ${({ resultsToggle }) => (resultsToggle ? "black" : "#fff")} !important;
+  border-bottom: 1px solid
+    ${({ resultsToggle }) => (resultsToggle ? "black" : "#fff")} !important;
   box-shadow: none !important;
   height: 30px;
   font-size: 16px;
@@ -84,20 +84,18 @@ type Props = {
 };
 
 const Navbar: React.FC<Props> = (Props): ReactElement => {
-  const { setResultsToggle, setCategory, resultsToggle, setGender} = Props;
+  const { setResultsToggle, setCategory, resultsToggle, setGender } = Props;
 
   const handleMenClick = () => {
     setResultsToggle(true);
     setCategory("men's%20clothing");
     setGender("Men's clothing");
-
   };
 
   const handleWomenClick = () => {
     setResultsToggle(true);
     setCategory("women's%20clothing");
     setGender("Women's clothing");
-
   };
   const handleHomeClick = () => {
     setResultsToggle(false);
@@ -106,32 +104,32 @@ const Navbar: React.FC<Props> = (Props): ReactElement => {
 
   return (
     <>
-    <NavContainer resultsToggle={resultsToggle}>
-      <Logo onClick={handleHomeClick} resultsToggle={resultsToggle}>
-        E Commerce Store
-      </Logo>
-      <LinkContainer>
-        <Links resultsToggle={resultsToggle} onClick={handleMenClick}>
-          Men
-        </Links>
-        <Links resultsToggle={resultsToggle} onClick={handleWomenClick}>
-          Women
-        </Links>
-      </LinkContainer>
-      <RightContainer resultsToggle={resultsToggle}>
-        <SearchBar
-          type="text"
-          placeholder="Search..."
-          resultsToggle={resultsToggle}
-        ></SearchBar>
-        <IconContainer resultsToggle={resultsToggle}>
-          <HiOutlineHeart size="24" />
-        </IconContainer>
-        <IconContainer resultsToggle={resultsToggle}>
-          <HiOutlineShoppingBag size="24" />
-        </IconContainer>
-      </RightContainer>
-    </NavContainer>
+      <NavContainer resultsToggle={resultsToggle}>
+        <Logo onClick={handleHomeClick} resultsToggle={resultsToggle}>
+          Oakwood Outfits
+        </Logo>
+        <LinkContainer>
+          <Links resultsToggle={resultsToggle} onClick={handleMenClick}>
+            Men
+          </Links>
+          <Links resultsToggle={resultsToggle} onClick={handleWomenClick}>
+            Women
+          </Links>
+        </LinkContainer>
+        <RightContainer resultsToggle={resultsToggle}>
+          <SearchBar
+            type="text"
+            placeholder="Search..."
+            resultsToggle={resultsToggle}
+          ></SearchBar>
+          <IconContainer resultsToggle={resultsToggle}>
+            <HiOutlineHeart size="24" />
+          </IconContainer>
+          <IconContainer resultsToggle={resultsToggle}>
+            <HiOutlineShoppingBag size="24" />
+          </IconContainer>
+        </RightContainer>
+      </NavContainer>
     </>
   );
 };

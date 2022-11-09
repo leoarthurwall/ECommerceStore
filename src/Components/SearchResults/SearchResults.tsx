@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
 import styled from "styled-components";
 import { iClothes } from "../../iClothes";
 import { HiOutlineHeart, HiOutlineShoppingBag } from "react-icons/hi";
@@ -17,6 +17,7 @@ const ResultsTitle = styled.h1`
   padding: 90px 40px 0 50px;
   margin: 0;
   font-size: 24px;
+  font-weight: 300;
 `;
 
 const ItemCard = styled.div`
@@ -32,14 +33,12 @@ const ItemCard = styled.div`
     width: 50%;
     min-width: 350px;
   }
- 
 `;
 
 const ItemImage = styled.img`
   width: 100%;
   height: 70%;
   object-fit: contain;
-
 `;
 const ItemTextContainer = styled.div`
   display: flex;
@@ -74,11 +73,12 @@ const ItemBottomRowContainer = styled.div`
 type Props = {
   category: String;
   gender: String;
+  data: iClothes[];
+  setData: (val: iClothes[]) => void;
 };
 const SearchResults: React.FC<Props> = (Props): ReactElement => {
-  const { category, gender } = Props;
+  const { category, gender, data, setData } = Props;
 
-  const [data, setData] = useState<iClothes[]>([]);
   console.log({ data });
 
   useEffect(() => {
@@ -89,11 +89,7 @@ const SearchResults: React.FC<Props> = (Props): ReactElement => {
         console.log(json);
         setData(json);
       });
-  }, [category]);
-
-
-  
-  
+  }, [category, setData]);
 
   return (
     <>

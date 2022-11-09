@@ -3,6 +3,7 @@ import Navbar from "./Components/Navbar/Navbar";
 import SearchResults from "./Components/SearchResults/SearchResults";
 import SectionOne from "./Components/SectionOne/SectionOne";
 import { useState } from "react";
+import { iClothes } from "./iClothes";
 
 const AppContainer = styled.div`
   display: flex;
@@ -15,6 +16,8 @@ function App() {
   const [category, setCategory] = useState<String>("");
   const [resultsToggle, setResultsToggle] = useState<Boolean>(false);
   const [gender, setGender] = useState<String>("");
+  const [data, setData] = useState<iClothes[]>([]);
+
 
   return (
     <AppContainer>
@@ -31,7 +34,7 @@ function App() {
           setGender={setGender}
         />
       ) : (
-        <SearchResults category={category} gender={gender} />
+        <SearchResults category={category} gender={gender} data={data} setData={setData}/>
       )}
     </AppContainer>
   );
