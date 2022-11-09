@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { ReactElement } from "react";
 import { RiCloseLine } from "react-icons/ri";
-import { HiOutlineShoppingBag } from "react-icons/hi";
+import { HiOutlineShoppingBag, HiOutlineHeart } from "react-icons/hi";
 
 const SideBarContainer = styled.div<IisClosed>`
   position: absolute;
@@ -20,15 +20,15 @@ const SideBarContainer = styled.div<IisClosed>`
   z-index: 10;
 `;
 const HeaderContainer = styled.div`
-display: flex;
-flex-direction: row;
-align-items: center; 
-gap: 0.5rem;
-padding-left: 25px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.5rem;
+  padding-left: 25px;
 `;
 const HeaderText = styled.h2`
-font-weight: 300;
-font-size: 22px;
+  font-weight: 300;
+  font-size: 22px;
 `;
 
 const IconContainer = styled.div`
@@ -59,31 +59,37 @@ type Props = {
   setShowBag: (val: Boolean) => void;
   showSave: Boolean;
   setShowSave: (val: Boolean) => void;
-
-
 };
 
 const SideBar: React.FC<Props> = (Props): ReactElement => {
-  const { isClosed, setIsClosed, showBag, setShowBag, showSave, setShowSave } = Props;
+  const { isClosed, setIsClosed, showBag, setShowBag, showSave, setShowSave } =
+    Props;
 
   const handleCloseClick = () => {
     setIsClosed(!isClosed);
     setShowBag(false);
-    setShowSave(false)
+    setShowSave(false);
   };
   return (
     <SideBarContainer isClosed={isClosed}>
       <IconMainContainer>
-        <HeaderContainer>
-          <HiOutlineShoppingBag size="24" color="white" />
-          {showBag && <HeaderText> Your Bag </HeaderText>}
-          {showSave && <HeaderText> Your Favourites </HeaderText>}
-        </HeaderContainer>
+        {showBag && (
+          <HeaderContainer>
+            <HiOutlineShoppingBag size="24" color="white" />
+            <HeaderText> Your Bag </HeaderText>
+          </HeaderContainer>
+        )}
+        {showSave && (
+          <HeaderContainer>
+            <HiOutlineHeart size="24" color="white" />
+            <HeaderText> Your Favourites </HeaderText>
+          </HeaderContainer>
+        )}
+
         <IconContainer onClick={handleCloseClick}>
           <RiCloseLine size="30" />
         </IconContainer>
       </IconMainContainer>
-
     </SideBarContainer>
   );
 };
