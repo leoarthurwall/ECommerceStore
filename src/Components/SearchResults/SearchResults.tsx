@@ -4,15 +4,14 @@ import { iClothes } from "../../iClothes";
 import { HiOutlineHeart, HiOutlineShoppingBag } from "react-icons/hi";
 import { ReactElement } from "react";
 
-
 const SearchResultsContainer = styled.section`
   height: 100vh;
   width: 100%;
+  max-width: 1400px;
   display: flex;
   flex-wrap: wrap;
   padding: 0 40px;
   box-sizing: border-box;
-
 `;
 const ResultsTitle = styled.h1`
   padding: 90px 40px 0 50px;
@@ -22,11 +21,18 @@ const ResultsTitle = styled.h1`
 
 const ItemCard = styled.div`
   width: 25%;
-  height: 380px;
+  height: 400px;
   padding: 15px;
-  border: 1px solid rgba(0, 0, 0, 0.1);
+  //   border: 1px solid rgba(0, 0, 0, 0.1);
   box-sizing: border-box;
-
+  @media (max-width: 1000px) {
+    width: 33%;
+  }
+  @media (max-width: 768px) {
+    width: 50%;
+    min-width: 350px;
+  }
+ 
 `;
 
 const ItemImage = styled.img`
@@ -64,18 +70,17 @@ const ItemBottomRowContainer = styled.div`
 `;
 
 type Props = {
-    category: String;
-  };
-const SearchResults: React.FC<Props>  = (Props):ReactElement => {
-    const { category } = Props
-    
+  category: String;
+};
+const SearchResults: React.FC<Props> = (Props): ReactElement => {
+  const { category } = Props;
+
   const [data, setData] = useState<iClothes[]>([]);
   console.log({ data });
 
   useEffect(() => {
     // fetch("https://fakestoreapi.com/products/category/men's%20clothing")
     fetch(`https://fakestoreapi.com/products/category/${category}`)
-
       .then((res) => res.json())
       .then((json) => {
         console.log(json);
@@ -95,8 +100,8 @@ const SearchResults: React.FC<Props>  = (Props):ReactElement => {
               <ItemBottomRowContainer>
                 <ItemPrice>£{item.price}</ItemPrice>
                 <ItemBasketSaveContainer>
-                  <HiOutlineHeart size={20}/>
-                  <HiOutlineShoppingBag size={20}/>
+                  <HiOutlineHeart size={20} />
+                  <HiOutlineShoppingBag size={20} />
                 </ItemBasketSaveContainer>
               </ItemBottomRowContainer>
             </ItemTextContainer>
