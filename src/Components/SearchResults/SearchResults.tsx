@@ -21,9 +21,9 @@ const ResultsTitle = styled.h1`
 `;
 
 const TitleSpan = styled.span`
-font-size: 14px;
-color: grey;
-`
+  font-size: 14px;
+  color: grey;
+`;
 const ItemCard = styled.div`
   width: 25%;
   height: 400px;
@@ -64,7 +64,6 @@ const ItemTitle = styled.h1`
   font-family: inter;
   margin: 0;
   cursor: pointer;
-
 `;
 const ItemPrice = styled.h3`
   font-size: 16px;
@@ -76,14 +75,12 @@ const ItemBasketSaveContainer = styled.div`
   display: flex;
   gap: 0.5rem;
   cursor: pointer;
-
 `;
 const ItemBottomRowContainer = styled.div`
   display: flex;
   width: 100%;
   justify-content: space-between;
   cursor: pointer;
-
 `;
 
 type Props = {
@@ -104,10 +101,12 @@ const SearchResults: React.FC<Props> = (Props): ReactElement => {
       });
   }, [category, setData]);
 
-  console.log(data.length)
+  console.log(data.length);
   return (
     <>
-      <ResultsTitle>{gender} <TitleSpan>({data.length} results)</TitleSpan></ResultsTitle>
+      <ResultsTitle>
+        {gender} <TitleSpan>({data.length} results)</TitleSpan>
+      </ResultsTitle>
       <SearchResultsContainer>
         {data.map((item, index) => (
           <ItemCard key={index}>

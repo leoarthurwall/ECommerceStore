@@ -4,7 +4,7 @@ import { ReactElement } from "react";
 import { RiCloseLine } from "react-icons/ri";
 import { HiOutlineShoppingBag } from "react-icons/hi";
 
-const BagContainer = styled.div<IisClosed>`
+const SideBarContainer = styled.div<IisClosed>`
   position: absolute;
   top: 0px;
   bottom: 0px;
@@ -30,13 +30,7 @@ const HeaderText = styled.h2`
 font-weight: 300;
 font-size: 22px;
 `;
-const BagHeaderBox = styled.div`
-  width: 100%;
-  height: 20%;
-  display: flex;
-  justify-content: center;
-  adlgn-items: center;
-`;
+
 const IconContainer = styled.div`
   cursor: pointer;
   display: flex;
@@ -61,29 +55,37 @@ interface IisClosed {
 type Props = {
   isClosed: Boolean;
   setIsClosed: (val: Boolean) => void;
+  showBag: Boolean;
+  setShowBag: (val: Boolean) => void;
+  showSave: Boolean;
+  setShowSave: (val: Boolean) => void;
+
+
 };
 
-const Bag: React.FC<Props> = (Props): ReactElement => {
-  const { isClosed, setIsClosed } = Props;
+const SideBar: React.FC<Props> = (Props): ReactElement => {
+  const { isClosed, setIsClosed, showBag, setShowBag, showSave, setShowSave } = Props;
 
   const handleCloseClick = () => {
     setIsClosed(!isClosed);
+    setShowBag(false);
+    setShowSave(false)
   };
   return (
-    <BagContainer isClosed={isClosed}>
+    <SideBarContainer isClosed={isClosed}>
       <IconMainContainer>
         <HeaderContainer>
           <HiOutlineShoppingBag size="24" color="white" />
-          <HeaderText> Your Bag </HeaderText>
+          {showBag && <HeaderText> Your Bag </HeaderText>}
+          {showSave && <HeaderText> Your Favourites </HeaderText>}
         </HeaderContainer>
         <IconContainer onClick={handleCloseClick}>
           <RiCloseLine size="30" />
         </IconContainer>
       </IconMainContainer>
 
-      <BagHeaderBox></BagHeaderBox>
-    </BagContainer>
+    </SideBarContainer>
   );
 };
 
-export default Bag;
+export default SideBar;

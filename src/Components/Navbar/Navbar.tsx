@@ -83,10 +83,21 @@ type Props = {
   setGender: (val: string) => void;
   isClosed: Boolean;
   setIsClosed: (val: Boolean) => void;
+  setShowBag: (val: Boolean) => void;
+  setShowSave: (val: Boolean) => void;
 };
 
 const Navbar: React.FC<Props> = (Props): ReactElement => {
-  const { setResultsToggle, setCategory, resultsToggle, setGender, isClosed, setIsClosed } = Props;
+  const {
+    setResultsToggle,
+    setCategory,
+    resultsToggle,
+    setGender,
+    isClosed,
+    setIsClosed,
+    setShowBag,
+    setShowSave,
+  } = Props;
 
   const handleMenClick = () => {
     setResultsToggle(true);
@@ -102,13 +113,18 @@ const Navbar: React.FC<Props> = (Props): ReactElement => {
   const handleHomeClick = () => {
     setResultsToggle(false);
     setCategory("");
-    setIsClosed(true)
+    setIsClosed(true);
   };
 
   const handleBagClick = () => {
-    setIsClosed(!isClosed)
-    console.log({isClosed})
-  }
+    setIsClosed(!isClosed);
+    setShowBag(true)
+  };
+  const handleSaveClick = () => {
+    setIsClosed(!isClosed);
+    console.log({ isClosed });
+    setShowSave(true)
+  };
   return (
     <>
       <NavContainer resultsToggle={resultsToggle}>
@@ -129,7 +145,10 @@ const Navbar: React.FC<Props> = (Props): ReactElement => {
             placeholder="Search..."
             resultsToggle={resultsToggle}
           ></SearchBar>
-          <IconContainer resultsToggle={resultsToggle}>
+          <IconContainer
+            resultsToggle={resultsToggle}
+            onClick={handleSaveClick}
+          >
             <HiOutlineHeart size="24" />
           </IconContainer>
           <IconContainer resultsToggle={resultsToggle} onClick={handleBagClick}>
