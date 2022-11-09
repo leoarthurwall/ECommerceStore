@@ -20,6 +20,10 @@ const ResultsTitle = styled.h1`
   font-weight: 300;
 `;
 
+const TitleSpan = styled.span`
+font-size: 14px;
+color: grey;
+`
 const ItemCard = styled.div`
   width: 25%;
   height: 400px;
@@ -91,7 +95,7 @@ const SearchResults: React.FC<Props> = (Props): ReactElement => {
   console.log(data.length)
   return (
     <>
-      <ResultsTitle>{gender} {data.length}</ResultsTitle>
+      <ResultsTitle>{gender} <TitleSpan>({data.length} results)</TitleSpan></ResultsTitle>
       <SearchResultsContainer>
         {data.map((item, index) => (
           <ItemCard key={index}>
