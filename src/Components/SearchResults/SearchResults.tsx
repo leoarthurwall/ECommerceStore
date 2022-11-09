@@ -82,7 +82,6 @@ const SearchResults: React.FC<Props> = (Props): ReactElement => {
   console.log({ data });
 
   useEffect(() => {
-    // fetch("https://fakestoreapi.com/products/category/men's%20clothing")
     fetch(`https://fakestoreapi.com/products/category/${category}`)
       .then((res) => res.json())
       .then((json) => {
@@ -91,9 +90,10 @@ const SearchResults: React.FC<Props> = (Props): ReactElement => {
       });
   }, [category, setData]);
 
+  console.log(data.length)
   return (
     <>
-      <ResultsTitle>{gender}</ResultsTitle>
+      <ResultsTitle>{gender} </ResultsTitle>
       <SearchResultsContainer>
         {data.map((item, index) => (
           <ItemCard key={index}>

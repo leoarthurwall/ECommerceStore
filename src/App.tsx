@@ -17,6 +17,7 @@ function App() {
   const [resultsToggle, setResultsToggle] = useState<Boolean>(false);
   const [gender, setGender] = useState<String>("");
   const [data, setData] = useState<iClothes[]>([]);
+  const [resultsLength, setResultsLength] = useState<Number>()
 
 
   return (
@@ -32,6 +33,8 @@ function App() {
           setResultsToggle={setResultsToggle}
           setCategory={setCategory}
           setGender={setGender}
+          setResultsLength={setResultsLength}
+          data={data}
         />
       ) : (
         <SearchResults category={category} gender={gender} data={data} setData={setData}/>
