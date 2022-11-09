@@ -41,7 +41,7 @@ function App() {
       ) : (
         <SearchResults category={category} gender={gender} data={data} setData={setData} />
       )}
-      <Bag isClosed={isClosed}/>
+      <Bag isClosed={isClosed} setIsClosed={setIsClosed}/>
     </AppContainer>
   );
 }

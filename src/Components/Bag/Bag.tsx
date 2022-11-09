@@ -3,11 +3,10 @@ import styled from "styled-components";
 import { ReactElement } from "react";
 import { HiOutlineHeart } from "react-icons/hi";
 import { RiCloseLine } from "react-icons/ri";
-import { IconBase } from "react-icons";
 
 const BagContainer = styled.div<IisClosed>`
   position: absolute;
-  top: 80px;
+  top: 0px;
   bottom: 0px;
   right: ${({ isClosed }) => (isClosed ? "-350px" : "0px")};
 
@@ -15,6 +14,8 @@ const BagContainer = styled.div<IisClosed>`
   width: 350px;
   background: #1e1e1e;
   border-radius: 5px 0 0 0; /*TL TR BR BL*/
+
+  z-index: 10;
 `;
 const BagHeaderBox = styled.div`
   width: 100%;
@@ -37,23 +38,29 @@ const IconMainContainer = styled.div`
   color: #fff;
 `;
 
+
 interface IisClosed {
-  isClosed: Boolean;
+    isClosed: Boolean;
 }
 
 type Props = {
-  isClosed: Boolean;
+    isClosed: Boolean;
+    setIsClosed: (val: Boolean) => void;
 };
 
 const Bag: React.FC<Props> = (Props): ReactElement => {
-  const { isClosed } = Props;
-  return (
+    const { isClosed, setIsClosed } = Props;
+    
+    const handleCloseClick = () => {
+        setIsClosed(!isClosed)
+    }
+    return (
     <BagContainer isClosed={isClosed}>
       <IconMainContainer>
         <IconContainer>
           <HiOutlineHeart size="24" />
         </IconContainer>
-        <IconContainer>
+        <IconContainer onClick={handleCloseClick}>
           <RiCloseLine size="30" />
         </IconContainer>
       </IconMainContainer>
