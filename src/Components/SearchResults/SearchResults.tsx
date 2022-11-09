@@ -75,10 +75,9 @@ type Props = {
   gender: String;
   data: iClothes[];
   setData: (val: iClothes[]) => void;
-  resultsLength: String;
 };
 const SearchResults: React.FC<Props> = (Props): ReactElement => {
-  const { category, gender, data, setData, resultsLength } = Props;
+  const { category, gender, data, setData } = Props;
 
   useEffect(() => {
     fetch(`https://fakestoreapi.com/products/category/${category}`)

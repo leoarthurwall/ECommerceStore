@@ -1,7 +1,6 @@
 import styled from "styled-components";
 import { HiOutlineArrowNarrowRight } from "react-icons/hi";
 import { ReactElement } from "react";
-import { iClothes } from "../../iClothes";
 
 const SectionOneImage = styled.div`
   height: 100vh;
@@ -61,25 +60,21 @@ type Props = {
   setResultsToggle: (val: Boolean) => void;
   setCategory: (val: string) => void;
   setGender: (val: string) => void;
-  setResultsLength: (val: String) => void;
-  data: iClothes[];
 };
 
 const SectionOne: React.FC<Props> = (Props): ReactElement => {
-  const { setResultsToggle, setCategory, setGender, setResultsLength, data } = Props;
+  const { setResultsToggle, setCategory, setGender } = Props;
 
   const handleMenClick = () => {
     setResultsToggle(true);
     setCategory("men's%20clothing");
     setGender("Men's clothing");
-    setResultsLength(data.length.toString());
 
   };
   const handleWomenClick = () => {
     setResultsToggle(true);
     setCategory("women's%20clothing");
     setGender("Women's clothing");
-    setResultsLength(data.length.toString());
   };
 
   return (
