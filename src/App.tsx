@@ -4,6 +4,7 @@ import SearchResults from "./Components/SearchResults/SearchResults";
 import SectionOne from "./Components/SectionOne/SectionOne";
 import { useState } from "react";
 import { iClothes } from "./iClothes";
+import Bag from "./Components/Bag/Bag";
 
 const AppContainer = styled.div`
   display: flex;
@@ -36,6 +37,7 @@ function App() {
       ) : (
         <SearchResults category={category} gender={gender} data={data} setData={setData} />
       )}
+      <Bag />
     </AppContainer>
   );
 }
