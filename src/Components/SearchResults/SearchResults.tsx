@@ -48,6 +48,7 @@ const ItemImage = styled.img`
   &:hover {
     transform: scale(1.05);
   }
+  cursor: pointer;
 `;
 const ItemTextContainer = styled.div`
   display: flex;
@@ -62,6 +63,8 @@ const ItemTitle = styled.h1`
   font-weight: 400;
   font-family: inter;
   margin: 0;
+  cursor: pointer;
+
 `;
 const ItemPrice = styled.h3`
   font-size: 16px;
@@ -72,11 +75,15 @@ const ItemPrice = styled.h3`
 const ItemBasketSaveContainer = styled.div`
   display: flex;
   gap: 0.5rem;
+  cursor: pointer;
+
 `;
 const ItemBottomRowContainer = styled.div`
   display: flex;
   width: 100%;
   justify-content: space-between;
+  cursor: pointer;
+
 `;
 
 type Props = {
