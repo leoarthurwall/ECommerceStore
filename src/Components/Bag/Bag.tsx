@@ -1,7 +1,9 @@
 import React from 'react'
 import styled from 'styled-components'
+import { ReactElement } from "react";
 
-const BagContainer = styled.div`
+
+const BagContainer = styled.div<IisClosed>`
     position: absolute;
     top: 80px;
     bottom:0px;
@@ -11,10 +13,18 @@ const BagContainer = styled.div`
     background: red;
 
 `
+interface IisClosed {
+    isClosed: Boolean;
+}
 
-const Bag = () => {
+type Props = {
+    isClosed: Boolean;
+}
+
+const Bag:  React.FC<Props> = (Props): ReactElement => {
+    const { isClosed } = Props;
   return (
-    <BagContainer>Bag</BagContainer>
+    <BagContainer isClosed={isClosed}>Bag</BagContainer>
   )
 }
 

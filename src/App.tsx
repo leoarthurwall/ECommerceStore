@@ -29,6 +29,8 @@ function App() {
         setCategory={setCategory}
         resultsToggle={resultsToggle}
         setGender={setGender}
+        setIsClosed={setIsClosed}
+        isClosed={isClosed}
       />
       {!resultsToggle ? (
         <SectionOne
@@ -39,7 +41,7 @@ function App() {
       ) : (
         <SearchResults category={category} gender={gender} data={data} setData={setData} />
       )}
-      <Bag />
+      <Bag isClosed={isClosed}/>
     </AppContainer>
   );
 }
