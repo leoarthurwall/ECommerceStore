@@ -11,7 +11,9 @@ const BagContainer = styled.div<IisClosed>`
 
     transition: .6s;
     width: 300px;
-    background: red;
+    background: #1E1E1E;
+    border-radius: 5px 0 0 0; /*TL TR BR BL*/
+
 
 `
 interface IisClosed {
@@ -25,7 +27,7 @@ type Props = {
 const Bag:  React.FC<Props> = (Props): ReactElement => {
     const { isClosed } = Props;
   return (
-    <BagContainer isClosed={isClosed}>Bag</BagContainer>
+    <BagContainer isClosed={isClosed}></BagContainer>
   )
 }
 
