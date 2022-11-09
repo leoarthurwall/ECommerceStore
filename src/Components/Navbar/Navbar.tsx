@@ -104,6 +104,10 @@ const Navbar: React.FC<Props> = (Props): ReactElement => {
     setCategory("");
   };
 
+  const handleBagClick = () => {
+    setIsClosed(!isClosed)
+    console.log({isClosed})
+  }
   return (
     <>
       <NavContainer resultsToggle={resultsToggle}>
@@ -127,7 +131,7 @@ const Navbar: React.FC<Props> = (Props): ReactElement => {
           <IconContainer resultsToggle={resultsToggle}>
             <HiOutlineHeart size="24" />
           </IconContainer>
-          <IconContainer resultsToggle={resultsToggle}>
+          <IconContainer resultsToggle={resultsToggle} onClick={handleBagClick}>
             <HiOutlineShoppingBag size="24" />
           </IconContainer>
         </RightContainer>
