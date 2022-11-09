@@ -38,6 +38,8 @@ const ItemCard = styled.div`
 const ItemImage = styled.img`
   width: 100%;
   height: 70%;
+  object-fit: contain;
+
 `;
 const ItemTextContainer = styled.div`
   display: flex;
