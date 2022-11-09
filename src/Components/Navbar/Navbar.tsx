@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { HiOutlineHeart, HiOutlineShoppingBag } from "react-icons/hi";
 import { ReactElement } from "react";
 
-const NavContainer = styled.nav`
+const NavContainer = styled.nav<IColor>`
   width: 100vw;
   height: 80px;
   display: flex;
@@ -12,7 +12,8 @@ const NavContainer = styled.nav`
   padding: 0 50px;
   box-sizing: border-box;
   z-index: 10;
-  //   background: red;
+  background: ${({ resultsToggle }) => (resultsToggle ? "#fff" : "")};
+
 `;
 const Logo = styled.h1<IColor>`
   color: ${({ resultsToggle }) => (resultsToggle ? "black" : "#fff")};
@@ -99,7 +100,8 @@ const Navbar: React.FC<Props> = (Props): ReactElement => {
   };
 
   return (
-    <NavContainer>
+    <>
+    <NavContainer resultsToggle={resultsToggle}>
       <Logo onClick={handleHomeClick} resultsToggle={resultsToggle}>
         E Commerce Store
       </Logo>
@@ -125,6 +127,7 @@ const Navbar: React.FC<Props> = (Props): ReactElement => {
         </IconContainer>
       </RightContainer>
     </NavContainer>
+    </>
   );
 };
 
