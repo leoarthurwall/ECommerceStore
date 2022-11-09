@@ -18,6 +18,8 @@ function App() {
   const [resultsToggle, setResultsToggle] = useState<Boolean>(false);
   const [gender, setGender] = useState<String>("");
   const [data, setData] = useState<iClothes[]>([]);
+  const [isClosed, setIsClosed] = useState<Boolean>(true)
+
 
 
   return (
