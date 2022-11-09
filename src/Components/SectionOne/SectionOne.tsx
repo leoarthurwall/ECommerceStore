@@ -59,18 +59,21 @@ const ShopButton = styled.button`
 type Props = {
   setResultsToggle: (val: Boolean) => void;
   setCategory: (val: string) => void;
+  setGender: (val: string) => void;
 };
 
 const SectionOne: React.FC<Props> = (Props): ReactElement => {
-  const { setResultsToggle, setCategory } = Props;
+  const { setResultsToggle, setCategory, setGender } = Props;
 
   const handleMenClick = () => {
     setResultsToggle(true);
     setCategory("men's%20clothing");
+    setGender("Men's clothing");
   };
   const handleWomenClick = () => {
     setResultsToggle(true);
     setCategory("women's%20clothing");
+    setGender("Women's clothing");
   };
 
   return (

@@ -80,19 +80,24 @@ type Props = {
   setResultsToggle: (val: Boolean) => void;
   setCategory: (val: string) => void;
   resultsToggle: Boolean;
+  setGender: (val: string) => void;
 };
 
 const Navbar: React.FC<Props> = (Props): ReactElement => {
-  const { setResultsToggle, setCategory, resultsToggle } = Props;
+  const { setResultsToggle, setCategory, resultsToggle, setGender} = Props;
 
   const handleMenClick = () => {
     setResultsToggle(true);
     setCategory("men's%20clothing");
+    setGender("Men's clothing");
+
   };
 
   const handleWomenClick = () => {
     setResultsToggle(true);
     setCategory("women's%20clothing");
+    setGender("Women's clothing");
+
   };
   const handleHomeClick = () => {
     setResultsToggle(false);

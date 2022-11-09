@@ -14,20 +14,24 @@ const AppContainer = styled.div`
 function App() {
   const [category, setCategory] = useState<String>("");
   const [resultsToggle, setResultsToggle] = useState<Boolean>(false);
+  const [gender, setGender] = useState<String>("");
+
   return (
     <AppContainer>
-      <Navbar 
-       setResultsToggle={setResultsToggle}
-       setCategory={setCategory}
-       resultsToggle={resultsToggle}
-       />
+      <Navbar
+        setResultsToggle={setResultsToggle}
+        setCategory={setCategory}
+        resultsToggle={resultsToggle}
+        setGender={setGender}
+      />
       {!resultsToggle ? (
         <SectionOne
           setResultsToggle={setResultsToggle}
           setCategory={setCategory}
+          setGender={setGender}
         />
       ) : (
-        <SearchResults category={category}/>
+        <SearchResults category={category} gender={gender} />
       )}
     </AppContainer>
   );

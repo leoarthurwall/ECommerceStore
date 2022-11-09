@@ -73,9 +73,10 @@ const ItemBottomRowContainer = styled.div`
 
 type Props = {
   category: String;
+  gender: String;
 };
 const SearchResults: React.FC<Props> = (Props): ReactElement => {
-  const { category } = Props;
+  const { category, gender } = Props;
 
   const [data, setData] = useState<iClothes[]>([]);
   console.log({ data });
@@ -90,9 +91,13 @@ const SearchResults: React.FC<Props> = (Props): ReactElement => {
       });
   }, [category]);
 
+
+  
+  
+
   return (
     <>
-      <ResultsTitle>Men's clothing</ResultsTitle>
+      <ResultsTitle>{gender}</ResultsTitle>
       <SearchResultsContainer>
         {data.map((item, index) => (
           <ItemCard key={index}>
