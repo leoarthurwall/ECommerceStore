@@ -3,6 +3,12 @@ import styled from "styled-components";
 const SideBarlowerContainer = styled.div`
   width: 100%;
   height: 15%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  padding: 0 10px;
+  box-sizing: border-box;
+
 `;
 const SubtotalContainer = styled.div`
   display: flex;
@@ -27,7 +33,7 @@ const CheckoutButton = styled.button`
   color: white;
   outline: none;
   border: none;
-  padding: 8px 0;
+  padding: 10px 0;
   font-weight: 300;
   font-size: 12px;
 
