@@ -6,17 +6,17 @@ const ItemContainer = styled.div`
   height: 100px;
   display: flex;
   justify-content: space-between;
-  align-items: center;
 `;
 const ItemImage = styled.img`
   height: 100%;
-  width: 20%;
+  width: 25%;
   object-fit: contain;
   background: black;
 `;
 const ItemCenter = styled.div`
   display: flex;
   flex-direction: column;
+  width: 50%;
 `;
 const ItemTitle = styled.h3`
   font-size: 20px;
@@ -32,7 +32,7 @@ const ItemQuantity = styled.p`
 `;
 
 const ItemRight = styled.div`
-  width: 25px;
+  width: 25%;
   height: 100%;
   display: flex;
   flex-direction: column;
@@ -45,6 +45,7 @@ const ItemRemove = styled.button`
   font: inherit;
   cursor: pointer;
   outline: inherit;
+  color: white;
 `;
 const ItemPrice = styled.p`
   color: white;
@@ -61,7 +62,7 @@ const ItemChangeQuantityContainer = styled.div`
 `;
 const ItemChangeQuantityButton = styled.button`
   background: none;
-  color: inherit;
+  color: white;
   border: none;
   padding: 0;
   font: inherit;
@@ -73,12 +74,12 @@ const SideBarItem = () => {
     <ItemContainer>
       <ItemImage></ItemImage>
       <ItemCenter>
-        <ItemTitle></ItemTitle>
-        <ItemQuantity>X</ItemQuantity>
+        <ItemTitle>Item Title</ItemTitle>
+        <ItemQuantity>Quantity: 1</ItemQuantity>
       </ItemCenter>
       <ItemRight>
-        <ItemRemove></ItemRemove>
-        <ItemPrice></ItemPrice>
+        <ItemRemove>X</ItemRemove>
+        <ItemPrice>$25.00</ItemPrice>
         <ItemChangeQuantityContainer>
             <ItemChangeQuantityButton>+</ItemChangeQuantityButton>
             <ItemChangeQuantityButton>-</ItemChangeQuantityButton>

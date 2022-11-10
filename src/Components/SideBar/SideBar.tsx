@@ -3,6 +3,7 @@ import styled from "styled-components";
 import { ReactElement } from "react";
 import { RiCloseLine } from "react-icons/ri";
 import { HiOutlineShoppingBag, HiOutlineHeart } from "react-icons/hi";
+import SideBarItem from "./SideBarItem/SideBarItem";
 
 const SideBarContainer = styled.div<IisClosed>`
   position: absolute;
@@ -19,7 +20,7 @@ const SideBarContainer = styled.div<IisClosed>`
   justify-content: space-between;
   z-index: 10;
 
-  padding: 0 45px 40px 25px;
+  padding: 0 25px 40px 25px;
   box-sizing: border-box;
 
 `;
@@ -105,7 +106,11 @@ const SideBar: React.FC<Props> = (Props): ReactElement => {
           <RiCloseLine size="30" />
         </IconContainer>
       </SideBarUpperContainer>
-      <SideBarMainSection></SideBarMainSection>
+      <SideBarMainSection>
+        <SideBarItem />
+        <SideBarItem />
+        <SideBarItem />
+      </SideBarMainSection>
       <SideBarLowerSection></SideBarLowerSection>
     </SideBarContainer>
   );
