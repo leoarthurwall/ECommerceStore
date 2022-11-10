@@ -1,11 +1,14 @@
 import React from "react";
 import styled from "styled-components";
+import { HiOutlineTrash } from "react-icons/hi";
 
 const ItemContainer = styled.div`
   width: 100%;
   height: 100px;
   display: flex;
   justify-content: space-between;
+  padding: 5px;
+  box-sizing: border-box;
 `;
 const ItemImage = styled.img`
   height: 100%;
@@ -18,6 +21,7 @@ const ItemCenter = styled.div`
   flex-direction: column;
   width: 50%;
   padding: 0 10px;
+  justify-content: space-between;
 `;
 const ItemTitle = styled.h3`
   font-size: 13px;
@@ -25,6 +29,10 @@ const ItemTitle = styled.h3`
   color: white;
   margin: 0;
 `;
+const QuantityContainer = styled.div`
+display: flex;
+flex-direction: column;
+`
 const ItemQuantity = styled.p`
   margin: 0;
   font-size: 12px;
@@ -37,7 +45,7 @@ const ItemChangeQuantityContainer = styled.div`
   justify-content: left;
   align-itmens: center;
   gap: 0.5rem;
-  margin-top: 10px;
+  margin-top: 5px;
 `;
 const ItemChangeQuantityButton = styled.button`
   width: 20px;
@@ -56,7 +64,6 @@ const ItemRight = styled.div`
   display: flex;
   flex-direction: column;
   align-items: end;
-  padding-right: 10px;
 `;
 const ItemRemove = styled.button`
   background: none;
@@ -81,14 +88,18 @@ const SideBarItem = () => {
       <ItemImage></ItemImage>
       <ItemCenter>
         <ItemTitle>Mens Casual Premium Slim Fit T-Shirts</ItemTitle>
-        <ItemQuantity>Quantity: 1</ItemQuantity>
-        <ItemChangeQuantityContainer>
-          <ItemChangeQuantityButton>+</ItemChangeQuantityButton>
-          <ItemChangeQuantityButton>-</ItemChangeQuantityButton>
-        </ItemChangeQuantityContainer>
+        <QuantityContainer>
+          <ItemQuantity>Quantity: 1</ItemQuantity>
+          <ItemChangeQuantityContainer>
+            <ItemChangeQuantityButton>+</ItemChangeQuantityButton>
+            <ItemChangeQuantityButton>-</ItemChangeQuantityButton>
+          </ItemChangeQuantityContainer>
+        </QuantityContainer>
       </ItemCenter>
       <ItemRight>
-        <ItemRemove>Bin</ItemRemove>
+        <ItemRemove>
+          <HiOutlineTrash />
+        </ItemRemove>
         <ItemPrice>$25.00</ItemPrice>
       </ItemRight>
     </ItemContainer>
