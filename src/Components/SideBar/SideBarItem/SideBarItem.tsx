@@ -11,26 +11,45 @@ const ItemImage = styled.img`
   height: 100%;
   width: 25%;
   object-fit: contain;
-  background: black;
+  background: white;
 `;
 const ItemCenter = styled.div`
   display: flex;
   flex-direction: column;
   width: 50%;
+  padding: 0 10px;
 `;
 const ItemTitle = styled.h3`
-  font-size: 20px;
-  font-weight: 400px;
+  font-size: 13px;
+  font-weight: 400;
   color: white;
   margin: 0;
 `;
 const ItemQuantity = styled.p`
   margin: 0;
-  font-size: 16px;
-  font-weight: 16px;
+  font-size: 12px;
+  font-weight: 400;
   color: grey;
 `;
 
+const ItemChangeQuantityContainer = styled.div`
+  display: flex;
+  justify-content: left;
+  align-itmens: center;
+  gap: 0.5rem;
+  margin-top: 10px;
+`;
+const ItemChangeQuantityButton = styled.button`
+  width: 20px;
+  background: grey;
+  color: white;
+  border: none;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+  outline: inherit;
+  border-radius: 3px;
+`;
 const ItemRight = styled.div`
   width: 25%;
   height: 100%;
@@ -54,36 +73,21 @@ const ItemPrice = styled.p`
   font-weight: 400;
 `;
 
-const ItemChangeQuantityContainer = styled.div`
-  display: flex;
-  justify-content: center;
-  align-itmens: center;
-  gap: 0.5rem;
-`;
-const ItemChangeQuantityButton = styled.button`
-  background: none;
-  color: white;
-  border: none;
-  padding: 0;
-  font: inherit;
-  cursor: pointer;
-  outline: inherit;
-`;
 const SideBarItem = () => {
   return (
     <ItemContainer>
       <ItemImage></ItemImage>
       <ItemCenter>
-        <ItemTitle>Item Title</ItemTitle>
+        <ItemTitle>Mens Casual Premium Slim Fit T-Shirts</ItemTitle>
         <ItemQuantity>Quantity: 1</ItemQuantity>
+        <ItemChangeQuantityContainer>
+          <ItemChangeQuantityButton>+</ItemChangeQuantityButton>
+          <ItemChangeQuantityButton>-</ItemChangeQuantityButton>
+        </ItemChangeQuantityContainer>
       </ItemCenter>
       <ItemRight>
         <ItemRemove>X</ItemRemove>
         <ItemPrice>$25.00</ItemPrice>
-        <ItemChangeQuantityContainer>
-            <ItemChangeQuantityButton>+</ItemChangeQuantityButton>
-            <ItemChangeQuantityButton>-</ItemChangeQuantityButton>
-        </ItemChangeQuantityContainer>
       </ItemRight>
     </ItemContainer>
   );
