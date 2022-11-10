@@ -8,10 +8,10 @@ const ItemContainer = styled.div`
   height: 100px;
   display: flex;
   justify-content: space-between;
-  padding: 10px 0;
+  padding: 10px;
   box-sizing: border-box;
   border-top: 1px solid #0c0b10;
-  &:first-child{
+  &:first-child {
     border-top: none;
   }
 `;

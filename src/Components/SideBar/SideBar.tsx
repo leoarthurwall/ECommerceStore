@@ -51,9 +51,9 @@ const SideBarUpperContainer = styled.div`
   color: #fff;
 `;
 const SideBarMainSection = styled.div`
-  height: 60%;
+  height: 65%;
   width: 100%;
-  
+
   border-top: 1px solid #0c0b10;
   border-bottom: 1px solid #0c0b10;
 
