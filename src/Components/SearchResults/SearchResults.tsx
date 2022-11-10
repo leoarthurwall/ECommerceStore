@@ -102,6 +102,11 @@ const SearchResults: React.FC<Props> = (Props): ReactElement => {
   }, [category, setData]);
 
   console.log(data.length);
+
+  const handleItem = (item:any) => {
+    console.log(data);
+  }
+
   return (
     <>
       <ResultsTitle>
@@ -109,14 +114,14 @@ const SearchResults: React.FC<Props> = (Props): ReactElement => {
       </ResultsTitle>
       <SearchResultsContainer>
         {data.map((item, index) => (
-          <ItemCard key={index}>
+          <ItemCard key={item.id}>
             <ItemImage src={item.image} alt={item.title}></ItemImage>
             <ItemTextContainer>
               <ItemTitle>{item.title}</ItemTitle>
               <ItemBottomRowContainer>
                 <ItemPrice>£{item.price}</ItemPrice>
                 <ItemBasketSaveContainer>
-                  <HiOutlineHeart size={20} />
+                  <HiOutlineHeart size={20} onClick={()=>handleItem(item)}/>
                   <HiOutlineShoppingBag size={20} />
                 </ItemBasketSaveContainer>
               </ItemBottomRowContainer>
