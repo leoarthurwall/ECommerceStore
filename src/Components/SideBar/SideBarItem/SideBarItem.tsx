@@ -3,15 +3,17 @@ import styled from "styled-components";
 import { HiOutlineTrash } from "react-icons/hi";
 import { AiOutlinePlusCircle, AiOutlineMinusCircle } from "react-icons/ai";
 
-
-
 const ItemContainer = styled.div`
   width: 100%;
   height: 100px;
   display: flex;
   justify-content: space-between;
-  padding: 5px;
+  padding: 10px 0;
   box-sizing: border-box;
+  border-top: 1px solid #0c0b10;
+  &:first-child{
+    border-top: none;
+  }
 `;
 const ItemImage = styled.img`
   height: 100%;
@@ -33,9 +35,9 @@ const ItemTitle = styled.h3`
   margin: 0;
 `;
 const QuantityContainer = styled.div`
-display: flex;
-flex-direction: column;
-`
+  display: flex;
+  flex-direction: column;
+`;
 const ItemQuantity = styled.p`
   margin: 0;
   font-size: 12px;
@@ -86,8 +88,8 @@ const SideBarItem = () => {
         <QuantityContainer>
           <ItemQuantity>Qty: 1</ItemQuantity>
           <ItemChangeQuantityContainer>
-                <AiOutlinePlusCircle size={16} color={"white"}/>
-                <AiOutlineMinusCircle size={16} color={"white"}/>
+            <AiOutlinePlusCircle size={16} color={"white"} />
+            <AiOutlineMinusCircle size={16} color={"white"} />
           </ItemChangeQuantityContainer>
         </QuantityContainer>
       </ItemCenter>

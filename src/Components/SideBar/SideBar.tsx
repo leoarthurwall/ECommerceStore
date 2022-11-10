@@ -53,8 +53,10 @@ const SideBarUpperContainer = styled.div`
 const SideBarMainSection = styled.div`
   height: 60%;
   width: 100%;
+  
+  border-top: 1px solid #0c0b10;
+  border-bottom: 1px solid #0c0b10;
 
-  background: #0c0b10;
   border-radius: 5px;
   overflow: scroll;
 `;
