@@ -51,7 +51,7 @@ const SideBarUpperContainer = styled.div`
   color: #fff;
 `;
 const SideBarMainSection = styled.div`
-  height: 40%;
+  height: 60%;
   width: 100%;
 
   background: #0c0b10;
@@ -60,7 +60,7 @@ const SideBarMainSection = styled.div`
 `;
 
 const SideBarLowerSection = styled.div`
-  height: 30%;
+  height: 15%;
   width: 100%;
 
   background: #0c0b10;
@@ -108,6 +108,8 @@ const SideBar: React.FC<Props> = (Props): ReactElement => {
         </IconContainer>
       </SideBarUpperContainer>
       <SideBarMainSection>
+        <SideBarItem />
+        <SideBarItem />
         <SideBarItem />
         <SideBarItem />
         <SideBarItem />
