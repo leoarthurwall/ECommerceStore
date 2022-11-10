@@ -11,7 +11,7 @@ const NavContainer = styled.nav<IColor>`
   justify-content: space-between;
   padding: 0 50px;
   box-sizing: border-box;
-  z-index: 10;
+  z-index: 5;
   background: ${({ resultsToggle }) => (resultsToggle ? "#fff" : "")};
 `;
 const Logo = styled.h1<IColor>`

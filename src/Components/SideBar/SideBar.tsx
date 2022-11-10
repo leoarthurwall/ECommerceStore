@@ -61,6 +61,20 @@ const SideBarMainSection = styled.div`
   overflow: scroll;
 `;
 
+const SideBarOverlay = styled.div<IisClosed>`
+  position: absolute;
+  background-color: ${({ isClosed }) => (isClosed ? "rgba(0, 0, 0, 0)" : "rgba(0, 0, 0, 0.4)")};
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 8;
+  transition: 0.5s;
+  visibility: ${({ isClosed }) => (isClosed  && "hidden")}
+
+
+`;
+
 interface IisClosed {
   isClosed: Boolean;
 }
@@ -84,33 +98,36 @@ const SideBar: React.FC<Props> = (Props): ReactElement => {
     setShowSave(false);
   };
   return (
-    <SideBarContainer isClosed={isClosed}>
-      <SideBarUpperContainer>
-        {showBag && (
-          <HeaderContainer>
-            <HiOutlineShoppingBag size="24" color="white" />
-            <HeaderText> Your Bag </HeaderText>
-          </HeaderContainer>
-        )}
-        {showSave && (
-          <HeaderContainer>
-            <HiOutlineHeart size="24" color="white" />
-            <HeaderText> Your Favourites </HeaderText>
-          </HeaderContainer>
-        )}
-        <IconContainer onClick={handleCloseClick}>
-          <RiCloseLine size="30" />
-        </IconContainer>
-      </SideBarUpperContainer>
-      <SideBarMainSection>
-        <SideBarItem />
-        <SideBarItem />
-        <SideBarItem />
-        <SideBarItem />
-        <SideBarItem />
-      </SideBarMainSection>
-      <SideBarlower />
-    </SideBarContainer>
+    <>
+      <SideBarContainer isClosed={isClosed}>
+        <SideBarUpperContainer>
+          {showBag && (
+            <HeaderContainer>
+              <HiOutlineShoppingBag size="24" color="white" />
+              <HeaderText> Your Bag </HeaderText>
+            </HeaderContainer>
+          )}
+          {showSave && (
+            <HeaderContainer>
+              <HiOutlineHeart size="24" color="white" />
+              <HeaderText> Your Favourites </HeaderText>
+            </HeaderContainer>
+          )}
+          <IconContainer onClick={handleCloseClick}>
+            <RiCloseLine size="30" />
+          </IconContainer>
+        </SideBarUpperContainer>
+        <SideBarMainSection>
+          <SideBarItem />
+          <SideBarItem />
+          <SideBarItem />
+          <SideBarItem />
+          <SideBarItem />
+        </SideBarMainSection>
+        <SideBarlower />
+      </SideBarContainer>
+      <SideBarOverlay isClosed={isClosed}/>
+    </>
   );
 };
 
