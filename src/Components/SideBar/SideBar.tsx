@@ -4,6 +4,7 @@ import { ReactElement } from "react";
 import { RiCloseLine } from "react-icons/ri";
 import { HiOutlineShoppingBag, HiOutlineHeart } from "react-icons/hi";
 import SideBarItem from "./SideBarItem/SideBarItem";
+import SideBarlower from "./SideBarLower/SideBarlower";
 
 const SideBarContainer = styled.div<IisClosed>`
   position: absolute;
@@ -22,7 +23,6 @@ const SideBarContainer = styled.div<IisClosed>`
 
   padding: 0 25px 40px 25px;
   box-sizing: border-box;
-
 `;
 const HeaderContainer = styled.div`
   display: flex;
@@ -61,13 +61,6 @@ const SideBarMainSection = styled.div`
   overflow: scroll;
 `;
 
-const SideBarLowerSection = styled.div`
-  height: 15%;
-  width: 100%;
-
-  background: #0c0b10;
-  border-radius: 5px;
-`;
 interface IisClosed {
   isClosed: Boolean;
 }
@@ -116,7 +109,7 @@ const SideBar: React.FC<Props> = (Props): ReactElement => {
         <SideBarItem />
         <SideBarItem />
       </SideBarMainSection>
-      <SideBarLowerSection></SideBarLowerSection>
+      <SideBarlower />
     </SideBarContainer>
   );
 };
