@@ -1,6 +1,9 @@
 import React from "react";
 import styled from "styled-components";
 import { HiOutlineTrash } from "react-icons/hi";
+import { AiOutlinePlusCircle, AiOutlineMinusCircle } from "react-icons/ai";
+
+
 
 const ItemContainer = styled.div`
   width: 100%;
@@ -19,13 +22,13 @@ const ItemImage = styled.img`
 const ItemCenter = styled.div`
   display: flex;
   flex-direction: column;
-  width: 50%;
+  width: 70%;
   padding: 0 10px;
   justify-content: space-between;
 `;
 const ItemTitle = styled.h3`
-  font-size: 13px;
-  font-weight: 400;
+  font-size: 12px;
+  font-weight: 300;
   color: white;
   margin: 0;
 `;
@@ -47,23 +50,14 @@ const ItemChangeQuantityContainer = styled.div`
   gap: 0.5rem;
   margin-top: 5px;
 `;
-const ItemChangeQuantityButton = styled.button`
-  width: 20px;
-  background: grey;
-  color: white;
-  border: none;
-  padding: 0;
-  font: inherit;
-  cursor: pointer;
-  outline: inherit;
-  border-radius: 3px;
-`;
+
 const ItemRight = styled.div`
-  width: 25%;
+  width: 5%;
   height: 100%;
   display: flex;
   flex-direction: column;
   align-items: end;
+  justify-content: end;
 `;
 const ItemRemove = styled.button`
   background: none;
@@ -87,12 +81,13 @@ const SideBarItem = () => {
     <ItemContainer>
       <ItemImage></ItemImage>
       <ItemCenter>
+        <ItemPrice>$25.00</ItemPrice>
         <ItemTitle>Mens Casual Premium Slim Fit T-Shirts</ItemTitle>
         <QuantityContainer>
-          <ItemQuantity>Quantity: 1</ItemQuantity>
+          <ItemQuantity>Qty: 1</ItemQuantity>
           <ItemChangeQuantityContainer>
-            <ItemChangeQuantityButton>+</ItemChangeQuantityButton>
-            <ItemChangeQuantityButton>-</ItemChangeQuantityButton>
+                <AiOutlinePlusCircle size={16} color={"white"}/>
+                <AiOutlineMinusCircle size={16} color={"white"}/>
           </ItemChangeQuantityContainer>
         </QuantityContainer>
       </ItemCenter>
@@ -100,7 +95,6 @@ const SideBarItem = () => {
         <ItemRemove>
           <HiOutlineTrash />
         </ItemRemove>
-        <ItemPrice>$25.00</ItemPrice>
       </ItemRight>
     </ItemContainer>
   );
