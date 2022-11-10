@@ -56,6 +56,7 @@ const SideBarMainSection = styled.div`
 
   background: #0c0b10;
   border-radius: 5px;
+  overflow: scroll;
 `;
 
 const SideBarLowerSection = styled.div`
