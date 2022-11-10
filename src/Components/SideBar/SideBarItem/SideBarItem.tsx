@@ -55,6 +55,8 @@ const ItemRight = styled.div`
   height: 100%;
   display: flex;
   flex-direction: column;
+  align-items: end;
+  padding-right: 10px;
 `;
 const ItemRemove = styled.button`
   background: none;
@@ -69,7 +71,7 @@ const ItemRemove = styled.button`
 const ItemPrice = styled.p`
   color: white;
   margin: 0;
-  font-size: 18px;
+  font-size: 14px;
   font-weight: 400;
 `;
 
@@ -86,7 +88,7 @@ const SideBarItem = () => {
         </ItemChangeQuantityContainer>
       </ItemCenter>
       <ItemRight>
-        <ItemRemove>X</ItemRemove>
+        <ItemRemove>Bin</ItemRemove>
         <ItemPrice>$25.00</ItemPrice>
       </ItemRight>
     </ItemContainer>
