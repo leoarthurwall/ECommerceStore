@@ -21,7 +21,7 @@ function App() {
   const [isClosed, setIsClosed] = useState<Boolean>(true);
   const [showBag, setShowBag] = useState<Boolean>(false);
   const [showSave, setShowSave] = useState<Boolean>(false);
-  const [cart, setCart] = useState<iClothes[]>([])
+  const [bag, setBag] = useState<iClothes[]>([])
 
   return (
     <AppContainer>

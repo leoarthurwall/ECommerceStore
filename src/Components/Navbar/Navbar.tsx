@@ -56,9 +56,28 @@ const SearchBar = styled.input<IColor>`
 const IconContainer = styled.div<IColor>`
   cursor: pointer;
 
+  position: relative;
+  display: flex;
+  height: 24px;
+  width: 24px;
+
   &:hover {
     color: ${({ resultsToggle }) => (resultsToggle ? "grey" : "#e8eaed")};
   }
+`;
+const IconCount = styled.div`
+  position: absolute;
+  border-radius: 50px;
+  width: 15px;
+  height: 15px;
+  background: red;
+  color: white;
+  font-size: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  bottom: -4px;
+  right: -4px;
 `;
 const Links = styled.li<IColor>`
   margin: 0;
@@ -118,12 +137,12 @@ const Navbar: React.FC<Props> = (Props): ReactElement => {
 
   const handleBagClick = () => {
     setIsClosed(!isClosed);
-    setShowBag(true)
+    setShowBag(true);
   };
   const handleSaveClick = () => {
     setIsClosed(!isClosed);
     console.log({ isClosed });
-    setShowSave(true)
+    setShowSave(true);
   };
   return (
     <>
@@ -150,9 +169,12 @@ const Navbar: React.FC<Props> = (Props): ReactElement => {
             onClick={handleSaveClick}
           >
             <HiOutlineHeart size="24" />
+            <IconCount>1</IconCount>
+
           </IconContainer>
           <IconContainer resultsToggle={resultsToggle} onClick={handleBagClick}>
             <HiOutlineShoppingBag size="24" />
+            <IconCount>1</IconCount>
           </IconContainer>
         </RightContainer>
       </NavContainer>
