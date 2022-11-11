@@ -97,6 +97,12 @@ const SideBar: React.FC<Props> = (Props): ReactElement => {
     setShowBag(false);
     setShowSave(false);
   };
+
+  // closes menu when overlay clicked
+  const handleOverlayClick = () => {
+    setIsClosed(!isClosed);
+
+  }
   return (
     <>
       <SideBarContainer isClosed={isClosed}>
@@ -126,7 +132,7 @@ const SideBar: React.FC<Props> = (Props): ReactElement => {
         </SideBarMainSection>
         <SideBarlower />
       </SideBarContainer>
-      <SideBarOverlay isClosed={isClosed}/>
+      <SideBarOverlay isClosed={isClosed} onClick={handleOverlayClick}/>
     </>
   );
 };
