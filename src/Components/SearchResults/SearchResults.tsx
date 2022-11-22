@@ -10,15 +10,17 @@ const SearchResultsContainer = styled.section`
   max-width: 1400px;
   margin: 0 auto;
   display: flex;
+  justify-content: center;
   flex-wrap: wrap;
   padding: 0 40px;
   box-sizing: border-box;
 `;
 const ResultsTitle = styled.h1`
-  padding: 90px 40px 0 40px;
+  padding: 90px 40px 20px 40px;
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
+  
   font-size: 24px;
   font-weight: 300;
 `;
