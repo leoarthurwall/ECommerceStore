@@ -10,13 +10,13 @@ const SearchResultsContainer = styled.section`
   max-width: 1400px;
   margin: 0 auto;
   display: flex;
-  justify-content: center;
+  justify-content: left;
   flex-wrap: wrap;
   padding: 0 40px;
   box-sizing: border-box;
 `;
 const ResultsTitle = styled.h1`
-  padding: 90px 40px 20px 40px;
+  padding: 90px 40px 20px 50px;
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
@@ -30,18 +30,18 @@ const TitleSpan = styled.span`
   color: grey;
 `;
 const ItemCard = styled.div`
-  width: 300px;
+  width: 25%;
   height: 400px;
   padding: 15px;
   //   border: 1px solid rgba(0, 0, 0, 0.1);
   box-sizing: border-box;
-  // @media (max-width: 1000px) {
-  //   width: 33%;
-  // }
-  // @media (max-width: 768px) {
-  //   width: 50%;
-  //   min-width: 350px;
-  // }
+  @media (max-width: 1000px) {
+    width: 33%;
+  }
+  @media (max-width: 768px) {
+    width: 50%;
+    min-width: 350px;
+  }
 `;
 
 const ItemImage = styled.img`
