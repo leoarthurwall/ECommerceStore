@@ -14,6 +14,10 @@ const SearchResultsContainer = styled.section`
   flex-wrap: wrap;
   padding: 0 40px;
   box-sizing: border-box;
+  @media (max-width: 768px) {
+    display: flex;
+    justify-content: center;
+  }
 `;
 const ResultsTitle = styled.h1`
   padding: 90px 40px 20px 50px;
@@ -23,6 +27,7 @@ const ResultsTitle = styled.h1`
   
   font-size: 24px;
   font-weight: 300;
+  
 `;
 
 const TitleSpan = styled.span`
