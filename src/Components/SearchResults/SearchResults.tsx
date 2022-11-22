@@ -7,7 +7,7 @@ import { ReactElement } from "react";
 const SearchResultsContainer = styled.section`
   height: 100vh;
   width: auto;
-  max-width: 1400px;
+  max-width: 1200px;
   margin: 0 auto;
   display: flex;
   justify-content: left;
@@ -22,7 +22,7 @@ const SearchResultsContainer = styled.section`
 const ResultsTitle = styled.h1`
   padding: 90px 40px 20px 40px;
   width: 100%;
-  max-width: 1200px;
+  max-width: 1100px;
   margin: 0 auto;
   
   font-size: 24px;
@@ -37,7 +37,7 @@ const TitleSpan = styled.span`
 const ItemCard = styled.div`
   width: 25%;
   height: 400px;
-  padding: 15px;
+  padding: 25px;
   //   border: 1px solid rgba(0, 0, 0, 0.1);
   box-sizing: border-box;
   @media (max-width: 1000px) {
