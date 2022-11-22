@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import styled from "styled-components";
 import { iClothes } from "../../iClothes";
-import { HiOutlineHeart, HiOutlineShoppingBag } from "react-icons/hi";
+import {  HiOutlineShoppingBag } from "react-icons/hi";
 import { ReactElement } from "react";
 
 const SearchResultsContainer = styled.section`
@@ -113,7 +113,7 @@ const SearchResults: React.FC<Props> = (Props): ReactElement => {
         {gender} <TitleSpan>({data.length} results)</TitleSpan>
       </ResultsTitle>
       <SearchResultsContainer>
-        {data.map((item, index) => (
+        {data.map((item) => (
           <ItemCard key={item.id}>
             <ItemImage src={item.image} alt={item.title}></ItemImage>
             <ItemTextContainer>
@@ -121,8 +121,7 @@ const SearchResults: React.FC<Props> = (Props): ReactElement => {
               <ItemBottomRowContainer>
                 <ItemPrice>£{item.price}</ItemPrice>
                 <ItemBasketSaveContainer>
-                  <HiOutlineHeart size={20} onClick={()=>handleItem(item)}/>
-                  <HiOutlineShoppingBag size={20} />
+                  <HiOutlineShoppingBag size={20} onClick={()=>handleItem(item)} />
                 </ItemBasketSaveContainer>
               </ItemBottomRowContainer>
             </ItemTextContainer>

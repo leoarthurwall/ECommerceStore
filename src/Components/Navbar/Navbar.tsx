@@ -5,6 +5,7 @@ import { ReactElement } from "react";
 const NavContainer = styled.nav<IColor>`
   width: 100vw;
   height: 80px;
+  
   display: flex;
   position: fixed;
   align-items: center;
@@ -24,6 +25,7 @@ const LinkContainer = styled.ul`
   list-style-type: none;
   gap: 1.5rem;
   font-size: 18px;
+  
 `;
 
 const RightContainer = styled.div<IColor>`
