@@ -20,7 +20,7 @@ const SearchResultsContainer = styled.section`
   }
 `;
 const ResultsTitle = styled.h1`
-  padding: 90px 40px 20px 50px;
+  padding: 90px 40px 20px 40px;
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;

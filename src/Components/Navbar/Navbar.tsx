@@ -62,8 +62,8 @@ const IconContainer = styled.div<IColor>`
 
   position: relative;
   display: flex;
-  height: 24px;
-  width: 24px;
+  height: 30px;
+  width: 30px;
 
   &:hover {
     color: ${({ resultsToggle }) => (resultsToggle ? "grey" : "#e8eaed")};
@@ -72,8 +72,8 @@ const IconContainer = styled.div<IColor>`
 const IconCount = styled.div`
   position: absolute;
   border-radius: 50px;
-  width: 15px;
-  height: 15px;
+  width: 18px;
+  height: 18px;
   background: red;
   color: white;
   font-size: 10px;
@@ -164,7 +164,7 @@ const Navbar: React.FC<Props> = (Props): ReactElement => {
           ></SearchBar> */}
 
           <IconContainer resultsToggle={resultsToggle} onClick={handleBagClick}>
-            <HiOutlineShoppingBag size="24" />
+            <HiOutlineShoppingBag size="auto" />
             <IconCount>1</IconCount>
           </IconContainer>
         </RightContainer>
