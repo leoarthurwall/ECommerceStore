@@ -6,7 +6,7 @@ import { ReactElement } from "react";
 
 const SearchResultsContainer = styled.section`
   height: 100vh;
-  width: 100%;
+  width: auto;
   max-width: 1400px;
   margin: 0 auto;
   display: flex;
@@ -15,9 +15,9 @@ const SearchResultsContainer = styled.section`
   box-sizing: border-box;
 `;
 const ResultsTitle = styled.h1`
-  padding: 90px 40px 0 50px;
+  padding: 90px 40px 0 40px;
   width: 100%;
-  max-width: 1400px;
+  max-width: 1200px;
   margin: 0 auto;
   font-size: 24px;
   font-weight: 300;
@@ -28,18 +28,18 @@ const TitleSpan = styled.span`
   color: grey;
 `;
 const ItemCard = styled.div`
-  width: 25%;
+  width: 300px;
   height: 400px;
   padding: 15px;
   //   border: 1px solid rgba(0, 0, 0, 0.1);
   box-sizing: border-box;
-  @media (max-width: 1000px) {
-    width: 33%;
-  }
-  @media (max-width: 768px) {
-    width: 50%;
-    min-width: 350px;
-  }
+  // @media (max-width: 1000px) {
+  //   width: 33%;
+  // }
+  // @media (max-width: 768px) {
+  //   width: 50%;
+  //   min-width: 350px;
+  // }
 `;
 
 const ItemImage = styled.img`
