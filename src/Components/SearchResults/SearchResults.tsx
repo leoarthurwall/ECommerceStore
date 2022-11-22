@@ -8,6 +8,7 @@ const SearchResultsContainer = styled.section`
   height: 100vh;
   width: 100%;
   max-width: 1400px;
+  margin: 0 auto;
   display: flex;
   flex-wrap: wrap;
   padding: 0 40px;
@@ -15,7 +16,9 @@ const SearchResultsContainer = styled.section`
 `;
 const ResultsTitle = styled.h1`
   padding: 90px 40px 0 50px;
-  margin: 0;
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
   font-size: 24px;
   font-weight: 300;
 `;
