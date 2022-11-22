@@ -20,8 +20,7 @@ function App() {
   const [data, setData] = useState<iClothes[]>([]);
   const [isClosed, setIsClosed] = useState<Boolean>(true);
   const [showBag, setShowBag] = useState<Boolean>(false);
-  const [showSave, setShowSave] = useState<Boolean>(false);
-  const [bag, setBag] = useState<iClothes[]>([])
+  // const [bag, setBag] = useState<iClothes[]>([])
 
   return (
     <AppContainer>
@@ -33,7 +32,6 @@ function App() {
         setIsClosed={setIsClosed}
         isClosed={isClosed}
         setShowBag={setShowBag}
-        setShowSave={setShowSave}
       />
       {!resultsToggle ? (
         <SectionOne
@@ -54,8 +52,7 @@ function App() {
         setIsClosed={setIsClosed}
         showBag={showBag}
         setShowBag={setShowBag}
-        showSave={showSave}
-        setShowSave={setShowSave}
+        
       />
     </AppContainer>
   );

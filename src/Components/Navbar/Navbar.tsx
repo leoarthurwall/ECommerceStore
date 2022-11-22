@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { HiOutlineHeart, HiOutlineShoppingBag } from "react-icons/hi";
+import { HiOutlineShoppingBag } from "react-icons/hi";
 import { ReactElement } from "react";
 
 const NavContainer = styled.nav<IColor>`
@@ -34,6 +34,26 @@ const RightContainer = styled.div<IColor>`
   gap: 1rem;
   color: ${({ resultsToggle }) => (resultsToggle ? "black" : "#fff")};
 `;
+// const SearchBar = styled.input<IColor>`
+//   background-color: rgba(0, 0, 0, 0) !important;
+//   border: none !important;
+//   border-bottom: 1px solid
+//     ${({ resultsToggle }) => (resultsToggle ? "black" : "#fff")} !important;
+//   box-shadow: none !important;
+//   height: 30px;
+//   font-size: 16px;
+//   font-weight: 400;
+//   color: ${({ resultsToggle }) => (resultsToggle ? "black" : "#fff")};
+//   padding: 0 15px;
+//   max-width: 150px;
+
+//   &:focus {
+//     outline: none;
+//   }
+//   ::placeholder {
+//     color: ${({ resultsToggle }) => (resultsToggle ? "black" : "#fff")};
+//   }
+// `;
 
 const IconContainer = styled.div<IColor>`
   cursor: pointer;
@@ -85,7 +105,6 @@ type Props = {
   isClosed: Boolean;
   setIsClosed: (val: Boolean) => void;
   setShowBag: (val: Boolean) => void;
-  setShowSave: (val: Boolean) => void;
 };
 
 const Navbar: React.FC<Props> = (Props): ReactElement => {
@@ -97,7 +116,6 @@ const Navbar: React.FC<Props> = (Props): ReactElement => {
     isClosed,
     setIsClosed,
     setShowBag,
-    setShowSave,
   } = Props;
 
   const handleMenClick = () => {
@@ -121,11 +139,7 @@ const Navbar: React.FC<Props> = (Props): ReactElement => {
     setIsClosed(!isClosed);
     setShowBag(true);
   };
-  const handleSaveClick = () => {
-    setIsClosed(!isClosed);
-    console.log({ isClosed });
-    setShowSave(true);
-  };
+
   return (
     <>
       <NavContainer resultsToggle={resultsToggle}>
@@ -141,13 +155,12 @@ const Navbar: React.FC<Props> = (Props): ReactElement => {
           </Links>
         </LinkContainer>
         <RightContainer resultsToggle={resultsToggle}>
-          <IconContainer
+          {/* <SearchBar
+            type="text"
+            placeholder="Search..."
             resultsToggle={resultsToggle}
-            onClick={handleSaveClick}
-          >
-            <HiOutlineHeart size="24" />
-            <IconCount>1</IconCount>
-          </IconContainer>
+          ></SearchBar> */}
+
           <IconContainer resultsToggle={resultsToggle} onClick={handleBagClick}>
             <HiOutlineShoppingBag size="24" />
             <IconCount>1</IconCount>

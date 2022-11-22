@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { ReactElement } from "react";
 import { RiCloseLine } from "react-icons/ri";
-import { HiOutlineShoppingBag, HiOutlineHeart } from "react-icons/hi";
+import { HiOutlineShoppingBag } from "react-icons/hi";
 import SideBarItem from "./SideBarItem/SideBarItem";
 import SideBarlower from "./SideBarLower/SideBarlower";
 
@@ -84,18 +84,16 @@ type Props = {
   setIsClosed: (val: Boolean) => void;
   showBag: Boolean;
   setShowBag: (val: Boolean) => void;
-  showSave: Boolean;
-  setShowSave: (val: Boolean) => void;
+  
 };
 
 const SideBar: React.FC<Props> = (Props): ReactElement => {
-  const { isClosed, setIsClosed, showBag, setShowBag, showSave, setShowSave } =
+  const { isClosed, setIsClosed, showBag, setShowBag } =
     Props;
 
   const handleCloseClick = () => {
     setIsClosed(!isClosed);
     setShowBag(false);
-    setShowSave(false);
   };
 
   // closes menu when overlay clicked
@@ -111,12 +109,6 @@ const SideBar: React.FC<Props> = (Props): ReactElement => {
             <HeaderContainer>
               <HiOutlineShoppingBag size="24" color="white" />
               <HeaderText> Your Bag </HeaderText>
-            </HeaderContainer>
-          )}
-          {showSave && (
-            <HeaderContainer>
-              <HiOutlineHeart size="24" color="white" />
-              <HeaderText> Your Favourites </HeaderText>
             </HeaderContainer>
           )}
           <IconContainer onClick={handleCloseClick}>
