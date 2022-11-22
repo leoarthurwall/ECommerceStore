@@ -19,6 +19,10 @@ const NavContainer = styled.nav<IColor>`
 const Logo = styled.h1<IColor>`
   color: ${({ resultsToggle }) => (resultsToggle ? "black" : "#fff")};
   cursor: pointer;
+  font-weight: 800;
+  font-family: sans-serif;
+  letter-spacing: -3px; 
+
 `;
 const LinkContainer = styled.ul`
   display: flex;
@@ -153,7 +157,7 @@ const Navbar: React.FC<Props> = (Props): ReactElement => {
     <>
       <NavContainer resultsToggle={resultsToggle}>
         <Logo onClick={handleHomeClick} resultsToggle={resultsToggle}>
-          Oakwood Outfits
+          ASUS
         </Logo>
         <LinkContainer>
           <Links resultsToggle={resultsToggle} onClick={handleMenClick}>
