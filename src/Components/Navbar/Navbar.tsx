@@ -14,6 +14,7 @@ const NavContainer = styled.nav<IColor>`
   z-index: 5;
   background: ${({ resultsToggle }) => (resultsToggle ? "#fff" : "")};
 `;
+
 const Logo = styled.h1<IColor>`
   color: ${({ resultsToggle }) => (resultsToggle ? "black" : "#fff")};
   cursor: pointer;
@@ -33,26 +34,7 @@ const RightContainer = styled.div<IColor>`
   gap: 1rem;
   color: ${({ resultsToggle }) => (resultsToggle ? "black" : "#fff")};
 `;
-const SearchBar = styled.input<IColor>`
-  background-color: rgba(0, 0, 0, 0) !important;
-  border: none !important;
-  border-bottom: 1px solid
-    ${({ resultsToggle }) => (resultsToggle ? "black" : "#fff")} !important;
-  box-shadow: none !important;
-  height: 30px;
-  font-size: 16px;
-  font-weight: 400;
-  color: ${({ resultsToggle }) => (resultsToggle ? "black" : "#fff")};
-  padding: 0 15px;
-  max-width: 150px;
 
-  &:focus {
-    outline: none;
-  }
-  ::placeholder {
-    color: ${({ resultsToggle }) => (resultsToggle ? "black" : "#fff")};
-  }
-`;
 const IconContainer = styled.div<IColor>`
   cursor: pointer;
 
@@ -159,18 +141,12 @@ const Navbar: React.FC<Props> = (Props): ReactElement => {
           </Links>
         </LinkContainer>
         <RightContainer resultsToggle={resultsToggle}>
-          <SearchBar
-            type="text"
-            placeholder="Search..."
-            resultsToggle={resultsToggle}
-          ></SearchBar>
           <IconContainer
             resultsToggle={resultsToggle}
             onClick={handleSaveClick}
           >
             <HiOutlineHeart size="24" />
             <IconCount>1</IconCount>
-
           </IconContainer>
           <IconContainer resultsToggle={resultsToggle} onClick={handleBagClick}>
             <HiOutlineShoppingBag size="24" />
