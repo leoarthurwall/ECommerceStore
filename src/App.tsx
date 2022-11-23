@@ -13,15 +13,17 @@ const AppContainer = styled.div`
   flex-direction: column;
 `;
 
-type ShoppingBag = {
-  getItemQuantity: (id: number) => number;
-  increaseBagQuantity: (id: number) => void;
-  decreaseBagQuantity: (id: number) => void;
-  removeFromBag: (id: number) => void;
-
-
-
+type BagItem= {
+  id: number;
+  quantity: number;
 }
+
+// type ShoppingBag = {
+//   getItemQuantity: (id: number) => number;
+//   increaseBagQuantity: (id: number) => void;
+//   decreaseBagQuantity: (id: number) => void;
+//   removeFromBag: (id: number) => void;
+// }
 
 function App() {
   const [category, setCategory] = useState<String>("");
@@ -30,9 +32,15 @@ function App() {
   const [data, setData] = useState<iClothes[]>([]);
   const [isClosed, setIsClosed] = useState<Boolean>(true);
   const [showBag, setShowBag] = useState<Boolean>(false);
-  const [bagItems, setBagItems] = useState([]);
+  const [bagItems, setBagItems] = useState<BagItem[]>([]);
 
-  //ADD ITEM
+
+  // GET ITEM
+  
+  function getItemQuantity(id: number) {
+    return bagItems.find(item => item.id === id)?.quantity || 0
+   }
+  // ADD ITEM
 
   function IncreaseBagQuantity(id: number) {
     setBagItems((currentItems) => {
@@ -48,6 +56,7 @@ function App() {
         })
       }
     });
+    console.log(bagItems)
   }
 
   return (
@@ -73,6 +82,7 @@ function App() {
           gender={gender}
           data={data}
           setData={setData}
+          IncreaseBagQuantity={IncreaseBagQuantity}
         />
       )}
       <Bag
@@ -80,7 +90,6 @@ function App() {
         setIsClosed={setIsClosed}
         showBag={showBag}
         setShowBag={setShowBag}
-        bagItems={bagItems}
       />
     </AppContainer>
   );

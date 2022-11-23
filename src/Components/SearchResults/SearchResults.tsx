@@ -3,7 +3,6 @@ import styled from "styled-components";
 import { iClothes } from "../../iClothes";
 import {  HiOutlineShoppingBag } from "react-icons/hi";
 import { ReactElement } from "react";
-
 const SearchResultsContainer = styled.section`
   height: 100vh;
   width: auto;
@@ -98,9 +97,10 @@ type Props = {
   gender: String;
   data: iClothes[];
   setData: (val: iClothes[]) => void;
+  IncreaseBagQuantity: any; // needs updating
 };
 const SearchResults: React.FC<Props> = (Props): ReactElement => {
-  const { category, gender, data, setData } = Props;
+  const { category, gender, data, setData, IncreaseBagQuantity } = Props;
 
   useEffect(() => {
     fetch(`https://fakestoreapi.com/products/category/${category}`)
@@ -111,11 +111,11 @@ const SearchResults: React.FC<Props> = (Props): ReactElement => {
       });
   }, [category, setData]);
 
-  console.log(data.length);
+  // console.log(data.length);
 
-  const handleItem = (item:any) => {
-    console.log(data);
-  }
+  // const handleItem = (item:any) => {
+  //   console.log(data);
+  // }
 
   return (
     <>
@@ -130,8 +130,8 @@ const SearchResults: React.FC<Props> = (Props): ReactElement => {
               <ItemTitle>{item.title}</ItemTitle>
               <ItemBottomRowContainer>
                 <ItemPrice>£{item.price}</ItemPrice>
-                <ItemBasketSaveContainer>
-                  <HiOutlineShoppingBag size={20} onClick={()=>handleItem(item)} />
+                <ItemBasketSaveContainer >
+                  <HiOutlineShoppingBag size={20} onClick={IncreaseBagQuantity}/>
                 </ItemBasketSaveContainer>
               </ItemBottomRowContainer>
             </ItemTextContainer>

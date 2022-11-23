@@ -5,8 +5,6 @@ import { RiCloseLine } from "react-icons/ri";
 import { HiOutlineShoppingBag } from "react-icons/hi";
 import SideBarItem from "./SideBarItem/SideBarItem";
 import SideBarlower from "./SideBarLower/SideBarlower";
-import { iClothes } from "../../iClothes";
-
 
 const SideBarContainer = styled.div<IisClosed>`
   position: absolute;
@@ -65,16 +63,15 @@ const SideBarMainSection = styled.div`
 
 const SideBarOverlay = styled.div<IisClosed>`
   position: absolute;
-  background-color: ${({ isClosed }) => (isClosed ? "rgba(0, 0, 0, 0)" : "rgba(0, 0, 0, 0.4)")};
+  background-color: ${({ isClosed }) =>
+    isClosed ? "rgba(0, 0, 0, 0)" : "rgba(0, 0, 0, 0.4)"};
   top: 0;
   bottom: 0;
   left: 0;
   right: 0;
   z-index: 8;
   transition: 0.5s;
-  visibility: ${({ isClosed }) => (isClosed  && "hidden")}
-
-
+  visibility: ${({ isClosed }) => isClosed && "hidden"};
 `;
 
 interface IisClosed {
@@ -86,13 +83,10 @@ type Props = {
   setIsClosed: (val: Boolean) => void;
   showBag: Boolean;
   setShowBag: (val: Boolean) => void;
-  bagItems: iClothes[];
-  
 };
 
 const SideBar: React.FC<Props> = (Props): ReactElement => {
-  const { isClosed, setIsClosed, showBag, setShowBag, bagItems } =
-    Props;
+  const { isClosed, setIsClosed, showBag, setShowBag } = Props;
 
   const handleCloseClick = () => {
     setIsClosed(!isClosed);
@@ -102,8 +96,7 @@ const SideBar: React.FC<Props> = (Props): ReactElement => {
   // closes menu when overlay clicked
   const handleOverlayClick = () => {
     setIsClosed(!isClosed);
-
-  }
+  };
   return (
     <>
       <SideBarContainer isClosed={isClosed}>
@@ -127,7 +120,7 @@ const SideBar: React.FC<Props> = (Props): ReactElement => {
         </SideBarMainSection>
         <SideBarlower />
       </SideBarContainer>
-      <SideBarOverlay isClosed={isClosed} onClick={handleOverlayClick}/>
+      <SideBarOverlay isClosed={isClosed} onClick={handleOverlayClick} />
     </>
   );
 };
