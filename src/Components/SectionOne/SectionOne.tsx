@@ -25,7 +25,7 @@ const Header = styled.h1`
   color: white;
   font-family: inter;
   font-weight: 600;
-  font-size: 3.5rem;
+  font-size: 3.8vw;
   text-align: left;
   margin: 0;
   @media (max-width: 1024px) {
