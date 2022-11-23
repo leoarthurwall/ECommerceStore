@@ -5,6 +5,8 @@ import { RiCloseLine } from "react-icons/ri";
 import { HiOutlineShoppingBag } from "react-icons/hi";
 import SideBarItem from "./SideBarItem/SideBarItem";
 import SideBarlower from "./SideBarLower/SideBarlower";
+import { iClothes } from "../../iClothes";
+
 
 const SideBarContainer = styled.div<IisClosed>`
   position: absolute;
@@ -84,11 +86,12 @@ type Props = {
   setIsClosed: (val: Boolean) => void;
   showBag: Boolean;
   setShowBag: (val: Boolean) => void;
+  bagItems: iClothes[];
   
 };
 
 const SideBar: React.FC<Props> = (Props): ReactElement => {
-  const { isClosed, setIsClosed, showBag, setShowBag } =
+  const { isClosed, setIsClosed, showBag, setShowBag, bagItems } =
     Props;
 
   const handleCloseClick = () => {

@@ -13,6 +13,16 @@ const AppContainer = styled.div`
   flex-direction: column;
 `;
 
+type ShoppingBag = {
+  getItemQuantity: (id: number) => number;
+  increaseBagQuantity: (id: number) => void;
+  decreaseBagQuantity: (id: number) => void;
+  removeFromBag: (id: number) => void;
+
+
+
+}
+
 function App() {
   const [category, setCategory] = useState<String>("");
   const [resultsToggle, setResultsToggle] = useState<Boolean>(false);
@@ -20,7 +30,25 @@ function App() {
   const [data, setData] = useState<iClothes[]>([]);
   const [isClosed, setIsClosed] = useState<Boolean>(true);
   const [showBag, setShowBag] = useState<Boolean>(false);
-  // const [bag, setBag] = useState<iClothes[]>([])
+  const [bagItems, setBagItems] = useState([]);
+
+  //ADD ITEM
+
+  function IncreaseBagQuantity(id: number) {
+    setBagItems((currentItems) => {
+      if (currentItems.find((item) => item.id === id) == null) {
+        return [...currentItems, { id, quantity: 1 }];
+      } else {
+        return currentItems.map( item => {
+          if (item.id === id) {
+            return {...item,  quantity: item.quantity + 1}
+          } else {
+            return item
+          }
+        })
+      }
+    });
+  }
 
   return (
     <AppContainer>
@@ -52,7 +80,7 @@ function App() {
         setIsClosed={setIsClosed}
         showBag={showBag}
         setShowBag={setShowBag}
-        
+        bagItems={bagItems}
       />
     </AppContainer>
   );
