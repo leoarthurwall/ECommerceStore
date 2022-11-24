@@ -34,6 +34,9 @@ const HeaderText = styled.h2`
   font-weight: 300;
   font-size: 22px;
 `;
+const HeaderSpan = styled.span`
+  font-size: 14px;
+`;
 
 const IconContainer = styled.div`
   cursor: pointer;
@@ -83,10 +86,11 @@ type Props = {
   setIsClosed: (val: Boolean) => void;
   showBag: Boolean;
   setShowBag: (val: Boolean) => void;
+  bagTotal: number
 };
 
 const SideBar: React.FC<Props> = (Props): ReactElement => {
-  const { isClosed, setIsClosed, showBag, setShowBag } = Props;
+  const { isClosed, setIsClosed, showBag, setShowBag, bagTotal } = Props;
 
   const handleCloseClick = () => {
     setIsClosed(!isClosed);
@@ -104,7 +108,7 @@ const SideBar: React.FC<Props> = (Props): ReactElement => {
           {showBag && (
             <HeaderContainer>
               <HiOutlineShoppingBag size="24" color="white" />
-              <HeaderText> Your Bag </HeaderText>
+              <HeaderText> Your Bag <HeaderSpan>({bagTotal})</HeaderSpan></HeaderText>
             </HeaderContainer>
           )}
           <IconContainer onClick={handleCloseClick}>

@@ -97,7 +97,7 @@ function App() {
         setIsClosed={setIsClosed}
         showBag={showBag}
         setShowBag={setShowBag}
-        // bagTotal={bagTotal}
+        bagTotal={bagTotal}
       />
     </AppContainer>
   );
