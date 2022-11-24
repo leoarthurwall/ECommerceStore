@@ -97,7 +97,7 @@ type Props = {
   gender: String;
   data: iClothes[];
   setData: (val: iClothes[]) => void;
-  IncreaseBagQuantity: any; // needs updating
+  IncreaseBagQuantity: (id: number) => void; 
 };
 const SearchResults: React.FC<Props> = (Props): ReactElement => {
   const { category, gender, data, setData, IncreaseBagQuantity } = Props;
@@ -113,9 +113,9 @@ const SearchResults: React.FC<Props> = (Props): ReactElement => {
 
   // console.log(data.length);
 
-  const handleItem = (item:any) => {
-    console.log(data);
-  }
+  // const handleItem = (item:any) => {
+  //   console.log(data);
+  // }
 
   return (
     <>
@@ -131,7 +131,7 @@ const SearchResults: React.FC<Props> = (Props): ReactElement => {
               <ItemBottomRowContainer>
                 <ItemPrice>£{item.price}</ItemPrice>
                 <ItemBasketSaveContainer >
-                  <HiOutlineShoppingBag size={20} onClick={IncreaseBagQuantity}/>
+                  <HiOutlineShoppingBag size={20} onClick={() => IncreaseBagQuantity(item.id)}/>
                 </ItemBasketSaveContainer>
               </ItemBottomRowContainer>
             </ItemTextContainer>
