@@ -117,7 +117,7 @@ type Props = {
   isClosed: Boolean;
   setIsClosed: (val: Boolean) => void;
   setShowBag: (val: Boolean) => void;
-  bagItems: any;
+  bagTotal: number;
 };
 
 const Navbar: React.FC<Props> = (Props): ReactElement => {
@@ -129,13 +129,9 @@ const Navbar: React.FC<Props> = (Props): ReactElement => {
     isClosed,
     setIsClosed,
     setShowBag,
-    bagItems,
+    bagTotal,
   } = Props;
 
-  // adds the total quanitiy of bag items together - used for the bag icon counter
-  var bagTotal = bagItems.reduce(function(prev: any, cur: any) {
-    return prev + cur.quantity;
-  }, 0);
 
   const handleMenClick = () => {
     setResultsToggle(true);
