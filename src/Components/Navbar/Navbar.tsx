@@ -21,8 +21,7 @@ const Logo = styled.h1<IColor>`
   cursor: pointer;
   font-weight: 800;
   font-family: sans-serif;
-  letter-spacing: -3px; 
-
+  letter-spacing: -3px;
 `;
 const LinkContainer = styled.ul`
   display: flex;
@@ -32,7 +31,7 @@ const LinkContainer = styled.ul`
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  
+
   list-style-type: none;
   font-size: 18px;
   padding: 0;
@@ -118,6 +117,7 @@ type Props = {
   isClosed: Boolean;
   setIsClosed: (val: Boolean) => void;
   setShowBag: (val: Boolean) => void;
+  bagItems: any;
 };
 
 const Navbar: React.FC<Props> = (Props): ReactElement => {
@@ -129,7 +129,13 @@ const Navbar: React.FC<Props> = (Props): ReactElement => {
     isClosed,
     setIsClosed,
     setShowBag,
+    bagItems,
   } = Props;
+
+  // adds the total quanitiy of bag items together - used for the bag icon counter
+  var bagTotal = bagItems.reduce(function(prev: any, cur: any) {
+    return prev + cur.quantity;
+  }, 0);
 
   const handleMenClick = () => {
     setResultsToggle(true);
@@ -176,7 +182,7 @@ const Navbar: React.FC<Props> = (Props): ReactElement => {
 
           <IconContainer resultsToggle={resultsToggle} onClick={handleBagClick}>
             <HiOutlineShoppingBag size="auto" />
-            <IconCount>1</IconCount>
+            <IconCount>{bagTotal}</IconCount>
           </IconContainer>
         </RightContainer>
       </NavContainer>

@@ -56,7 +56,7 @@ function App() {
         })
       }
     });
-    console.log(bagItems)
+    console.log("bag items:", bagItems)
   }
 
   return (
@@ -69,6 +69,7 @@ function App() {
         setIsClosed={setIsClosed}
         isClosed={isClosed}
         setShowBag={setShowBag}
+        bagItems={bagItems}
       />
       {!resultsToggle ? (
         <SectionOne
