@@ -113,9 +113,9 @@ const SearchResults: React.FC<Props> = (Props): ReactElement => {
 
   // console.log(data.length);
 
-  // const handleItem = (item:any) => {
-  //   console.log(data);
-  // }
+  const handleItem = (item:any) => {
+    console.log(data);
+  }
 
   return (
     <>
