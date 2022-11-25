@@ -9,14 +9,14 @@ type BagItem = {
   quantity: number;
 };
 
-type ShoppingBagContext = {
+type ShoppingBagContextProps = {
   getItemQuantity: (id: number) => number;
   increaseBagQuantity: (id: number) => void;
   decreaseBagQuantity: (id: number) => void;
   removeFromBag: (id: number) => void;
 };
 
-const ShoppingBagContext = createContext({} as ShoppingBagContext);
+const ShoppingBagContext = createContext({} as ShoppingBagContextProps);
 
 export function useShoppingBag() {
   return useContext(ShoppingBagContext);
