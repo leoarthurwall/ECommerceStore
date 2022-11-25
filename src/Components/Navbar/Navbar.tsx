@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import { HiOutlineShoppingBag } from "react-icons/hi";
 import { ReactElement } from "react";
+import { useShoppingBag } from "../../Context/ShoppingBagContext";
 
 const NavContainer = styled.nav<IColor>`
   width: 100vw;
@@ -132,6 +133,7 @@ const Navbar: React.FC<Props> = (Props): ReactElement => {
     bagTotal,
   } = Props;
 
+  const { bagQuantity } =  useShoppingBag();
 
   const handleMenClick = () => {
     setResultsToggle(true);
@@ -178,7 +180,7 @@ const Navbar: React.FC<Props> = (Props): ReactElement => {
 
           <IconContainer resultsToggle={resultsToggle} onClick={handleBagClick}>
             <HiOutlineShoppingBag size="auto" />
-            <IconCount>{bagTotal}</IconCount>
+            <IconCount>{bagQuantity}</IconCount>
           </IconContainer>
         </RightContainer>
       </NavContainer>

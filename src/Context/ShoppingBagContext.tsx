@@ -27,6 +27,7 @@ export function useShoppingBag() {
 export function ShoppingBagProvider({ children }: ShoppingBagProviderProps) {
   const [bagItems, setBagItems] = useState<BagItem[]>([]);
 
+  // TOTAL BAG QUANTITY
   const bagQuantity = bagItems.reduce(
     (quantity, item) => item.quantity + quantity,
     0
