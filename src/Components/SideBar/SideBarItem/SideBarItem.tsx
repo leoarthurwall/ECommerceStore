@@ -5,7 +5,6 @@ import { AiOutlinePlusCircle, AiOutlineMinusCircle } from "react-icons/ai";
 import { ReactElement } from "react";
 import { iClothes } from "../../../iClothes";
 
-
 const ItemContainer = styled.div`
   width: 100%;
   height: 100px;
@@ -90,7 +89,7 @@ type Props = {
 const SideBarItem: React.FC<Props> = (Props): ReactElement => {
   const { id, quantity, data } = Props;
 
-  
+
 
   return (
     <ItemContainer>

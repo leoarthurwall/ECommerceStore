@@ -6,6 +6,7 @@ import { HiOutlineShoppingBag } from "react-icons/hi";
 import SideBarItem from "./SideBarItem/SideBarItem";
 import SideBarlower from "./SideBarLower/SideBarlower";
 import { iClothes } from "../../iClothes";
+import { useShoppingBag } from "../../Context/ShoppingBagContext";
 
 const SideBarContainer = styled.div<IisClosed>`
   position: absolute;
@@ -96,6 +97,8 @@ const SideBar: React.FC<Props> = (Props): ReactElement => {
   const { isClosed, setIsClosed, showBag, setShowBag, bagTotal, bagItems, data} =
     Props;
 
+    const { bagQuantity } =  useShoppingBag();
+
   const handleCloseClick = () => {
     setIsClosed(!isClosed);
     setShowBag(false);
@@ -114,7 +117,7 @@ const SideBar: React.FC<Props> = (Props): ReactElement => {
               <HiOutlineShoppingBag size="24" color="white" />
               <HeaderText>
                 {" "}
-                Your Bag <HeaderSpan>({bagTotal})</HeaderSpan>
+                Your Bag <HeaderSpan>({bagQuantity})</HeaderSpan>
               </HeaderText>
             </HeaderContainer>
           )}
