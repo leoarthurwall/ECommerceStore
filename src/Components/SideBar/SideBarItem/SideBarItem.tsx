@@ -89,8 +89,6 @@ type Props = {
 const SideBarItem: React.FC<Props> = (Props): ReactElement => {
   const { id, quantity, data } = Props;
 
-
-
   return (
     <ItemContainer>
       <ItemImage></ItemImage>

@@ -16,6 +16,8 @@ type ShoppingBagContextProps = {
   removeFromBag: (id: number) => void;
   bagItems: BagItem[];
   bagQuantity: number;
+  resultsToggle: Boolean;
+  setResultsToggle: (val: Boolean) => void;
 };
 
 const ShoppingBagContext = createContext({} as ShoppingBagContextProps);
@@ -26,6 +28,8 @@ export function useShoppingBag() {
 
 export function ShoppingBagProvider({ children }: ShoppingBagProviderProps) {
   const [bagItems, setBagItems] = useState<BagItem[]>([]);
+  const [resultsToggle, setResultsToggle] = useState<Boolean>(false);
+
 
   // TOTAL BAG QUANTITY
   const bagQuantity = bagItems.reduce(
@@ -89,6 +93,8 @@ export function ShoppingBagProvider({ children }: ShoppingBagProviderProps) {
         removeFromBag,
         bagItems,
         bagQuantity,
+        resultsToggle,
+        setResultsToggle,
       }}
     >
       {children}

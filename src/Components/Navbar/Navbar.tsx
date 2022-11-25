@@ -131,7 +131,7 @@ const Navbar: React.FC<Props> = (Props): ReactElement => {
     setShowBag,
   } = Props;
 
-  const { bagQuantity } =  useShoppingBag();
+  const { bagQuantity } = useShoppingBag();
 
   const handleMenClick = () => {
     setResultsToggle(true);
