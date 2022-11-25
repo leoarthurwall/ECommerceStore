@@ -2,6 +2,9 @@ import React from "react";
 import styled from "styled-components";
 import { HiOutlineTrash } from "react-icons/hi";
 import { AiOutlinePlusCircle, AiOutlineMinusCircle } from "react-icons/ai";
+import { ReactElement } from "react";
+import { iClothes } from "../../../iClothes";
+
 
 const ItemContainer = styled.div`
   width: 100%;
@@ -78,12 +81,22 @@ const ItemPrice = styled.p`
   font-weight: 400;
 `;
 
-const SideBarItem = () => {
+type Props = {
+  id: number;
+  quantity: number;
+  data: iClothes[];
+};
+
+const SideBarItem: React.FC<Props> = (Props): ReactElement => {
+  const { id, quantity, data } = Props;
+
+
+
   return (
     <ItemContainer>
       <ItemImage></ItemImage>
       <ItemCenter>
-        <ItemPrice>$25.00</ItemPrice>
+        <ItemPrice>25 pounds</ItemPrice>
         <ItemTitle>Mens Casual Premium Slim Fit T-Shirts</ItemTitle>
         <QuantityContainer>
           <ItemQuantity>Qty: 1</ItemQuantity>

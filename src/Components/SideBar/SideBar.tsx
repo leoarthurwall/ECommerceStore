@@ -5,6 +5,7 @@ import { RiCloseLine } from "react-icons/ri";
 import { HiOutlineShoppingBag } from "react-icons/hi";
 import SideBarItem from "./SideBarItem/SideBarItem";
 import SideBarlower from "./SideBarLower/SideBarlower";
+import { iClothes } from "../../iClothes";
 
 const SideBarContainer = styled.div<IisClosed>`
   position: absolute;
@@ -86,11 +87,14 @@ type Props = {
   setIsClosed: (val: Boolean) => void;
   showBag: Boolean;
   setShowBag: (val: Boolean) => void;
-  bagTotal: number
+  bagTotal: number;
+  bagItems: any;
+  data: iClothes[];
 };
 
 const SideBar: React.FC<Props> = (Props): ReactElement => {
-  const { isClosed, setIsClosed, showBag, setShowBag, bagTotal } = Props;
+  const { isClosed, setIsClosed, showBag, setShowBag, bagTotal, bagItems, data} =
+    Props;
 
   const handleCloseClick = () => {
     setIsClosed(!isClosed);
@@ -108,7 +112,10 @@ const SideBar: React.FC<Props> = (Props): ReactElement => {
           {showBag && (
             <HeaderContainer>
               <HiOutlineShoppingBag size="24" color="white" />
-              <HeaderText> Your Bag <HeaderSpan>({bagTotal})</HeaderSpan></HeaderText>
+              <HeaderText>
+                {" "}
+                Your Bag <HeaderSpan>({bagTotal})</HeaderSpan>
+              </HeaderText>
             </HeaderContainer>
           )}
           <IconContainer onClick={handleCloseClick}>
@@ -116,11 +123,9 @@ const SideBar: React.FC<Props> = (Props): ReactElement => {
           </IconContainer>
         </SideBarUpperContainer>
         <SideBarMainSection>
-          <SideBarItem />
-          <SideBarItem />
-          <SideBarItem />
-          <SideBarItem />
-          <SideBarItem />
+          {bagItems.map((item: any) => (
+            <SideBarItem key={item.id} {...item} data={data}/>
+          ))}
         </SideBarMainSection>
         <SideBarlower />
       </SideBarContainer>

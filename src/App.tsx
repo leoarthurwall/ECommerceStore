@@ -4,7 +4,7 @@ import SearchResults from "./Components/SearchResults/SearchResults";
 import SectionOne from "./Components/SectionOne/SectionOne";
 import { useState } from "react";
 import { iClothes } from "./iClothes";
-import Bag from "./Components/SideBar/SideBar";
+import SideBar from "./Components/SideBar/SideBar";
 
 const AppContainer = styled.div`
   display: flex;
@@ -92,12 +92,14 @@ function App() {
           IncreaseBagQuantity={IncreaseBagQuantity}
         />
       )}
-      <Bag
+      <SideBar
         isClosed={isClosed}
         setIsClosed={setIsClosed}
         showBag={showBag}
         setShowBag={setShowBag}
         bagTotal={bagTotal}
+        bagItems={bagItems}
+        data={data}
       />
     </AppContainer>
   );
