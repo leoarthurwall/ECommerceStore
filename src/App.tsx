@@ -5,6 +5,7 @@ import SectionOne from "./Components/SectionOne/SectionOne";
 import { useState } from "react";
 import { iClothes } from "./iClothes";
 import SideBar from "./Components/SideBar/SideBar";
+import { ShoppingBagProvider } from "./Context/ShoppingBagContext";
 
 const AppContainer = styled.div`
   display: flex;
@@ -17,8 +18,6 @@ type BagItem = {
   id: number;
   quantity: number;
 };
-
-
 
 function App() {
   const [category, setCategory] = useState<String>("");
@@ -85,42 +84,44 @@ function App() {
   }
 
   return (
-    <AppContainer>
-      <Navbar
-        setResultsToggle={setResultsToggle}
-        setCategory={setCategory}
-        resultsToggle={resultsToggle}
-        setGender={setGender}
-        setIsClosed={setIsClosed}
-        isClosed={isClosed}
-        setShowBag={setShowBag}
-        bagTotal={bagTotal}
-      />
-      {!resultsToggle ? (
-        <SectionOne
+    <ShoppingBagProvider>
+      <AppContainer>
+        <Navbar
           setResultsToggle={setResultsToggle}
           setCategory={setCategory}
+          resultsToggle={resultsToggle}
           setGender={setGender}
+          setIsClosed={setIsClosed}
+          isClosed={isClosed}
+          setShowBag={setShowBag}
+          bagTotal={bagTotal}
         />
-      ) : (
-        <SearchResults
-          category={category}
-          gender={gender}
+        {!resultsToggle ? (
+          <SectionOne
+            setResultsToggle={setResultsToggle}
+            setCategory={setCategory}
+            setGender={setGender}
+          />
+        ) : (
+          <SearchResults
+            category={category}
+            gender={gender}
+            data={data}
+            setData={setData}
+            increaseBagQuantity={increaseBagQuantity}
+          />
+        )}
+        <SideBar
+          isClosed={isClosed}
+          setIsClosed={setIsClosed}
+          showBag={showBag}
+          setShowBag={setShowBag}
+          bagTotal={bagTotal}
+          bagItems={bagItems}
           data={data}
-          setData={setData}
-          increaseBagQuantity={increaseBagQuantity}
         />
-      )}
-      <SideBar
-        isClosed={isClosed}
-        setIsClosed={setIsClosed}
-        showBag={showBag}
-        setShowBag={setShowBag}
-        bagTotal={bagTotal}
-        bagItems={bagItems}
-        data={data}
-      />
-    </AppContainer>
+      </AppContainer>
+    </ShoppingBagProvider>
   );
 }
 
