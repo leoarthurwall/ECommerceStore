@@ -4,6 +4,13 @@ type ShoppingBagProviderProps = {
     children: ReactNode 
 }
 
+type ShoppingBagContext = {
+    getItemQuantity: (id: number) => number;
+    increaseBagQuantity: (id: number) => void;
+    decreaseBagQuantity: (id: number) => void;
+    removeFromBag: (id: number) => void;
+  }
+
 const ShoppingBagContext  = createContext({})
 
 export function useShoppingBag() {

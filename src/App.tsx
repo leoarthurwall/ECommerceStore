@@ -18,12 +18,7 @@ type BagItem = {
   quantity: number;
 };
 
-// type ShoppingBag = {
-//   getItemQuantity: (id: number) => number;
-//   increaseBagQuantity: (id: number) => void;
-//   decreaseBagQuantity: (id: number) => void;
-//   removeFromBag: (id: number) => void;
-// }
+
 
 function App() {
   const [category, setCategory] = useState<String>("");
