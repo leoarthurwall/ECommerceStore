@@ -1,8 +1,9 @@
 import { useEffect } from "react";
 import styled from "styled-components";
 import { iClothes } from "../../iClothes";
-import {  HiOutlineShoppingBag } from "react-icons/hi";
+import { HiOutlineShoppingBag } from "react-icons/hi";
 import { ReactElement } from "react";
+import { useShoppingBag } from "../../Context/ShoppingBagContext";
 const SearchResultsContainer = styled.section`
   height: 100vh;
   width: auto;
@@ -23,10 +24,9 @@ const ResultsTitle = styled.h1`
   width: 100%;
   max-width: 1100px;
   margin: 0 auto;
-  
+
   font-size: 24px;
   font-weight: 300;
-  
 `;
 
 const TitleSpan = styled.span`
@@ -92,15 +92,17 @@ const ItemBottomRowContainer = styled.div`
   cursor: pointer;
 `;
 
-type Props = {
+type ItemProps = {
   category: String;
   gender: String;
   data: iClothes[];
   setData: (val: iClothes[]) => void;
-  increaseBagQuantity: (id: number) => void; 
 };
-const SearchResults: React.FC<Props> = (Props): ReactElement => {
-  const { category, gender, data, setData, increaseBagQuantity } = Props;
+const SearchResults: React.FC<ItemProps> = (Props): ReactElement => {
+  const { category, gender, data, setData } = Props;
+  const {
+    increaseBagQuantity,
+  } = useShoppingBag();
 
   useEffect(() => {
     fetch(`https://fakestoreapi.com/products/category/${category}`)
@@ -130,8 +132,11 @@ const SearchResults: React.FC<Props> = (Props): ReactElement => {
               <ItemTitle>{item.title}</ItemTitle>
               <ItemBottomRowContainer>
                 <ItemPrice>£{item.price}</ItemPrice>
-                <ItemBasketSaveContainer >
-                  <HiOutlineShoppingBag size={20} onClick={() => increaseBagQuantity(item.id)}/>
+                <ItemBasketSaveContainer>
+                  <HiOutlineShoppingBag
+                    size={20}
+                    onClick={() => increaseBagQuantity(item.id)}
+                  />
                 </ItemBasketSaveContainer>
               </ItemBottomRowContainer>
             </ItemTextContainer>

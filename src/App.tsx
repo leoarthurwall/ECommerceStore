@@ -108,7 +108,6 @@ function App() {
             gender={gender}
             data={data}
             setData={setData}
-            increaseBagQuantity={increaseBagQuantity}
           />
         )}
         <SideBar
