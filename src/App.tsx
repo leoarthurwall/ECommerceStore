@@ -28,17 +28,6 @@ function App() {
   const [showBag, setShowBag] = useState<Boolean>(false);
   const [bagItems, setBagItems] = useState<BagItem[]>([]);
 
-  // TOTAL BAG QUANTITY
-
-  const bagTotal = bagItems.reduce(function (previous: any, current: any) {
-    return previous + current.quantity;
-  }, 0);
-
-  // GET ITEM
-
-  function getItemQuantity(id: number) {
-    return bagItems.find((item) => item.id === id)?.quantity || 0;
-  }
 
   return (
     <ShoppingBagProvider>
@@ -51,7 +40,6 @@ function App() {
           setIsClosed={setIsClosed}
           isClosed={isClosed}
           setShowBag={setShowBag}
-          bagTotal={bagTotal}
         />
         {!resultsToggle ? (
           <SectionOne
@@ -72,7 +60,6 @@ function App() {
           setIsClosed={setIsClosed}
           showBag={showBag}
           setShowBag={setShowBag}
-          bagTotal={bagTotal}
           bagItems={bagItems}
           data={data}
         />

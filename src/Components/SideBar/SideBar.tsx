@@ -88,13 +88,12 @@ type Props = {
   setIsClosed: (val: Boolean) => void;
   showBag: Boolean;
   setShowBag: (val: Boolean) => void;
-  bagTotal: number;
   bagItems: any;
   data: iClothes[];
 };
 
 const SideBar: React.FC<Props> = (Props): ReactElement => {
-  const { isClosed, setIsClosed, showBag, setShowBag, bagTotal, bagItems, data} =
+  const { isClosed, setIsClosed, showBag, setShowBag, bagItems, data} =
     Props;
 
     const { bagQuantity } =  useShoppingBag();

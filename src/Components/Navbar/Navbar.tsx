@@ -118,7 +118,6 @@ type Props = {
   isClosed: Boolean;
   setIsClosed: (val: Boolean) => void;
   setShowBag: (val: Boolean) => void;
-  bagTotal: number;
 };
 
 const Navbar: React.FC<Props> = (Props): ReactElement => {
@@ -130,7 +129,6 @@ const Navbar: React.FC<Props> = (Props): ReactElement => {
     isClosed,
     setIsClosed,
     setShowBag,
-    bagTotal,
   } = Props;
 
   const { bagQuantity } =  useShoppingBag();
