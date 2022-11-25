@@ -26,7 +26,6 @@ function App() {
   const [data, setData] = useState<iClothes[]>([]);
   const [isClosed, setIsClosed] = useState<Boolean>(true);
   const [showBag, setShowBag] = useState<Boolean>(false);
-  const [bagItems, setBagItems] = useState<BagItem[]>([]);
 
 
   return (
@@ -60,7 +59,6 @@ function App() {
           setIsClosed={setIsClosed}
           showBag={showBag}
           setShowBag={setShowBag}
-          bagItems={bagItems}
           data={data}
         />
       </AppContainer>
