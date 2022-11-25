@@ -14,6 +14,8 @@ type ShoppingBagContextProps = {
   increaseBagQuantity: (id: number) => void;
   decreaseBagQuantity: (id: number) => void;
   removeFromBag: (id: number) => void;
+  bagItems: BagItem[];
+  bagQuantity: number;
 };
 
 const ShoppingBagContext = createContext({} as ShoppingBagContextProps);
@@ -25,14 +27,17 @@ export function useShoppingBag() {
 export function ShoppingBagProvider({ children }: ShoppingBagProviderProps) {
   const [bagItems, setBagItems] = useState<BagItem[]>([]);
 
-  // GET BAG QUANTITY
+  const bagQuantity = bagItems.reduce(
+    (quantity, item) => item.quantity + quantity,
+    0
+  );
 
+  // GET BAG QUANTITY
   function getItemQuantity(id: number) {
     return bagItems.find((item) => item.id === id)?.quantity || 0;
   }
 
   // INCREASE QUANTITY
-
   function increaseBagQuantity(id: number) {
     setBagItems((currentItems) => {
       if (currentItems.find((item) => item.id === id) == null) {
@@ -50,7 +55,6 @@ export function ShoppingBagProvider({ children }: ShoppingBagProviderProps) {
     console.log("bag items:", bagItems);
   }
   // DECREASE QUANTITY
-
   function decreaseBagQuantity(id: number) {
     setBagItems((currentItems) => {
       if (currentItems.find((item) => item.id === id)?.quantity === 1) {
@@ -69,7 +73,6 @@ export function ShoppingBagProvider({ children }: ShoppingBagProviderProps) {
   }
 
   //REMOVE FROM BAG
-
   function removeFromBag(id: number) {
     setBagItems((currentItems) => {
       return currentItems.filter((item) => item.id !== id);
@@ -83,6 +86,8 @@ export function ShoppingBagProvider({ children }: ShoppingBagProviderProps) {
         increaseBagQuantity,
         decreaseBagQuantity,
         removeFromBag,
+        bagItems,
+        bagQuantity,
       }}
     >
       {children}
