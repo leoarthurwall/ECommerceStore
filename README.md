@@ -4,3 +4,7 @@
 - write function that adds specific item to array
 - attach function to click handler
 - map bag array in the side bar.
+
+
+## EXCHANGE USESTATE FOR CONTEXT
+- resultsToggle

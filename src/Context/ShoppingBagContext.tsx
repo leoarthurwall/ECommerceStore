@@ -28,7 +28,7 @@ export function useShoppingBag() {
 
 export function ShoppingBagProvider({ children }: ShoppingBagProviderProps) {
   const [bagItems, setBagItems] = useState<BagItem[]>([]);
-  const [resultsToggle, setResultsToggle] = useState<Boolean>(false);
+  const [resultsToggle, setResultsToggle] = useState<Boolean>(false); // toggles search results on and off
 
 
   // TOTAL BAG QUANTITY

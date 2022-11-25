@@ -27,7 +27,6 @@ function App() {
   const [isClosed, setIsClosed] = useState<Boolean>(true);
   const [showBag, setShowBag] = useState<Boolean>(false);
 
-
   return (
     <ShoppingBagProvider>
       <AppContainer>
