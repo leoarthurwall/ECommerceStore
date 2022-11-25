@@ -13,10 +13,10 @@ const AppContainer = styled.div`
   flex-direction: column;
 `;
 
-type BagItem= {
+type BagItem = {
   id: number;
   quantity: number;
-}
+};
 
 // type ShoppingBag = {
 //   getItemQuantity: (id: number) => number;
@@ -35,34 +35,58 @@ function App() {
   const [bagItems, setBagItems] = useState<BagItem[]>([]);
 
   // TOTAL BAG QUANTITY
-   
-   const bagTotal = bagItems.reduce(function(previous: any, current: any) {
+
+  const bagTotal = bagItems.reduce(function (previous: any, current: any) {
     return previous + current.quantity;
   }, 0);
 
   // GET ITEM
-  
+
   function getItemQuantity(id: number) {
-    return bagItems.find(item => item.id === id)?.quantity || 0
-   }
+    return bagItems.find((item) => item.id === id)?.quantity || 0;
+  }
 
-  // ADD ITEM 
+  // INCREASE QUANTITY
 
-  function IncreaseBagQuantity(id: number) {
+  function increaseBagQuantity(id: number) {
     setBagItems((currentItems) => {
       if (currentItems.find((item) => item.id === id) == null) {
         return [...currentItems, { id, quantity: 1 }];
       } else {
-        return currentItems.map( item => {
+        return currentItems.map((item) => {
           if (item.id === id) {
-            return {...item,  quantity: item.quantity + 1}
+            return { ...item, quantity: item.quantity + 1 };
           } else {
-            return item
+            return item;
           }
-        })
+        });
       }
     });
-    console.log("bag items:", bagItems)
+    console.log("bag items:", bagItems);
+  }
+  // DECREASE QUANTITY
+
+  function decreaseBagQuantity(id: number) {
+    setBagItems((currentItems) => {
+      if (currentItems.find((item) => item.id === id)?.quantity === 1) {
+        return currentItems.filter((item) => item.id !== id);
+      } else {
+        return currentItems.map((item) => {
+          if (item.id === id) {
+            return { ...item, quantity: item.quantity - 1 };
+          } else {
+            return item;
+          }
+        });
+      }
+    });
+    console.log("quantity reduced by 1");
+  }
+
+  function removeFromBag(id: number) {
+    setBagItems((currentItems) => {
+      return currentItems.filter((item) => item.id !== id);
+    });
   }
 
   return (
@@ -89,7 +113,7 @@ function App() {
           gender={gender}
           data={data}
           setData={setData}
-          IncreaseBagQuantity={IncreaseBagQuantity}
+          increaseBagQuantity={increaseBagQuantity}
         />
       )}
       <SideBar

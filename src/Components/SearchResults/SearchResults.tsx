@@ -97,10 +97,10 @@ type Props = {
   gender: String;
   data: iClothes[];
   setData: (val: iClothes[]) => void;
-  IncreaseBagQuantity: (id: number) => void; 
+  increaseBagQuantity: (id: number) => void; 
 };
 const SearchResults: React.FC<Props> = (Props): ReactElement => {
-  const { category, gender, data, setData, IncreaseBagQuantity } = Props;
+  const { category, gender, data, setData, increaseBagQuantity } = Props;
 
   useEffect(() => {
     fetch(`https://fakestoreapi.com/products/category/${category}`)
@@ -131,7 +131,7 @@ const SearchResults: React.FC<Props> = (Props): ReactElement => {
               <ItemBottomRowContainer>
                 <ItemPrice>£{item.price}</ItemPrice>
                 <ItemBasketSaveContainer >
-                  <HiOutlineShoppingBag size={20} onClick={() => IncreaseBagQuantity(item.id)}/>
+                  <HiOutlineShoppingBag size={20} onClick={() => increaseBagQuantity(item.id)}/>
                 </ItemBasketSaveContainer>
               </ItemBottomRowContainer>
             </ItemTextContainer>

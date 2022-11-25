@@ -90,13 +90,13 @@ type Props = {
 const SideBarItem: React.FC<Props> = (Props): ReactElement => {
   const { id, quantity, data } = Props;
 
-
+  
 
   return (
     <ItemContainer>
       <ItemImage></ItemImage>
       <ItemCenter>
-        <ItemPrice>25 pounds</ItemPrice>
+        <ItemPrice>25</ItemPrice>
         <ItemTitle>Mens Casual Premium Slim Fit T-Shirts</ItemTitle>
         <QuantityContainer>
           <ItemQuantity>Qty: 1</ItemQuantity>
