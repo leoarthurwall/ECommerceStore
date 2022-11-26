@@ -5,7 +5,7 @@ import SectionOne from "./Components/SectionOne/SectionOne";
 import { useState } from "react";
 import { iClothes } from "./iClothes";
 import SideBar from "./Components/SideBar/SideBar";
-import { ShoppingBagProvider } from "./Context/ShoppingBagContext";
+import { useShoppingBag } from "./Context/ShoppingBagContext";
 
 const AppContainer = styled.div`
   display: flex;
@@ -16,22 +16,27 @@ const AppContainer = styled.div`
 
 function App() {
   const [category, setCategory] = useState<String>("");
-  const [resultsToggle, setResultsToggle] = useState<Boolean>(false);
+  // const [resultsToggle, setResultsToggle] = useState<Boolean>(false);
   const [gender, setGender] = useState<String>("");
   const [data, setData] = useState<iClothes[]>([]);
 
+  const {
+    resultsToggle,
+  } = useShoppingBag();
+
   return (
-    <ShoppingBagProvider>
+    
+    
       <AppContainer>
         <Navbar
-          setResultsToggle={setResultsToggle}
+          // setResultsToggle={setResultsToggle}
           setCategory={setCategory}
-          resultsToggle={resultsToggle}
+          // resultsToggle={resultsToggle}
           setGender={setGender}
         />
         {!resultsToggle ? (
           <SectionOne
-            setResultsToggle={setResultsToggle}
+            // setResultsToggle={setResultsToggle}
             setCategory={setCategory}
             setGender={setGender}
           />
@@ -45,7 +50,6 @@ function App() {
         )}
         <SideBar data={data} />
       </AppContainer>
-    </ShoppingBagProvider>
   );
 }
 

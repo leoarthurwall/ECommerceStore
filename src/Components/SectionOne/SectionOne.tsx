@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import { HiOutlineArrowNarrowRight } from "react-icons/hi";
 import { ReactElement } from "react";
+import { useShoppingBag } from "../../Context/ShoppingBagContext";
 
 const SectionOneImage = styled.div`
   height: 100vh;
@@ -57,13 +58,14 @@ const ShopButton = styled.button`
 `;
 
 type Props = {
-  setResultsToggle: (val: Boolean) => void;
+  // setResultsToggle: (val: Boolean) => void;
   setCategory: (val: string) => void;
   setGender: (val: string) => void;
 };
 
 const SectionOne: React.FC<Props> = (Props): ReactElement => {
-  const { setResultsToggle, setCategory, setGender } = Props;
+  const {  setCategory, setGender } = Props;
+  const { setResultsToggle } = useShoppingBag()
 
   const handleMenClick = () => {
     setResultsToggle(true);

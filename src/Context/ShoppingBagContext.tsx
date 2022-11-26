@@ -33,6 +33,7 @@ export function ShoppingBagProvider({ children }: ShoppingBagProviderProps) {
   const [resultsToggle, setResultsToggle] = useState<Boolean>(false); // toggles search results on and off
   const [isClosed, setIsClosed] = useState<Boolean>(true); // toggles sidebar between open and closed
 
+
   // TOTAL BAG QUANTITY
   const bagQuantity = bagItems.reduce(
     (quantity, item) => item.quantity + quantity,
