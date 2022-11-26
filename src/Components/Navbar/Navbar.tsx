@@ -119,19 +119,21 @@ const Navbar: React.FC = (): ReactElement => {
     setResultsToggle,
     setCategory,
     setGender,
+    handleMenClick,
+    handleWomenClick,
   } = useShoppingBag();
 
-  const handleMenClick = () => {
-    setResultsToggle(true);
-    setCategory("men's%20clothing");
-    setGender("Men's clothing");
-  };
+  // const handleMenClick = () => {
+  //   setResultsToggle(true);
+  //   setCategory("men's%20clothing");
+  //   setGender("Men's clothing");
+  // };
 
-  const handleWomenClick = () => {
-    setResultsToggle(true);
-    setCategory("women's%20clothing");
-    setGender("Women's clothing");
-  };
+  // const handleWomenClick = () => {
+  //   setResultsToggle(true);
+  //   setCategory("women's%20clothing");
+  //   setGender("Women's clothing");
+  // };
   const handleHomeClick = () => {
     setResultsToggle(false);
     setCategory("");
@@ -149,10 +151,10 @@ const Navbar: React.FC = (): ReactElement => {
           ASUS
         </Logo>
         <LinkContainer>
-          <Links resultsToggle={resultsToggle} onClick={handleMenClick}>
+          <Links resultsToggle={resultsToggle} onClick={(e) => handleMenClick(e)}>
             Men
           </Links>
-          <Links resultsToggle={resultsToggle} onClick={handleWomenClick}>
+          <Links resultsToggle={resultsToggle} onClick={(e) => handleWomenClick(e)}>
             Women
           </Links>
         </LinkContainer>

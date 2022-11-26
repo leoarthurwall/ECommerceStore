@@ -10,8 +10,8 @@ type BagItem = {
 };
 
 type ShoppingBagContextProps = {
-  handleMenClick: (val: String) => void;
-  handleWomenClick: (val: String) => void;
+  handleMenClick: (val: any) => void;
+  handleWomenClick: (val: any) => void;
   getItemQuantity: (id: number) => number;
   increaseBagQuantity: (id: number) => void;
   decreaseBagQuantity: (id: number) => void;
