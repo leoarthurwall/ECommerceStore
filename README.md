@@ -7,4 +7,5 @@
 
 
 ## EXCHANGE USESTATE FOR CONTEXT
+- sidebar close toggle
 - resultsToggle
