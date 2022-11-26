@@ -5,7 +5,6 @@ import { RiCloseLine } from "react-icons/ri";
 import { HiOutlineShoppingBag } from "react-icons/hi";
 import SideBarItem from "./SideBarItem/SideBarItem";
 import SideBarlower from "./SideBarLower/SideBarlower";
-import { iClothes } from "../../iClothes";
 import { useShoppingBag } from "../../Context/ShoppingBagContext";
 
 const SideBarContainer = styled.div<IisClosed>`

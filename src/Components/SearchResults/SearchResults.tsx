@@ -1,6 +1,5 @@
 import { useEffect } from "react";
 import styled from "styled-components";
-import { iClothes } from "../../iClothes";
 import { HiOutlineShoppingBag } from "react-icons/hi";
 import { ReactElement } from "react";
 import { useShoppingBag } from "../../Context/ShoppingBagContext";
