@@ -14,17 +14,11 @@ const AppContainer = styled.div`
   flex-direction: column;
 `;
 
-type BagItem = {
-  id: number;
-  quantity: number;
-};
-
 function App() {
   const [category, setCategory] = useState<String>("");
   const [resultsToggle, setResultsToggle] = useState<Boolean>(false);
   const [gender, setGender] = useState<String>("");
   const [data, setData] = useState<iClothes[]>([]);
-  const [showBag, setShowBag] = useState<Boolean>(false);
 
   return (
     <ShoppingBagProvider>
@@ -34,7 +28,6 @@ function App() {
           setCategory={setCategory}
           resultsToggle={resultsToggle}
           setGender={setGender}
-          setShowBag={setShowBag}
         />
         {!resultsToggle ? (
           <SectionOne
@@ -50,12 +43,7 @@ function App() {
             setData={setData}
           />
         )}
-        <SideBar
-          
-          showBag={showBag}
-          setShowBag={setShowBag}
-          data={data}
-        />
+        <SideBar data={data} />
       </AppContainer>
     </ShoppingBagProvider>
   );

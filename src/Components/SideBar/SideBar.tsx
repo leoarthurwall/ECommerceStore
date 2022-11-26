@@ -84,20 +84,16 @@ interface IisClosed {
 }
 
 type Props = {
-  showBag: Boolean;
-  setShowBag: (val: Boolean) => void;
   data: iClothes[];
 };
 
 const SideBar: React.FC<Props> = (Props): ReactElement => {
-  const { showBag, setShowBag, data} =
-    Props;
+  const { data } = Props;
 
-    const { bagQuantity, bagItems, isClosed, setIsClosed } =  useShoppingBag();
+  const { bagQuantity, bagItems, isClosed, setIsClosed } = useShoppingBag();
 
   const handleCloseClick = () => {
     setIsClosed(!isClosed);
-    setShowBag(false);
   };
 
   // closes menu when overlay clicked
@@ -108,22 +104,21 @@ const SideBar: React.FC<Props> = (Props): ReactElement => {
     <>
       <SideBarContainer isClosed={isClosed}>
         <SideBarUpperContainer>
-          {showBag && (
-            <HeaderContainer>
-              <HiOutlineShoppingBag size="24" color="white" />
-              <HeaderText>
-                {" "}
-                Your Bag <HeaderSpan>({bagQuantity})</HeaderSpan>
-              </HeaderText>
-            </HeaderContainer>
-          )}
+          <HeaderContainer>
+            <HiOutlineShoppingBag size="24" color="white" />
+            <HeaderText>
+              {" "}
+              Your Bag <HeaderSpan>({bagQuantity})</HeaderSpan>
+            </HeaderText>
+          </HeaderContainer>
+
           <IconContainer onClick={handleCloseClick}>
             <RiCloseLine size="30" />
           </IconContainer>
         </SideBarUpperContainer>
         <SideBarMainSection>
           {bagItems.map((item: any) => (
-            <SideBarItem key={item.id} {...item} data={data}/>
+            <SideBarItem key={item.id} {...item} data={data} />
           ))}
         </SideBarMainSection>
         <SideBarlower />
