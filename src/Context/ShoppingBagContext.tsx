@@ -29,11 +29,9 @@ export function useShoppingBag() {
 }
 
 export function ShoppingBagProvider({ children }: ShoppingBagProviderProps) {
-  const [bagItems, setBagItems] = useState<BagItem[]>([]);
+  const [bagItems, setBagItems] = useState<BagItem[]>([]); // array where the bag items are stored
   const [resultsToggle, setResultsToggle] = useState<Boolean>(false); // toggles search results on and off
   const [isClosed, setIsClosed] = useState<Boolean>(true); // toggles sidebar between open and closed
-
-
 
   // TOTAL BAG QUANTITY
   const bagQuantity = bagItems.reduce(
