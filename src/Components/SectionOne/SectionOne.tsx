@@ -58,13 +58,14 @@ const ShopButton = styled.button`
 `;
 
 type Props = {
-  // setResultsToggle: (val: Boolean) => void;
   setCategory: (val: string) => void;
   setGender: (val: string) => void;
 };
 
 const SectionOne: React.FC<Props> = (Props): ReactElement => {
+  //PROPS
   const {  setCategory, setGender } = Props;
+  //CONTEXT
   const { setResultsToggle } = useShoppingBag()
 
   const handleMenClick = () => {

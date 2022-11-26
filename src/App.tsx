@@ -16,7 +16,6 @@ const AppContainer = styled.div`
 
 function App() {
   const [category, setCategory] = useState<String>("");
-  // const [resultsToggle, setResultsToggle] = useState<Boolean>(false);
   const [gender, setGender] = useState<String>("");
   const [data, setData] = useState<iClothes[]>([]);
 
@@ -29,14 +28,11 @@ function App() {
     
       <AppContainer>
         <Navbar
-          // setResultsToggle={setResultsToggle}
           setCategory={setCategory}
-          // resultsToggle={resultsToggle}
           setGender={setGender}
         />
         {!resultsToggle ? (
           <SectionOne
-            // setResultsToggle={setResultsToggle}
             setCategory={setCategory}
             setGender={setGender}
           />
