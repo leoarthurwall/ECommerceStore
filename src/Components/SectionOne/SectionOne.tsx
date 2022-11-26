@@ -60,8 +60,6 @@ const ShopButton = styled.button`
 const SectionOne: React.FC = (): ReactElement => {
   const { handleMenClick, handleWomenClick } = useShoppingBag();
 
-
-
   return (
     <SectionOneImage>
       <LeftContainer>

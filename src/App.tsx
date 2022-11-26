@@ -15,29 +15,15 @@ const AppContainer = styled.div`
 `;
 
 function App() {
-  const [data, setData] = useState<iClothes[]>([]);
 
-  const {
-    resultsToggle,
-  } = useShoppingBag();
+  const { resultsToggle } = useShoppingBag();
 
   return (
-    
-    
-      <AppContainer>
-        <Navbar
-        />
-        {!resultsToggle ? (
-          <SectionOne
-          />
-        ) : (
-          <SearchResults
-            data={data}
-            setData={setData}
-          />
-        )}
-        <SideBar data={data} />
-      </AppContainer>
+    <AppContainer>
+      <Navbar />
+      {!resultsToggle ? <SectionOne /> : <SearchResults />}
+      <SideBar />
+    </AppContainer>
   );
 }
 
