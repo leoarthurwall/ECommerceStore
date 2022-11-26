@@ -1,5 +1,5 @@
 import { createContext, ReactNode, useContext, useState } from "react";
-import { iClothes } from "../iClothes"
+import { iClothes } from "../iClothes";
 
 type ShoppingBagProviderProps = {
   children: ReactNode;
@@ -11,6 +11,7 @@ type BagItem = {
 };
 
 type ShoppingBagContextProps = {
+  handleSidebarClick: (val: any) => void;
   handleMenClick: (val: any) => void;
   handleWomenClick: (val: any) => void;
   getItemQuantity: (id: number) => number;
@@ -45,6 +46,10 @@ export function ShoppingBagProvider({ children }: ShoppingBagProviderProps) {
   const [gender, setGender] = useState<String>(""); //set's the gender for the header to men or women
   const [data, setData] = useState<iClothes[]>([]); // stores the api data
 
+  //TOGGLES SIDEBAR OPEN AND CLOSED
+  const handleSidebarClick = () => {
+    setIsClosed(!isClosed);
+  };
 
   // WHEN YOU SELECT MENS CLOTHING BUTTON
   const handleMenClick = () => {
@@ -116,6 +121,7 @@ export function ShoppingBagProvider({ children }: ShoppingBagProviderProps) {
   return (
     <ShoppingBagContext.Provider
       value={{
+        handleSidebarClick,
         handleMenClick,
         handleWomenClick,
         getItemQuantity,

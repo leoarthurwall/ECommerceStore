@@ -113,13 +113,13 @@ interface IColor {
 const Navbar: React.FC = (): ReactElement => {
   const {
     bagQuantity,
-    isClosed,
     setIsClosed,
     resultsToggle,
     setResultsToggle,
     setCategory,
     handleMenClick,
     handleWomenClick,
+    handleSidebarClick
   } = useShoppingBag();
 
   const handleHomeClick = () => {
@@ -128,9 +128,7 @@ const Navbar: React.FC = (): ReactElement => {
     setIsClosed(true);
   };
 
-  const handleBagClick = () => {
-    setIsClosed(!isClosed);
-  };
+
 
   return (
     <>
@@ -153,7 +151,7 @@ const Navbar: React.FC = (): ReactElement => {
             resultsToggle={resultsToggle}
           ></SearchBar> */}
 
-          <IconContainer resultsToggle={resultsToggle} onClick={handleBagClick}>
+          <IconContainer resultsToggle={resultsToggle} onClick={(e) => handleSidebarClick(e)}>
             <HiOutlineShoppingBag size="auto" />
             <IconCount>{bagQuantity}</IconCount>
           </IconContainer>
