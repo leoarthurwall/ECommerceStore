@@ -10,6 +10,8 @@ type BagItem = {
 };
 
 type ShoppingBagContextProps = {
+  handleMenClick: (val: String) => void;
+  handleWomenClick: (val: String) => void;
   getItemQuantity: (id: number) => number;
   increaseBagQuantity: (id: number) => void;
   decreaseBagQuantity: (id: number) => void;
@@ -38,6 +40,20 @@ export function ShoppingBagProvider({ children }: ShoppingBagProviderProps) {
   const [isClosed, setIsClosed] = useState<Boolean>(true); // toggles sidebar between open and closed
   const [category, setCategory] = useState<String>(""); //sets the api category to men or women's clothing
   const [gender, setGender] = useState<String>(""); //set's the gender for the header to men or women
+
+  // WHEN YOU SELECT MENS CLOTHING BUTTON
+  const handleMenClick = () => {
+    setResultsToggle(true);
+    setCategory("men's%20clothing");
+    setGender("Men's clothing");
+  };
+
+  //WHEN YOU SELECT WOMENS CLOTHING BUTTON
+  const handleWomenClick = () => {
+    setResultsToggle(true);
+    setCategory("women's%20clothing");
+    setGender("Women's clothing");
+  };
 
   // TOTAL BAG QUANTITY
   const bagQuantity = bagItems.reduce(
@@ -95,6 +111,8 @@ export function ShoppingBagProvider({ children }: ShoppingBagProviderProps) {
   return (
     <ShoppingBagContext.Provider
       value={{
+        handleMenClick,
+        handleWomenClick,
         getItemQuantity,
         increaseBagQuantity,
         decreaseBagQuantity,
