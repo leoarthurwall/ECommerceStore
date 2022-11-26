@@ -20,6 +20,9 @@ type ShoppingBagContextProps = {
   setResultsToggle: (val: Boolean) => void;
   isClosed: Boolean;
   setIsClosed: (val: Boolean) => void;
+  category: String;
+  setCategory: (val: String) => void;
+
 };
 
 const ShoppingBagContext = createContext({} as ShoppingBagContextProps);
@@ -32,6 +35,7 @@ export function ShoppingBagProvider({ children }: ShoppingBagProviderProps) {
   const [bagItems, setBagItems] = useState<BagItem[]>([]); // array where the bag items are stored
   const [resultsToggle, setResultsToggle] = useState<Boolean>(false); // toggles search results on and off
   const [isClosed, setIsClosed] = useState<Boolean>(true); // toggles sidebar between open and closed
+  const [category, setCategory] = useState<String>(""); //sets the category to men or women's clothing
 
 
   // TOTAL BAG QUANTITY
@@ -100,6 +104,8 @@ export function ShoppingBagProvider({ children }: ShoppingBagProviderProps) {
         setResultsToggle,
         isClosed,
         setIsClosed,
+        category,
+        setCategory,
       }}
     >
       {children}

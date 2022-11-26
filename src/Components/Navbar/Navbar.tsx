@@ -111,13 +111,12 @@ interface IColor {
 }
 
 type Props = {
-  setCategory: (val: string) => void;
   setGender: (val: string) => void;
 };
 
 const Navbar: React.FC<Props> = (Props): ReactElement => {
   //PROPS
-  const { setCategory, setGender } = Props;
+  const { setGender } = Props;
 
   //CONTEXT
   const {
@@ -126,6 +125,7 @@ const Navbar: React.FC<Props> = (Props): ReactElement => {
     setIsClosed,
     resultsToggle,
     setResultsToggle,
+    setCategory,
   } = useShoppingBag();
 
 
