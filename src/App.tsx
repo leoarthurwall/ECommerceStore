@@ -24,7 +24,6 @@ function App() {
   const [resultsToggle, setResultsToggle] = useState<Boolean>(false);
   const [gender, setGender] = useState<String>("");
   const [data, setData] = useState<iClothes[]>([]);
-  const [isClosed, setIsClosed] = useState<Boolean>(true);
   const [showBag, setShowBag] = useState<Boolean>(false);
 
   return (
@@ -35,8 +34,6 @@ function App() {
           setCategory={setCategory}
           resultsToggle={resultsToggle}
           setGender={setGender}
-          setIsClosed={setIsClosed}
-          isClosed={isClosed}
           setShowBag={setShowBag}
         />
         {!resultsToggle ? (
@@ -54,8 +51,7 @@ function App() {
           />
         )}
         <SideBar
-          isClosed={isClosed}
-          setIsClosed={setIsClosed}
+          
           showBag={showBag}
           setShowBag={setShowBag}
           data={data}

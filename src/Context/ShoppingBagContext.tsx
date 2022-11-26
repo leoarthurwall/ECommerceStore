@@ -18,8 +18,8 @@ type ShoppingBagContextProps = {
   bagQuantity: number;
   resultsToggle: Boolean;
   setResultsToggle: (val: Boolean) => void;
-  isSidebarClosed: Boolean;
-  setIsSidebarClosed: (val: Boolean) => void;
+  isClosed: Boolean;
+  setIsClosed: (val: Boolean) => void;
 };
 
 const ShoppingBagContext = createContext({} as ShoppingBagContextProps);
@@ -31,7 +31,7 @@ export function useShoppingBag() {
 export function ShoppingBagProvider({ children }: ShoppingBagProviderProps) {
   const [bagItems, setBagItems] = useState<BagItem[]>([]);
   const [resultsToggle, setResultsToggle] = useState<Boolean>(false); // toggles search results on and off
-  const [isSidebarClosed, setIsSidebarClosed] = useState<Boolean>(true); // toggles sidebar between open and closed
+  const [isClosed, setIsClosed] = useState<Boolean>(true); // toggles sidebar between open and closed
 
 
 
@@ -99,8 +99,8 @@ export function ShoppingBagProvider({ children }: ShoppingBagProviderProps) {
         bagQuantity,
         resultsToggle,
         setResultsToggle,
-        isSidebarClosed,
-        setIsSidebarClosed,
+        isClosed,
+        setIsClosed,
       }}
     >
       {children}

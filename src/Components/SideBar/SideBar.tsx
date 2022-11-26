@@ -84,18 +84,16 @@ interface IisClosed {
 }
 
 type Props = {
-  isClosed: Boolean;
-  setIsClosed: (val: Boolean) => void;
   showBag: Boolean;
   setShowBag: (val: Boolean) => void;
   data: iClothes[];
 };
 
 const SideBar: React.FC<Props> = (Props): ReactElement => {
-  const { isClosed, setIsClosed, showBag, setShowBag, data} =
+  const { showBag, setShowBag, data} =
     Props;
 
-    const { bagQuantity, bagItems } =  useShoppingBag();
+    const { bagQuantity, bagItems, isClosed, setIsClosed } =  useShoppingBag();
 
   const handleCloseClick = () => {
     setIsClosed(!isClosed);

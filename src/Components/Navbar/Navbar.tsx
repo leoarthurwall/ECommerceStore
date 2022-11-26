@@ -115,8 +115,6 @@ type Props = {
   setCategory: (val: string) => void;
   resultsToggle: Boolean;
   setGender: (val: string) => void;
-  isClosed: Boolean;
-  setIsClosed: (val: Boolean) => void;
   setShowBag: (val: Boolean) => void;
 };
 
@@ -126,12 +124,10 @@ const Navbar: React.FC<Props> = (Props): ReactElement => {
     setCategory,
     resultsToggle,
     setGender,
-    isClosed,
-    setIsClosed,
     setShowBag,
   } = Props;
 
-  const { bagQuantity } = useShoppingBag();
+  const { bagQuantity, isClosed, setIsClosed } = useShoppingBag();
 
   const handleMenClick = () => {
     setResultsToggle(true);
