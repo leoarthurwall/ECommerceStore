@@ -15,7 +15,6 @@ const AppContainer = styled.div`
 `;
 
 function App() {
-  const [gender, setGender] = useState<String>("");
   const [data, setData] = useState<iClothes[]>([]);
 
   const {
@@ -27,15 +26,12 @@ function App() {
     
       <AppContainer>
         <Navbar
-          setGender={setGender}
         />
         {!resultsToggle ? (
           <SectionOne
-            setGender={setGender}
           />
         ) : (
           <SearchResults
-            gender={gender}
             data={data}
             setData={setData}
           />

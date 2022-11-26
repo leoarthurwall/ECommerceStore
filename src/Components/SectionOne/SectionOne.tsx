@@ -57,21 +57,13 @@ const ShopButton = styled.button`
   }
 `;
 
-type Props = {
-  setGender: (val: string) => void;
-};
-
-const SectionOne: React.FC<Props> = (Props): ReactElement => {
-  //PROPS
-  const {  setGender } = Props;
-  //CONTEXT
-  const { setResultsToggle, setCategory } = useShoppingBag()
+const SectionOne: React.FC = (): ReactElement => {
+  const { setResultsToggle, setCategory, setGender } = useShoppingBag();
 
   const handleMenClick = () => {
     setResultsToggle(true);
     setCategory("men's%20clothing");
     setGender("Men's clothing");
-
   };
   const handleWomenClick = () => {
     setResultsToggle(true);

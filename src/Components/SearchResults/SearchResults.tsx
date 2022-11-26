@@ -93,13 +93,12 @@ const ItemBottomRowContainer = styled.div`
 `;
 
 type ItemProps = {
-  gender: String;
   data: iClothes[];
   setData: (val: iClothes[]) => void;
 };
 const SearchResults: React.FC<ItemProps> = (Props): ReactElement => {
-  const { gender, data, setData } = Props;
-  const { increaseBagQuantity, category } = useShoppingBag();
+  const { data, setData } = Props;
+  const { increaseBagQuantity, category, gender } = useShoppingBag();
 
   useEffect(() => {
     fetch(`https://fakestoreapi.com/products/category/${category}`)
