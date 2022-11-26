@@ -119,7 +119,7 @@ const Navbar: React.FC = (): ReactElement => {
     setCategory,
     handleMenClick,
     handleWomenClick,
-    handleSidebarClick
+    handleSidebarClick,
   } = useShoppingBag();
 
   const handleHomeClick = () => {
@@ -128,8 +128,6 @@ const Navbar: React.FC = (): ReactElement => {
     setIsClosed(true);
   };
 
-
-
   return (
     <>
       <NavContainer resultsToggle={resultsToggle}>
@@ -137,10 +135,16 @@ const Navbar: React.FC = (): ReactElement => {
           ASUS
         </Logo>
         <LinkContainer>
-          <Links resultsToggle={resultsToggle} onClick={(e) => handleMenClick(e)}>
+          <Links
+            resultsToggle={resultsToggle}
+            onClick={(e) => handleMenClick(e)}
+          >
             Men
           </Links>
-          <Links resultsToggle={resultsToggle} onClick={(e) => handleWomenClick(e)}>
+          <Links
+            resultsToggle={resultsToggle}
+            onClick={(e) => handleWomenClick(e)}
+          >
             Women
           </Links>
         </LinkContainer>
@@ -151,7 +155,10 @@ const Navbar: React.FC = (): ReactElement => {
             resultsToggle={resultsToggle}
           ></SearchBar> */}
 
-          <IconContainer resultsToggle={resultsToggle} onClick={(e) => handleSidebarClick(e)}>
+          <IconContainer
+            resultsToggle={resultsToggle}
+            onClick={(e) => handleSidebarClick(e)}
+          >
             <HiOutlineShoppingBag size="auto" />
             <IconCount>{bagQuantity}</IconCount>
           </IconContainer>

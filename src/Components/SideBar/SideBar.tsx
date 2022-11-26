@@ -83,10 +83,14 @@ interface IisClosed {
 }
 
 const SideBar: React.FC = (): ReactElement => {
-  const { bagQuantity, bagItems, isClosed, setIsClosed, data, handleSidebarClick } =
-    useShoppingBag();
-
-
+  const {
+    bagQuantity,
+    bagItems,
+    isClosed,
+    setIsClosed,
+    data,
+    handleSidebarClick,
+  } = useShoppingBag();
 
   // closes menu when overlay clicked
   const handleOverlayClick = () => {

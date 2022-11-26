@@ -91,9 +91,9 @@ const ItemBottomRowContainer = styled.div`
   cursor: pointer;
 `;
 
-
 const SearchResults: React.FC = (): ReactElement => {
-  const { increaseBagQuantity, category, gender, data, setData } = useShoppingBag();
+  const { increaseBagQuantity, category, gender, data, setData } =
+    useShoppingBag();
 
   useEffect(() => {
     fetch(`https://fakestoreapi.com/products/category/${category}`)
