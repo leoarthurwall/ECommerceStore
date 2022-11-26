@@ -18,6 +18,8 @@ type ShoppingBagContextProps = {
   bagQuantity: number;
   resultsToggle: Boolean;
   setResultsToggle: (val: Boolean) => void;
+  isSidebarClosed: Boolean;
+  setIsSidebarClosed: (val: Boolean) => void;
 };
 
 const ShoppingBagContext = createContext({} as ShoppingBagContextProps);
@@ -97,6 +99,8 @@ export function ShoppingBagProvider({ children }: ShoppingBagProviderProps) {
         bagQuantity,
         resultsToggle,
         setResultsToggle,
+        isSidebarClosed,
+        setIsSidebarClosed,
       }}
     >
       {children}
