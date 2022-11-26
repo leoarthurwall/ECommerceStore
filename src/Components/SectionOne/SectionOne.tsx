@@ -58,28 +58,19 @@ const ShopButton = styled.button`
 `;
 
 const SectionOne: React.FC = (): ReactElement => {
-  const { setResultsToggle, setCategory, setGender } = useShoppingBag();
+  const { handleMenClick, handleWomenClick } = useShoppingBag();
 
-  const handleMenClick = () => {
-    setResultsToggle(true);
-    setCategory("men's%20clothing");
-    setGender("Men's clothing");
-  };
-  const handleWomenClick = () => {
-    setResultsToggle(true);
-    setCategory("women's%20clothing");
-    setGender("Women's clothing");
-  };
+
 
   return (
     <SectionOneImage>
       <LeftContainer>
         <Header>The ultimate experience</Header>
-        <ShopButton onClick={handleMenClick}>
+        <ShopButton onClick={(e) => handleMenClick(e)}>
           Shop Mens
           <HiOutlineArrowNarrowRight />
         </ShopButton>
-        <ShopButton onClick={handleWomenClick}>
+        <ShopButton onClick={(e) => handleWomenClick(e)}>
           Shop Womens
           <HiOutlineArrowNarrowRight />
         </ShopButton>

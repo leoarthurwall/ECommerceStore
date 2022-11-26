@@ -118,22 +118,10 @@ const Navbar: React.FC = (): ReactElement => {
     resultsToggle,
     setResultsToggle,
     setCategory,
-    setGender,
     handleMenClick,
     handleWomenClick,
   } = useShoppingBag();
 
-  // const handleMenClick = () => {
-  //   setResultsToggle(true);
-  //   setCategory("men's%20clothing");
-  //   setGender("Men's clothing");
-  // };
-
-  // const handleWomenClick = () => {
-  //   setResultsToggle(true);
-  //   setCategory("women's%20clothing");
-  //   setGender("Women's clothing");
-  // };
   const handleHomeClick = () => {
     setResultsToggle(false);
     setCategory("");
