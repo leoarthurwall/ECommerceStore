@@ -35,7 +35,9 @@ export function ShoppingBagProvider({ children }: ShoppingBagProviderProps) {
   const [bagItems, setBagItems] = useState<BagItem[]>([]); // array where the bag items are stored
   const [resultsToggle, setResultsToggle] = useState<Boolean>(false); // toggles search results on and off
   const [isClosed, setIsClosed] = useState<Boolean>(true); // toggles sidebar between open and closed
-  const [category, setCategory] = useState<String>(""); //sets the category to men or women's clothing
+  const [category, setCategory] = useState<String>(""); //sets the api category to men or women's clothing 
+  const [gender, setGender] = useState<String>(""); //set's the gender for the header to men or women
+
 
 
   // TOTAL BAG QUANTITY
