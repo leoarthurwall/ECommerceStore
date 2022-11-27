@@ -48,10 +48,11 @@ const ItemCard = styled.div`
 `;
 
 const ImageContainer = styled.div`
+  position: relative;
   width: 100%;
   height: 80%;
-  background-color: rgba(0,0,0,0.05);
-  overflow:hidden;
+  background-color: rgba(0, 0, 0, 0.05);
+  overflow: hidden;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -67,6 +68,21 @@ const ItemImage = styled.img`
   &:hover {
     transform: scale(1.05);
   }
+`;
+
+const IconCircle = styled.div`
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background-color: white;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
   cursor: pointer;
 `;
 const ItemTextContainer = styled.div`
@@ -92,11 +108,7 @@ const ItemPrice = styled.h3`
   font-family: inter;
   margin: 0;
 `;
-const ItemBasketSaveContainer = styled.div`
-  display: flex;
-  gap: 0.5rem;
-  cursor: pointer;
-`;
+
 const ItemBottomRowContainer = styled.div`
   display: flex;
   width: 100%;
@@ -133,17 +145,17 @@ const SearchResults: React.FC = (): ReactElement => {
           <ItemCard key={item.id}>
             <ImageContainer>
               <ItemImage src={item.image} alt={item.title}></ItemImage>
+              <IconCircle>
+                <HiOutlineShoppingBag
+                  size={20}
+                  onClick={() => increaseBagQuantity(item.id)}
+                />
+              </IconCircle>
             </ImageContainer>
             <ItemTextContainer>
               <ItemTitle>{item.title}</ItemTitle>
               <ItemBottomRowContainer>
                 <ItemPrice>£{item.price}</ItemPrice>
-                <ItemBasketSaveContainer>
-                  <HiOutlineShoppingBag
-                    size={20}
-                    onClick={() => increaseBagQuantity(item.id)}
-                  />
-                </ItemBasketSaveContainer>
               </ItemBottomRowContainer>
             </ItemTextContainer>
           </ItemCard>
