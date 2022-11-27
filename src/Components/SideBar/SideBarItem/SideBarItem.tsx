@@ -17,11 +17,18 @@ const ItemContainer = styled.div`
     border-top: none;
   }
 `;
-const ItemImage = styled.img`
+const ImageContainer = styled.div`
   height: 100%;
   width: 25%;
+  background-color: rgba(255,255,255, 0.7);
+  display: flex; 
+  justify-content: center;
+  align-items: center;
+`;
+const ItemImage = styled.img`
+  width: 85%;
   object-fit: contain;
-  background: white;
+  filter: brightness(70%);
 `;
 const ItemCenter = styled.div`
   display: flex;
@@ -103,14 +110,18 @@ const SideBarItem: React.FC<BagItemProps> = (
   if (item == null) return null;
   return (
     <ItemContainer>
-      <ItemImage src={item.image}></ItemImage>
+      <ImageContainer>
+        <ItemImage src={item.image}></ItemImage>
+      </ImageContainer>
       <ItemCenter>
         <ItemPrice>£{Math.round(item.price)}</ItemPrice>
         <ItemTitle>{item.title}</ItemTitle>
         <QuantityContainer>
           <QuantityTotalWrapper>
             <ItemTotalQuantity>Qty: {quantity} </ItemTotalQuantity>
-            <ItemTotalQuantity>Total: £{Math.round(item.price * quantity)}</ItemTotalQuantity>
+            <ItemTotalQuantity>
+              Total: £{Math.round(item.price * quantity)}
+            </ItemTotalQuantity>
           </QuantityTotalWrapper>
 
           <ItemChangeQuantityContainer>
