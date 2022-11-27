@@ -85,6 +85,15 @@ const IconCircle = styled.div`
 
   cursor: pointer;
 `;
+const PriceContainer = styled.div`
+position: absolute;
+left: 10px;
+bottom: 2px;
+width: max-content;
+padding: 2px 5px;
+background-color: white;
+
+`
 const ItemTextContainer = styled.div`
   display: flex;
   flex-direction: column;
@@ -151,11 +160,14 @@ const SearchResults: React.FC = (): ReactElement => {
                   onClick={() => increaseBagQuantity(item.id)}
                 />
               </IconCircle>
+              <PriceContainer>
+                <ItemPrice>£{item.price}</ItemPrice>
+
+              </PriceContainer>
             </ImageContainer>
             <ItemTextContainer>
               <ItemTitle>{item.title}</ItemTitle>
               <ItemBottomRowContainer>
-                <ItemPrice>£{item.price}</ItemPrice>
               </ItemBottomRowContainer>
             </ItemTextContainer>
           </ItemCard>
