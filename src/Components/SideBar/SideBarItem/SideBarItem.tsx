@@ -47,7 +47,7 @@ const QuantityTotalWrapper = styled.div`
   align-items: center;
   width: 100%;
 `;
-const ItemQuantity = styled.p`
+const ItemTotalQuantity = styled.p`
   margin: 0;
   font-size: 12px;
   font-weight: 400;
@@ -109,8 +109,8 @@ const SideBarItem: React.FC<BagItemProps> = (
         <ItemTitle>{item.title}</ItemTitle>
         <QuantityContainer>
           <QuantityTotalWrapper>
-            <ItemQuantity>Qty: {quantity} </ItemQuantity>
-            <ItemQuantity>Total: £{Math.round(item.price * quantity)}</ItemQuantity>
+            <ItemTotalQuantity>Qty: {quantity} </ItemTotalQuantity>
+            <ItemTotalQuantity>Total: £{Math.round(item.price * quantity)}</ItemTotalQuantity>
           </QuantityTotalWrapper>
 
           <ItemChangeQuantityContainer>

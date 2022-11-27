@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { useShoppingBag } from "../../../Context/ShoppingBagContext";
 
 const SideBarlowerContainer = styled.div`
   width: 100%;
@@ -8,7 +9,6 @@ const SideBarlowerContainer = styled.div`
   justify-content: space-around;
   padding: 0 10px;
   box-sizing: border-box;
-
 `;
 const SubtotalContainer = styled.div`
   display: flex;
@@ -40,11 +40,19 @@ const CheckoutButton = styled.button`
   cursor: pointer;
 `;
 const SideBarlower = () => {
+  const { data, bagItems } = useShoppingBag();
+
   return (
     <SideBarlowerContainer>
       <SubtotalContainer>
-        <SubtotalText>Subtotal:</SubtotalText>
-        <SubtotalAmount>$400</SubtotalAmount>
+        <SubtotalText>Bag Total:</SubtotalText>
+        <SubtotalAmount>
+          £
+          {Math.round(bagItems.reduce((total, bagItem) => {
+            const item = data.find((i) => i.id === bagItem.id);
+            return total + (item?.price || 0) * bagItem.quantity;
+          }, 0))}
+        </SubtotalAmount>
       </SubtotalContainer>
       <CheckoutButton>CHECKOUT</CheckoutButton>
     </SideBarlowerContainer>
