@@ -47,11 +47,22 @@ const ItemCard = styled.div`
   }
 `;
 
-const ItemImage = styled.img`
+const ImageContainer = styled.div`
   width: 100%;
   height: 70%;
+  background-color: rgba(0,0,0,0.05);
+  overflow:hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+
+const ItemImage = styled.img`
+  width: 100%;
+  height: 90%;
   object-fit: contain;
   transition: all 0.5s;
+  filter: brightness(95%);
 
   &:hover {
     transform: scale(1.05);
@@ -118,7 +129,9 @@ const SearchResults: React.FC = (): ReactElement => {
       <SearchResultsContainer>
         {data.map((item) => (
           <ItemCard key={item.id}>
-            <ItemImage src={item.image} alt={item.title}></ItemImage>
+            <ImageContainer>
+              <ItemImage src={item.image} alt={item.title}></ItemImage>
+            </ImageContainer>
             <ItemTextContainer>
               <ItemTitle>{item.title}</ItemTitle>
               <ItemBottomRowContainer>
