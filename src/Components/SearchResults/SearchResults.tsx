@@ -103,12 +103,12 @@ const ItemTextContainer = styled.div`
 `;
 const ItemTitle = styled.h1`
   color: black;
-  font-size: 14px;
+  font-size: 13px;
   font-weight: 400;
   font-family: inter;
+  line-height: 1.4;
   margin: 0;
-  cursor: pointer;
-  height: 35px;
+  height: 34px;
   overflow: scroll;
 `;
 const ItemPrice = styled.h3`
