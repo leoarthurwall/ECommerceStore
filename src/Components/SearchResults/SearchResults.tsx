@@ -49,7 +49,7 @@ const ItemCard = styled.div`
 
 const ImageContainer = styled.div`
   width: 100%;
-  height: 70%;
+  height: 80%;
   background-color: rgba(0,0,0,0.05);
   overflow:hidden;
   display: flex;
@@ -72,7 +72,7 @@ const ItemImage = styled.img`
 const ItemTextContainer = styled.div`
   display: flex;
   flex-direction: column;
-  height: 25%;
+  height: 15%;
   justify-content: space-between;
   padding: 10px 0;
 `;
@@ -83,6 +83,8 @@ const ItemTitle = styled.h1`
   font-family: inter;
   margin: 0;
   cursor: pointer;
+  height: 35px;
+  overflow: scroll;
 `;
 const ItemPrice = styled.h3`
   font-size: 16px;
