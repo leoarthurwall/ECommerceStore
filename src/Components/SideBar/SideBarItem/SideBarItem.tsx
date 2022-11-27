@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { HiOutlineTrash } from "react-icons/hi";
 import { AiOutlinePlusCircle, AiOutlineMinusCircle } from "react-icons/ai";
 import { ReactElement } from "react";
-import { iClothes } from "../../../iClothes";
+import { useShoppingBag } from "../../../Context/ShoppingBagContext";
 
 const ItemContainer = styled.div`
   width: 100%;
@@ -80,20 +80,25 @@ const ItemPrice = styled.p`
   font-weight: 400;
 `;
 
-type Props = {
+type BagItemProps = {
   id: number;
   quantity: number;
-  data: iClothes[];
 };
 
-const SideBarItem: React.FC<Props> = (Props): ReactElement => {
-  const { id, quantity, data } = Props;
+const SideBarItem: React.FC<BagItemProps> = (
+  Props
+): ReactElement<any> | null => {
+  const { id, quantity } = Props;
+  const { increaseBagQuantity, decreaseBagQuantity, removeFromBag, data } =
+    useShoppingBag();
 
+  const item = data.find((i) => i.id === id);
+  if (item == null) return null;
   return (
     <ItemContainer>
       <ItemImage></ItemImage>
       <ItemCenter>
-        <ItemPrice>25</ItemPrice>
+        <ItemPrice>{Math.round(item.price)}</ItemPrice>
         <ItemTitle>Mens Casual Premium Slim Fit T-Shirts</ItemTitle>
         <QuantityContainer>
           <ItemQuantity>Qty: 1</ItemQuantity>

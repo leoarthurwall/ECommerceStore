@@ -113,8 +113,8 @@ const SideBar: React.FC = (): ReactElement => {
           </IconContainer>
         </SideBarUpperContainer>
         <SideBarMainSection>
-          {bagItems.map((item: any) => (
-            <SideBarItem key={item.id} {...item} data={data} />
+          {bagItems.map((item) => (
+            <SideBarItem key={item.id} {...item} />
           ))}
         </SideBarMainSection>
         <SideBarlower />
