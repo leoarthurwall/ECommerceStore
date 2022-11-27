@@ -35,7 +35,7 @@ const TitleSpan = styled.span`
 const ItemCard = styled.div`
   width: 25%;
   height: 400px;
-  padding: 25px;
+  padding: 5px;
   //   border: 1px solid rgba(0, 0, 0, 0.1);
   box-sizing: border-box;
   @media (max-width: 1000px) {
