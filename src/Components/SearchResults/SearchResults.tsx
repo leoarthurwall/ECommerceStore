@@ -161,7 +161,7 @@ const SearchResults: React.FC = (): ReactElement => {
                 />
               </IconCircle>
               <PriceContainer>
-                <ItemPrice>£{item.price}</ItemPrice>
+                <ItemPrice>£{Math.round(item.price)}</ItemPrice>
 
               </PriceContainer>
             </ImageContainer>
