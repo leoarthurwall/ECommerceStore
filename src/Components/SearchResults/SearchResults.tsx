@@ -87,8 +87,8 @@ const IconCircle = styled.div`
 `;
 const PriceContainer = styled.div`
 position: absolute;
-left: 10px;
-bottom: 2px;
+left: 5px;
+bottom: 0px;
 width: max-content;
 padding: 2px 5px;
 background-color: white;
@@ -112,8 +112,8 @@ const ItemTitle = styled.h1`
   overflow: scroll;
 `;
 const ItemPrice = styled.h3`
-  font-size: 16px;
-  font-weight: 800;
+  font-size: 14px;
+  font-weight: 500;
   font-family: inter;
   margin: 0;
 `;
