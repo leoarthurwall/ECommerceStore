@@ -120,7 +120,7 @@ const SideBarItem: React.FC<BagItemProps> = (
       </ItemCenter>
       <ItemRight>
         <ItemRemove>
-          <HiOutlineTrash />
+          <HiOutlineTrash onClick={() => removeFromBag(item.id)} />
         </ItemRemove>
       </ItemRight>
     </ItemContainer>
