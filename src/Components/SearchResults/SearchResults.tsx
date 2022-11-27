@@ -85,6 +85,9 @@ const IconCircle = styled.div`
   align-items: center;
 
   cursor: pointer;
+  &:hover {
+    color: grey;
+  }
 `;
 const PriceContainer = styled.div`
   position: absolute;
@@ -117,8 +120,6 @@ const ItemPrice = styled.h3`
   font-family: inter;
   margin: 0;
 `;
-
-
 
 const SearchResults: React.FC = (): ReactElement => {
   const { increaseBagQuantity, category, gender, data, setData } =
