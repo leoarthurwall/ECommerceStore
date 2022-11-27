@@ -103,8 +103,8 @@ const SideBarItem: React.FC<BagItemProps> = (
         <QuantityContainer>
           <ItemQuantity>Qty: {quantity}</ItemQuantity>
           <ItemChangeQuantityContainer>
-            <AiOutlinePlusCircle size={16} color={"white"} />
-            <AiOutlineMinusCircle size={16} color={"white"} />
+            <AiOutlinePlusCircle size={16} color={"white"} onClick={() => increaseBagQuantity(item.id)}/>
+            <AiOutlineMinusCircle size={16} color={"white"} onClick={() => decreaseBagQuantity(item.id)}/>
           </ItemChangeQuantityContainer>
         </QuantityContainer>
       </ItemCenter>
