@@ -84,6 +84,8 @@ const IconCircle = styled.div`
   justify-content: center;
   align-items: center;
 
+  transition: 0.2s;
+
   cursor: pointer;
   &:hover {
     color: grey;

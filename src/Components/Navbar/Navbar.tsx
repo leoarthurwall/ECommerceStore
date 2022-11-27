@@ -76,6 +76,9 @@ const IconContainer = styled.div<IColor>`
   height: 30px;
   width: 30px;
 
+  transition: 0.2s;
+
+
   &:hover {
     color: ${({ resultsToggle }) => (resultsToggle ? "grey" : "#e8eaed")};
   }
@@ -100,6 +103,7 @@ const Links = styled.li<IColor>`
   color: ${({ resultsToggle }) => (resultsToggle ? "black" : "#fff")};
 
   cursor: pointer;
+  transition: 0.2s;
 
   &:hover {
     color: ${({ resultsToggle }) => (resultsToggle ? "grey" : "#e8eaed")};
