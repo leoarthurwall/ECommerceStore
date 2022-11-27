@@ -96,12 +96,12 @@ const SideBarItem: React.FC<BagItemProps> = (
   if (item == null) return null;
   return (
     <ItemContainer>
-      <ItemImage></ItemImage>
+      <ItemImage src={item.image}></ItemImage>
       <ItemCenter>
-        <ItemPrice>{Math.round(item.price)}</ItemPrice>
-        <ItemTitle>Mens Casual Premium Slim Fit T-Shirts</ItemTitle>
+        <ItemPrice>£{Math.round(item.price)}</ItemPrice>
+        <ItemTitle>{item.title}</ItemTitle>
         <QuantityContainer>
-          <ItemQuantity>Qty: 1</ItemQuantity>
+          <ItemQuantity>Qty: {quantity}</ItemQuantity>
           <ItemChangeQuantityContainer>
             <AiOutlinePlusCircle size={16} color={"white"} />
             <AiOutlineMinusCircle size={16} color={"white"} />
