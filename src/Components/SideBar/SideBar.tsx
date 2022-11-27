@@ -88,7 +88,6 @@ const SideBar: React.FC = (): ReactElement => {
     bagItems,
     isClosed,
     setIsClosed,
-    data,
     handleSidebarClick,
   } = useShoppingBag();
 
