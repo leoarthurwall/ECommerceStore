@@ -40,6 +40,13 @@ const QuantityContainer = styled.div`
   display: flex;
   flex-direction: column;
 `;
+
+const QuantityTotalWrapper = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+`;
 const ItemQuantity = styled.p`
   margin: 0;
   font-size: 12px;
@@ -101,7 +108,11 @@ const SideBarItem: React.FC<BagItemProps> = (
         <ItemPrice>£{Math.round(item.price)}</ItemPrice>
         <ItemTitle>{item.title}</ItemTitle>
         <QuantityContainer>
-          <ItemQuantity>Qty: {quantity}</ItemQuantity>
+          <QuantityTotalWrapper>
+            <ItemQuantity>Qty: {quantity} </ItemQuantity>
+            <ItemQuantity>Total: £{Math.round(item.price * quantity)}</ItemQuantity>
+          </QuantityTotalWrapper>
+
           <ItemChangeQuantityContainer>
             <AiOutlinePlusCircle
               size={16}
