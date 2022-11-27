@@ -13,6 +13,7 @@ const SearchResultsContainer = styled.section`
   flex-wrap: wrap;
   padding: 0 40px;
   box-sizing: border-box;
+
   @media (max-width: 768px) {
     display: flex;
     justify-content: center;
@@ -86,14 +87,13 @@ const IconCircle = styled.div`
   cursor: pointer;
 `;
 const PriceContainer = styled.div`
-position: absolute;
-left: 5px;
-bottom: 0px;
-width: max-content;
-padding: 2px 5px;
-background-color: white;
-
-`
+  position: absolute;
+  left: 5px;
+  bottom: 0px;
+  width: max-content;
+  padding: 2px 5px;
+  background-color: white;
+`;
 const ItemTextContainer = styled.div`
   display: flex;
   flex-direction: column;
@@ -118,12 +118,7 @@ const ItemPrice = styled.h3`
   margin: 0;
 `;
 
-const ItemBottomRowContainer = styled.div`
-  display: flex;
-  width: 100%;
-  justify-content: space-between;
-  cursor: pointer;
-`;
+
 
 const SearchResults: React.FC = (): ReactElement => {
   const { increaseBagQuantity, category, gender, data, setData } =
@@ -162,13 +157,10 @@ const SearchResults: React.FC = (): ReactElement => {
               </IconCircle>
               <PriceContainer>
                 <ItemPrice>£{Math.round(item.price)}</ItemPrice>
-
               </PriceContainer>
             </ImageContainer>
             <ItemTextContainer>
               <ItemTitle>{item.title}</ItemTitle>
-              <ItemBottomRowContainer>
-              </ItemBottomRowContainer>
             </ItemTextContainer>
           </ItemCard>
         ))}

@@ -8,7 +8,7 @@ import SideBarlower from "./SideBarLower/SideBarlower";
 import { useShoppingBag } from "../../Context/ShoppingBagContext";
 
 const SideBarContainer = styled.div<IisClosed>`
-  position: absolute;
+  position: fixed;
   top: 0px;
   bottom: 0px;
   right: ${({ isClosed }) => (isClosed ? "-350px" : "0px")};
@@ -66,7 +66,7 @@ const SideBarMainSection = styled.div`
 `;
 
 const SideBarOverlay = styled.div<IisClosed>`
-  position: absolute;
+  position: fixed;
   background-color: ${({ isClosed }) =>
     isClosed ? "rgba(0, 0, 0, 0)" : "rgba(0, 0, 0, 0.4)"};
   top: 0;
