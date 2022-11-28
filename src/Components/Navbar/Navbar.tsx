@@ -2,6 +2,7 @@ import styled from "styled-components";
 import { HiOutlineShoppingBag } from "react-icons/hi";
 import { ReactElement } from "react";
 import { useShoppingBag } from "../../Context/ShoppingBagContext";
+import { NavLink } from "react-router-dom";
 
 const NavContainer = styled.nav<IColor>`
   width: 100vw;
@@ -78,7 +79,6 @@ const IconContainer = styled.div<IColor>`
 
   transition: 0.2s;
 
-
   &:hover {
     color: ${({ resultsToggle }) => (resultsToggle ? "grey" : "#e8eaed")};
   }
@@ -135,10 +135,12 @@ const Navbar: React.FC = (): ReactElement => {
   return (
     <>
       <NavContainer resultsToggle={resultsToggle}>
-        <Logo onClick={handleHomeClick} resultsToggle={resultsToggle}>
-          ASUS
-        </Logo>
-        <LinkContainer>
+        <NavLink to="/">
+          <Logo onClick={handleHomeClick} resultsToggle={resultsToggle}>
+            ASUS
+          </Logo>
+        </NavLink>
+        {/* <LinkContainer>
           <Links
             resultsToggle={resultsToggle}
             onClick={(e) => handleMenClick(e)}
@@ -151,6 +153,14 @@ const Navbar: React.FC = (): ReactElement => {
           >
             Women
           </Links>
+        </LinkContainer> */}
+        <LinkContainer>
+          <NavLink to="/mens" onClick={(e) => handleMenClick(e)}>
+            Men
+          </NavLink>
+          <NavLink to="/womens" onClick={(e) => handleWomenClick(e)}>
+            Women
+          </NavLink>
         </LinkContainer>
         <RightContainer resultsToggle={resultsToggle}>
           {/* <SearchBar

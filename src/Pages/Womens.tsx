@@ -124,12 +124,12 @@ const ItemPrice = styled.h3`
 `;
 
 export const Womens: React.FC = (): ReactElement => {
-  const { increaseBagQuantity, gender, data } = useShoppingBag();
+  const { increaseBagQuantity, data } = useShoppingBag();
 
   return (
     <>
       <ResultsTitle>
-        {gender} <TitleSpan>({data.length} results)</TitleSpan>
+        Womens Clothing <TitleSpan>({data.length} results)</TitleSpan>
       </ResultsTitle>
       <SearchResultsContainer>
         {data.map((item) => (
