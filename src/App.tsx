@@ -5,6 +5,7 @@ import SectionOne from "./Components/SectionOne/SectionOne";
 import SideBar from "./Components/SideBar/SideBar";
 import { useShoppingBag } from "./Context/ShoppingBagContext";
 import { useEffect } from "react";
+import { BrowserRouter } from "react-router-dom"
 
 const AppContainer = styled.div`
   display: flex;
