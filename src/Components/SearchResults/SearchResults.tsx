@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 import styled from "styled-components";
 import { HiOutlineShoppingBag } from "react-icons/hi";
 import { ReactElement } from "react";
