@@ -16,6 +16,7 @@ const AppContainer = styled.div`
 function App() {
   const { resultsToggle, setData, category } = useShoppingBag();
 
+  // API fetch
   useEffect(() => {
     fetch(`https://fakestoreapi.com/products/category/${category}`)
       .then((res) => res.json())
