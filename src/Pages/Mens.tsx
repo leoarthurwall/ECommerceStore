@@ -130,7 +130,7 @@ export const Mens: React.FC = (): ReactElement => {
   return (
     <>
       <ResultsTitle>
-        Mens Clothing<TitleSpan>({data.length} results)</TitleSpan>
+        Mens Clothing <TitleSpan>({data.length} results)</TitleSpan>
       </ResultsTitle>
       <SearchResultsContainer>
         {data.map((item) => (
@@ -156,5 +156,3 @@ export const Mens: React.FC = (): ReactElement => {
     </>
   );
 };
-
-
