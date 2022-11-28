@@ -34,7 +34,7 @@ const Header = styled.h1`
     font-size: 42px;
   }
 `;
-const ShopButton = styled.button`
+const ShopButton = styled(NavLink)`
   background-color: white;
   border: none;
   color: black;
@@ -65,18 +65,14 @@ export const Home: React.FC = (): ReactElement => {
     <SectionOneImage>
       <LeftContainer>
         <Header>The ultimate experience</Header>
-        <NavLink to="/mens">
-          <ShopButton onClick={(e) => handleMenClick(e)}>
-            Shop Mens
-            <HiOutlineArrowNarrowRight />
-          </ShopButton>
-        </NavLink>
-        <NavLink to="/womens">
-          <ShopButton onClick={(e) => handleWomenClick(e)}>
-            Shop Womens
-            <HiOutlineArrowNarrowRight />
-          </ShopButton>
-        </NavLink>
+        <ShopButton to="/mens" onClick={(e) => handleMenClick(e)}>
+          Shop Mens
+          <HiOutlineArrowNarrowRight />
+        </ShopButton>
+        <ShopButton to="/womens" onClick={(e) => handleWomenClick(e)}>
+          Shop Womens
+          <HiOutlineArrowNarrowRight />
+        </ShopButton>
       </LeftContainer>
     </SectionOneImage>
   );

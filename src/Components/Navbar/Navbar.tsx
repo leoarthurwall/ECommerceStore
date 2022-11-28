@@ -163,13 +163,13 @@ const Navbar: React.FC = (): ReactElement => {
           >
             Men
           </Links>
-            <Links
+          <Links
             to="/womens"
-              resultsToggle={resultsToggle}
-              onClick={(e) => handleWomenClick(e)}
-            >
-              Women
-            </Links>
+            resultsToggle={resultsToggle}
+            onClick={(e) => handleWomenClick(e)}
+          >
+            Women
+          </Links>
         </LinkContainer>
         <RightContainer resultsToggle={resultsToggle}>
           {/* <SearchBar
