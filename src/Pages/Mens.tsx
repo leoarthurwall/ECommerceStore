@@ -1,9 +1,8 @@
 import React from 'react'
 
-const Mens = () => {
+export const Mens = () => {
   return (
     <div>Mens</div>
   )
 }
 
-export default Mens

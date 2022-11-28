@@ -5,6 +5,10 @@ import SectionOne from "./Components/SectionOne/SectionOne";
 import SideBar from "./Components/SideBar/SideBar";
 import { useShoppingBag } from "./Context/ShoppingBagContext";
 import { useEffect } from "react";
+import { Routes, Route } from "react-router-dom";
+import { Home } from "./Pages/Home"
+import { Mens } from "./Pages/Mens";
+import { Womens } from "./Pages/Womens";
 
 const AppContainer = styled.div`
   display: flex;
@@ -29,6 +33,11 @@ function App() {
   return (
     <AppContainer>
       <Navbar />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/mens" element={<Mens />} />
+        <Route path="/womens" element={<Womens />} />
+      </Routes>
       {!resultsToggle ? <SectionOne /> : <SearchResults />}
       <SideBar />
     </AppContainer>
