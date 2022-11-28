@@ -36,7 +36,6 @@ const LinkContainer = styled.ul`
   left: 50%;
   transform: translate(-50%, -50%);
 
-
   list-style-type: none;
   font-size: 18px;
   padding: 0;
@@ -100,13 +99,14 @@ const IconCount = styled.div`
   bottom: -4px;
   right: -4px;
 `;
-const Links = styled.li<IColor>`
+const Links = styled(NavLink)<IColor>`
   margin: 0;
   padding: 0;
   color: ${({ resultsToggle }) => (resultsToggle ? "black" : "#fff")};
 
   cursor: pointer;
   transition: 0.2s;
+  text-decoration: none;
 
   &:hover {
     color: ${({ resultsToggle }) => (resultsToggle ? "grey" : "#e8eaed")};
@@ -138,12 +138,9 @@ const Navbar: React.FC = (): ReactElement => {
   return (
     <>
       <NavContainer resultsToggle={resultsToggle}>
-        
-          <Logo onClick={handleHomeClick} resultsToggle={resultsToggle}
-          to="/"
-          >
-            ASUS
-          </Logo>
+        <Logo onClick={handleHomeClick} resultsToggle={resultsToggle} to="/">
+          ASUS
+        </Logo>
         {/* <LinkContainer>
           <Links
             resultsToggle={resultsToggle}
@@ -159,22 +156,20 @@ const Navbar: React.FC = (): ReactElement => {
           </Links>
         </LinkContainer> */}
         <LinkContainer>
-          <NavLink to="/mens">
+          <Links
+            to="/mens"
+            resultsToggle={resultsToggle}
+            onClick={(e) => handleMenClick(e)}
+          >
+            Men
+          </Links>
             <Links
-              resultsToggle={resultsToggle}
-              onClick={(e) => handleMenClick(e)}
-            >
-              Men
-            </Links>
-          </NavLink>
-          <NavLink to="/womens">
-            <Links
+            to="/womens"
               resultsToggle={resultsToggle}
               onClick={(e) => handleWomenClick(e)}
             >
               Women
             </Links>
-          </NavLink>
         </LinkContainer>
         <RightContainer resultsToggle={resultsToggle}>
           {/* <SearchBar
