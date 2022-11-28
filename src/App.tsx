@@ -38,7 +38,7 @@ function App() {
         <Route path="/mens" element={<Mens />} />
         <Route path="/womens" element={<Womens />} />
       </Routes>
-      {!resultsToggle ? <SectionOne /> : <SearchResults />}
+      {/* {!resultsToggle ? <SectionOne /> : <SearchResults />} */}
       <SideBar />
     </AppContainer>
   );
