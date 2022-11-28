@@ -3,8 +3,6 @@ import styled from "styled-components";
 import { HiOutlineShoppingBag } from "react-icons/hi";
 import { ReactElement } from "react";
 import { useShoppingBag } from "../../Context/ShoppingBagContext";
-import { MensClothes } from "../../Data/items";
-
 
 const SearchResultsContainer = styled.section`
   height: 100vh;
@@ -127,52 +125,15 @@ const ItemPrice = styled.h3`
 `;
 
 const SearchResults: React.FC = (): ReactElement => {
-  const { increaseBagQuantity, category, gender, data, setData } =
-    useShoppingBag();
-
-  // useEffect(() => {
-  //   fetch(`https://fakestoreapi.com/products/category/${category}`)
-  //     .then((res) => res.json())
-  //     .then((json) => {
-  //       console.log(json);
-  //       setData(json);
-  //     });
-  // }, [category, setData]);
-
-  // console.log(data.length);
-
-  // const handleItem = (item:any) => {
-  //   console.log(data);
-  // }
+  const { increaseBagQuantity, gender, data } = useShoppingBag();
 
   return (
     <>
       <ResultsTitle>
         {gender} <TitleSpan>({data.length} results)</TitleSpan>
       </ResultsTitle>
-      {/* <SearchResultsContainer>
-        {data.map((item) => (
-          <ItemCard key={item.id}>
-            <ImageContainer>
-              <ItemImage src={item.image} alt={item.title}></ItemImage>
-              <IconCircle>
-                <HiOutlineShoppingBag
-                  size={20}
-                  onClick={() => increaseBagQuantity(item.id)}
-                />
-              </IconCircle>
-              <PriceContainer>
-                <ItemPrice>£{Math.round(item.price)}</ItemPrice>
-              </PriceContainer>
-            </ImageContainer>
-            <ItemTextContainer>
-              <ItemTitle>{item.title}</ItemTitle>
-            </ItemTextContainer>
-          </ItemCard>
-        ))}
-      </SearchResultsContainer> */}
       <SearchResultsContainer>
-        {MensClothes.map((item) => (
+        {data.map((item) => (
           <ItemCard key={item.id}>
             <ImageContainer>
               <ItemImage src={item.image} alt={item.title}></ItemImage>
