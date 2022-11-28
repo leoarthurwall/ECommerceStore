@@ -2,6 +2,7 @@ import styled from "styled-components";
 import { HiOutlineShoppingBag } from "react-icons/hi";
 import { ReactElement } from "react";
 import { useShoppingBag } from "../Context/ShoppingBagContext";
+import { WomensClothes } from "../Data/items";
 
 const SearchResultsContainer = styled.section`
   height: 100vh;
@@ -129,10 +130,10 @@ export const Womens: React.FC = (): ReactElement => {
   return (
     <>
       <ResultsTitle>
-        Womens Clothing <TitleSpan>({data.length} results)</TitleSpan>
+        Womens Clothing <TitleSpan>({WomensClothes.length} results)</TitleSpan>
       </ResultsTitle>
       <SearchResultsContainer>
-        {data.map((item) => (
+        {WomensClothes.map((item) => (
           <ItemCard key={item.id}>
             <ImageContainer>
               <ItemImage src={item.image} alt={item.title}></ItemImage>

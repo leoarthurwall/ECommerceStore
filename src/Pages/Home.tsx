@@ -2,6 +2,7 @@ import styled from "styled-components";
 import { HiOutlineArrowNarrowRight } from "react-icons/hi";
 import { ReactElement } from "react";
 import { useShoppingBag } from "../Context/ShoppingBagContext";
+import { NavLink } from "react-router-dom";
 
 const SectionOneImage = styled.div`
   height: 100vh;
@@ -64,17 +65,19 @@ export const Home: React.FC = (): ReactElement => {
     <SectionOneImage>
       <LeftContainer>
         <Header>The ultimate experience</Header>
-        <ShopButton onClick={(e) => handleMenClick(e)}>
-          Shop Mens
-          <HiOutlineArrowNarrowRight />
-        </ShopButton>
-        <ShopButton onClick={(e) => handleWomenClick(e)}>
-          Shop Womens
-          <HiOutlineArrowNarrowRight />
-        </ShopButton>
+        <NavLink to="/mens">
+          <ShopButton onClick={(e) => handleMenClick(e)}>
+            Shop Mens
+            <HiOutlineArrowNarrowRight />
+          </ShopButton>
+        </NavLink>
+        <NavLink to="/womens">
+          <ShopButton onClick={(e) => handleWomenClick(e)}>
+            Shop Womens
+            <HiOutlineArrowNarrowRight />
+          </ShopButton>
+        </NavLink>
       </LeftContainer>
     </SectionOneImage>
   );
 };
-
-

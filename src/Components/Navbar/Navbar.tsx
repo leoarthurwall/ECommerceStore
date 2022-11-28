@@ -155,11 +155,21 @@ const Navbar: React.FC = (): ReactElement => {
           </Links>
         </LinkContainer> */}
         <LinkContainer>
-          <NavLink to="/mens" onClick={(e) => handleMenClick(e)}>
-            Men
+          <NavLink to="/mens">
+            <Links
+              resultsToggle={resultsToggle}
+              onClick={(e) => handleMenClick(e)}
+            >
+              Men
+            </Links>
           </NavLink>
-          <NavLink to="/womens" onClick={(e) => handleWomenClick(e)}>
-            Women
+          <NavLink to="/womens">
+            <Links
+              resultsToggle={resultsToggle}
+              onClick={(e) => handleWomenClick(e)}
+            >
+              Women
+            </Links>
           </NavLink>
         </LinkContainer>
         <RightContainer resultsToggle={resultsToggle}>

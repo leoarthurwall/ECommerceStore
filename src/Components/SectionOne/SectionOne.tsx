@@ -2,6 +2,7 @@ import styled from "styled-components";
 import { HiOutlineArrowNarrowRight } from "react-icons/hi";
 import { ReactElement } from "react";
 import { useShoppingBag } from "../../Context/ShoppingBagContext";
+import { NavLink } from "react-router-dom";
 
 const SectionOneImage = styled.div`
   height: 100vh;
