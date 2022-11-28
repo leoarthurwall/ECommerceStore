@@ -20,7 +20,7 @@ const ItemContainer = styled.div`
 const ImageContainer = styled.div`
   height: 100%;
   width: 25%;
-  background-color: rgba(255,255,255, 0.7);
+  background-color: rgba(255,255,255, 0.8);
   display: flex; 
   justify-content: center;
   align-items: center;
@@ -28,7 +28,7 @@ const ImageContainer = styled.div`
 const ItemImage = styled.img`
   width: 85%;
   object-fit: contain;
-  filter: brightness(70%);
+  filter: brightness(80%);
 `;
 const ItemCenter = styled.div`
   display: flex;
