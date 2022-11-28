@@ -130,10 +130,10 @@ export const Womens: React.FC = (): ReactElement => {
   return (
     <>
       <ResultsTitle>
-        Womens Clothing <TitleSpan>({WomensClothes.length} results)</TitleSpan>
+        Womens Clothing <TitleSpan>({data.length} results)</TitleSpan>
       </ResultsTitle>
       <SearchResultsContainer>
-        {WomensClothes.map((item) => (
+        {data.map((item) => (
           <ItemCard key={item.id}>
             <ImageContainer>
               <ItemImage src={item.image} alt={item.title}></ItemImage>

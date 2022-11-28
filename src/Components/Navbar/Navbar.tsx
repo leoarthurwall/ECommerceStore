@@ -18,12 +18,14 @@ const NavContainer = styled.nav<IColor>`
   background: ${({ resultsToggle }) => (resultsToggle ? "#fff" : "")};
 `;
 
-const Logo = styled.h1<IColor>`
+const Logo = styled(NavLink)<IColor>`
   color: ${({ resultsToggle }) => (resultsToggle ? "black" : "#fff")};
   cursor: pointer;
   font-weight: 800;
   font-family: sans-serif;
   letter-spacing: -3px;
+  font-size: 24px;
+  text-decoration: none;
 `;
 const LinkContainer = styled.ul`
   display: flex;
@@ -33,6 +35,7 @@ const LinkContainer = styled.ul`
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+
 
   list-style-type: none;
   font-size: 18px;
@@ -135,11 +138,12 @@ const Navbar: React.FC = (): ReactElement => {
   return (
     <>
       <NavContainer resultsToggle={resultsToggle}>
-        <NavLink to="/">
-          <Logo onClick={handleHomeClick} resultsToggle={resultsToggle}>
+        
+          <Logo onClick={handleHomeClick} resultsToggle={resultsToggle}
+          to="/"
+          >
             ASUS
           </Logo>
-        </NavLink>
         {/* <LinkContainer>
           <Links
             resultsToggle={resultsToggle}
