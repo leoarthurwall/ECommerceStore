@@ -1,10 +1,12 @@
 import styled from "styled-components";
 import Navbar from "./Components/Navbar/Navbar";
-import SearchResults from "./Components/SearchResults/SearchResults";
-import SectionOne from "./Components/SectionOne/SectionOne";
 import SideBar from "./Components/SideBar/SideBar";
 import { useShoppingBag } from "./Context/ShoppingBagContext";
 import { useEffect } from "react";
+import { Routes, Route } from "react-router-dom";
+import { Home } from "./Pages/Home";
+import { Mens } from "./Pages/Mens";
+import { Womens } from "./Pages/Womens";
 
 const AppContainer = styled.div`
   display: flex;
@@ -14,7 +16,7 @@ const AppContainer = styled.div`
 `;
 
 function App() {
-  const { resultsToggle, setData, category } = useShoppingBag();
+  const { setData, category } = useShoppingBag();
 
   // API fetch
   useEffect(() => {
@@ -29,7 +31,11 @@ function App() {
   return (
     <AppContainer>
       <Navbar />
-      {!resultsToggle ? <SectionOne /> : <SearchResults />}
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/mens" element={<Mens />} />
+        <Route path="/womens" element={<Womens />} />
+      </Routes>
       <SideBar />
     </AppContainer>
   );

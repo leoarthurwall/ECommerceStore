@@ -2,6 +2,7 @@ import styled from "styled-components";
 import { HiOutlineShoppingBag } from "react-icons/hi";
 import { ReactElement } from "react";
 import { useShoppingBag } from "../../Context/ShoppingBagContext";
+import { NavLink } from "react-router-dom";
 
 const NavContainer = styled.nav<IColor>`
   width: 100vw;
@@ -17,12 +18,14 @@ const NavContainer = styled.nav<IColor>`
   background: ${({ resultsToggle }) => (resultsToggle ? "#fff" : "")};
 `;
 
-const Logo = styled.h1<IColor>`
+const Logo = styled(NavLink)<IColor>`
   color: ${({ resultsToggle }) => (resultsToggle ? "black" : "#fff")};
   cursor: pointer;
   font-weight: 800;
   font-family: sans-serif;
   letter-spacing: -3px;
+  font-size: 24px;
+  text-decoration: none;
 `;
 const LinkContainer = styled.ul`
   display: flex;
@@ -78,7 +81,6 @@ const IconContainer = styled.div<IColor>`
 
   transition: 0.2s;
 
-
   &:hover {
     color: ${({ resultsToggle }) => (resultsToggle ? "grey" : "#e8eaed")};
   }
@@ -97,13 +99,14 @@ const IconCount = styled.div`
   bottom: -4px;
   right: -4px;
 `;
-const Links = styled.li<IColor>`
+const Links = styled(NavLink)<IColor>`
   margin: 0;
   padding: 0;
   color: ${({ resultsToggle }) => (resultsToggle ? "black" : "#fff")};
 
   cursor: pointer;
   transition: 0.2s;
+  text-decoration: none;
 
   &:hover {
     color: ${({ resultsToggle }) => (resultsToggle ? "grey" : "#e8eaed")};
@@ -135,10 +138,10 @@ const Navbar: React.FC = (): ReactElement => {
   return (
     <>
       <NavContainer resultsToggle={resultsToggle}>
-        <Logo onClick={handleHomeClick} resultsToggle={resultsToggle}>
+        <Logo onClick={handleHomeClick} resultsToggle={resultsToggle} to="/">
           ASUS
         </Logo>
-        <LinkContainer>
+        {/* <LinkContainer>
           <Links
             resultsToggle={resultsToggle}
             onClick={(e) => handleMenClick(e)}
@@ -146,6 +149,22 @@ const Navbar: React.FC = (): ReactElement => {
             Men
           </Links>
           <Links
+            resultsToggle={resultsToggle}
+            onClick={(e) => handleWomenClick(e)}
+          >
+            Women
+          </Links>
+        </LinkContainer> */}
+        <LinkContainer>
+          <Links
+            to="/mens"
+            resultsToggle={resultsToggle}
+            onClick={(e) => handleMenClick(e)}
+          >
+            Men
+          </Links>
+          <Links
+            to="/womens"
             resultsToggle={resultsToggle}
             onClick={(e) => handleWomenClick(e)}
           >
