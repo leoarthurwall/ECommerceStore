@@ -24,7 +24,7 @@ type ShoppingBagContextProps = {
   setResultsToggle: (val: Boolean) => void;
   isClosed: Boolean;
   setIsClosed: (val: Boolean) => void;
-  
+
   data: iClothes[];
   setData: (val: iClothes[]) => void;
 };
@@ -40,6 +40,8 @@ export function ShoppingBagProvider({ children }: ShoppingBagProviderProps) {
   const [resultsToggle, setResultsToggle] = useState<Boolean>(false); // toggles search results on and off
   const [isClosed, setIsClosed] = useState<Boolean>(true); // toggles sidebar between open and closed
   const [data, setData] = useState<iClothes[]>([]); // stores the api data
+
+
 
   //TOGGLES SIDEBAR OPEN AND CLOSED
   const handleSidebarClick = () => {

@@ -136,7 +136,7 @@ const Navbar: React.FC = (): ReactElement => {
   return (
     <>
       <NavContainer resultsToggle={resultsToggle}>
-        <Logo onClick={handleHomeClick} resultsToggle={resultsToggle} to="/">
+        <Logo onClick={handleHomeClick} resultsToggle={resultsToggle} to="/" >
           ASUS
         </Logo>
         {/* <LinkContainer>
