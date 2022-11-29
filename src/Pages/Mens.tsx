@@ -134,7 +134,7 @@ export const Mens: React.FC = (): ReactElement => {
   return (
     <>
       <ResultsTitle>
-        Mens Clothing <TitleSpan>({MensData.length} results)</TitleSpan>
+        Men's Clothing <TitleSpan>({MensData.length} results)</TitleSpan>
       </ResultsTitle>
       <SearchResultsContainer>
         {MensData.map((item) => (

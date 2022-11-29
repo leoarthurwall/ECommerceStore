@@ -63,11 +63,11 @@ export const Home: React.FC = (): ReactElement => {
     <SectionOneImage>
       <LeftContainer>
         <Header>The ultimate experience</Header>
-        <ShopButton to="/mens">
+        <ShopButton to="/men">
           Shop Mens
           <HiOutlineArrowNarrowRight />
         </ShopButton>
-        <ShopButton to="/womens">
+        <ShopButton to="/women">
           Shop Womens
           <HiOutlineArrowNarrowRight />
         </ShopButton>

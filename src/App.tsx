@@ -33,8 +33,8 @@ function App() {
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/mens" element={<Mens />} />
-        <Route path="/womens" element={<Womens />} />
+        <Route path="/men" element={<Mens />} />
+        <Route path="/women" element={<Womens />} />
       </Routes>
       <SideBar />
     </AppContainer>

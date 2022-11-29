@@ -158,10 +158,10 @@ const Navbar: React.FC = (): ReactElement => {
           </Links>
         </LinkContainer> */}
         <LinkContainer>
-          <Links to="/mens" resultsToggle={resultsToggle}>
+          <Links to="/men" resultsToggle={resultsToggle}>
             Men
           </Links>
-          <Links to="/womens" resultsToggle={resultsToggle}>
+          <Links to="/women" resultsToggle={resultsToggle}>
             Women
           </Links>
         </LinkContainer>
