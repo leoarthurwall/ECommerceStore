@@ -176,7 +176,7 @@ const Navbar: React.FC = (): ReactElement => {
             onClick={(e) => handleSidebarClick(e)}
           >
             <HiOutlineShoppingBag size="auto" />
-            <IconCount>{bagQuantity}</IconCount>
+            {bagQuantity > 0 ? <IconCount>{bagQuantity}</IconCount> : null}
           </IconContainer>
         </RightContainer>
       </NavContainer>

@@ -35,7 +35,7 @@ export function useShoppingBag() {
 
 export function ShoppingBagProvider({ children }: ShoppingBagProviderProps) {
   const [bagItems, setBagItems] = useState<BagItem[]>([]); // array where the bag items are stored
-  const [resultsToggle, setResultsToggle] = useState<Boolean>(false); // toggles search results on and off
+  const [resultsToggle, setResultsToggle] = useState<Boolean>(false); // toggles navbar styles depending on active path
   const [isClosed, setIsClosed] = useState<Boolean>(true); // toggles sidebar between open and closed
   const [data, setData] = useState<iClothes[]>([]); // stores the api data
 
