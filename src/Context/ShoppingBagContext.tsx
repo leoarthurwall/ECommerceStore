@@ -13,8 +13,6 @@ type BagItem = {
 type ShoppingBagContextProps = {
   handleHomeClick: (val: any) => void;
   handleSidebarClick: (val: any) => void;
-  handleMenClick: (val: any) => void;
-  handleWomenClick: (val: any) => void;
   getItemQuantity: (id: number) => number;
   increaseBagQuantity: (id: number) => void;
   decreaseBagQuantity: (id: number) => void;
@@ -52,14 +50,6 @@ export function ShoppingBagProvider({ children }: ShoppingBagProviderProps) {
     setIsClosed(!isClosed);
   };
 
-  // WHEN YOU SELECT MENS CLOTHING BUTTON
-  const handleMenClick = () => {
-  };
-
-  //WHEN YOU SELECT WOMENS CLOTHING BUTTON
-  const handleWomenClick = () => {
-  };
-
   // TOTAL BAG QUANTITY
   const bagQuantity = bagItems.reduce(
     (quantity, item) => item.quantity + quantity,
@@ -88,6 +78,7 @@ export function ShoppingBagProvider({ children }: ShoppingBagProviderProps) {
     });
     console.log("bag items:", bagItems);
   }
+  
   // DECREASE QUANTITY
   function decreaseBagQuantity(id: number) {
     setBagItems((currentItems) => {
@@ -118,8 +109,6 @@ export function ShoppingBagProvider({ children }: ShoppingBagProviderProps) {
       value={{
         handleHomeClick,
         handleSidebarClick,
-        handleMenClick,
-        handleWomenClick,
         getItemQuantity,
         increaseBagQuantity,
         decreaseBagQuantity,

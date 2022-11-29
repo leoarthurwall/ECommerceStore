@@ -123,8 +123,6 @@ const Navbar: React.FC = (): ReactElement => {
     resultsToggle,
     setResultsToggle,
     handleHomeClick,
-    handleMenClick,
-    handleWomenClick,
     handleSidebarClick,
   } = useShoppingBag();
 
@@ -159,18 +157,10 @@ const Navbar: React.FC = (): ReactElement => {
           </Links>
         </LinkContainer> */}
         <LinkContainer>
-          <Links
-            to="/mens"
-            resultsToggle={resultsToggle}
-            onClick={(e) => handleMenClick(e)}
-          >
+          <Links to="/mens" resultsToggle={resultsToggle}>
             Men
           </Links>
-          <Links
-            to="/womens"
-            resultsToggle={resultsToggle}
-            onClick={(e) => handleWomenClick(e)}
-          >
+          <Links to="/womens" resultsToggle={resultsToggle}>
             Women
           </Links>
         </LinkContainer>
