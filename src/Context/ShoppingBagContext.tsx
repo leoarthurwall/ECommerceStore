@@ -24,8 +24,7 @@ type ShoppingBagContextProps = {
   setResultsToggle: (val: Boolean) => void;
   isClosed: Boolean;
   setIsClosed: (val: Boolean) => void;
-  category: String;
-  setCategory: (val: String) => void;
+  
   data: iClothes[];
   setData: (val: iClothes[]) => void;
 };
@@ -40,7 +39,6 @@ export function ShoppingBagProvider({ children }: ShoppingBagProviderProps) {
   const [bagItems, setBagItems] = useState<BagItem[]>([]); // array where the bag items are stored
   const [resultsToggle, setResultsToggle] = useState<Boolean>(false); // toggles search results on and off
   const [isClosed, setIsClosed] = useState<Boolean>(true); // toggles sidebar between open and closed
-  const [category, setCategory] = useState<String>(""); //sets the api category to men or women's clothing
   const [data, setData] = useState<iClothes[]>([]); // stores the api data
 
   //TOGGLES SIDEBAR OPEN AND CLOSED
@@ -51,13 +49,11 @@ export function ShoppingBagProvider({ children }: ShoppingBagProviderProps) {
   // WHEN YOU SELECT MENS CLOTHING BUTTON
   const handleMenClick = () => {
     setResultsToggle(true);
-    setCategory("men's%20clothing");
   };
 
   //WHEN YOU SELECT WOMENS CLOTHING BUTTON
   const handleWomenClick = () => {
     setResultsToggle(true);
-    setCategory("women's%20clothing");
   };
 
   // TOTAL BAG QUANTITY
@@ -129,8 +125,6 @@ export function ShoppingBagProvider({ children }: ShoppingBagProviderProps) {
         setResultsToggle,
         isClosed,
         setIsClosed,
-        category,
-        setCategory,
         data,
         setData,
       }}

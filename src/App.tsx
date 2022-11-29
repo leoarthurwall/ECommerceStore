@@ -16,17 +16,18 @@ const AppContainer = styled.div`
 `;
 
 function App() {
-  const { setData, category } = useShoppingBag();
+  const { setData } = useShoppingBag();
 
   // API fetch
   useEffect(() => {
-    fetch(`https://fakestoreapi.com/products/category/${category}`)
+
+    fetch(`https://fakestoreapi.com/products`)
       .then((res) => res.json())
       .then((json) => {
         console.log(json);
         setData(json);
       });
-  }, [category, setData]);
+  }, [setData]);
 
   return (
     <AppContainer>
