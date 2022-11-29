@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { HiOutlineShoppingBag } from "react-icons/hi";
 import { ReactElement } from "react";
 import { useShoppingBag } from "../Context/ShoppingBagContext";
-import { WomensClothes } from "../Data/items";
+// import { WomensClothes } from "../Data/items";
 
 const SearchResultsContainer = styled.section`
   height: 100vh;

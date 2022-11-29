@@ -1,11 +1,4 @@
-## ADD ITEM TO ARRAY
-- create bag array - DONE
-- pass the bag array to the bag component
-- write function that adds specific item to array
-- attach function to click handler
-- map bag array in the side bar.
+## TODO
 
-
-## EXCHANGE USESTATE FOR CONTEXT
-- sidebar close toggle
-- resultsToggle
+- style the nav bar for home page and then men's/women's
+- conditionally render the red bag icon (if  quantity === 0 &&) {return null}
