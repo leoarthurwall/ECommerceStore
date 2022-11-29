@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { HiOutlineShoppingBag } from "react-icons/hi";
 import { ReactElement } from "react";
 import { useShoppingBag } from "../../Context/ShoppingBagContext";
-import { NavLink } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 
 const NavContainer = styled.nav<IColor>`
   width: 100vw;
@@ -120,18 +120,21 @@ interface IColor {
 const Navbar: React.FC = (): ReactElement => {
   const {
     bagQuantity,
-    setIsClosed,
     resultsToggle,
     setResultsToggle,
-    handleMenClick,
-    handleWomenClick,
+    handleHomeClick,
     handleSidebarClick,
   } = useShoppingBag();
 
-  const handleHomeClick = () => {
+  //GETS CURRENT PATH AND SETS TO FALSE IF ROUTE PATH, OTHERWISE TO TRUE - USED FOR CONDITIONAL STYLING
+  const location = useLocation();
+  console.log(location);
+  if (location.pathname === "/") {
     setResultsToggle(false);
-    setIsClosed(true);
-  };
+  } else {
+    setResultsToggle(true);
+  }
+  console.log("resultsToggle:", resultsToggle);
 
   return (
     <>
@@ -154,18 +157,10 @@ const Navbar: React.FC = (): ReactElement => {
           </Links>
         </LinkContainer> */}
         <LinkContainer>
-          <Links
-            to="/mens"
-            resultsToggle={resultsToggle}
-            onClick={(e) => handleMenClick(e)}
-          >
+          <Links to="/mens" resultsToggle={resultsToggle}>
             Men
           </Links>
-          <Links
-            to="/womens"
-            resultsToggle={resultsToggle}
-            onClick={(e) => handleWomenClick(e)}
-          >
+          <Links to="/womens" resultsToggle={resultsToggle}>
             Women
           </Links>
         </LinkContainer>

@@ -128,8 +128,8 @@ export const Mens: React.FC = (): ReactElement => {
   const { increaseBagQuantity, data } = useShoppingBag();
 
   //Array filter for MEN'S clothing
-  const MensData = data.filter(item => item.category === "men's clothing");
-  console.log("MensData:", MensData)
+  const MensData = data.filter((item) => item.category === "men's clothing");
+  console.log("MensData:", MensData);
 
   return (
     <>

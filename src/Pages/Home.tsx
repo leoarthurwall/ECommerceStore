@@ -1,7 +1,6 @@
 import styled from "styled-components";
 import { HiOutlineArrowNarrowRight } from "react-icons/hi";
 import { ReactElement } from "react";
-import { useShoppingBag } from "../Context/ShoppingBagContext";
 import { NavLink } from "react-router-dom";
 
 const SectionOneImage = styled.div`
@@ -60,17 +59,15 @@ const ShopButton = styled(NavLink)`
 `;
 
 export const Home: React.FC = (): ReactElement => {
-  const { handleMenClick, handleWomenClick } = useShoppingBag();
-
   return (
     <SectionOneImage>
       <LeftContainer>
         <Header>The ultimate experience</Header>
-        <ShopButton to="/mens" onClick={(e) => handleMenClick(e)}>
+        <ShopButton to="/mens">
           Shop Mens
           <HiOutlineArrowNarrowRight />
         </ShopButton>
-        <ShopButton to="/womens" onClick={(e) => handleWomenClick(e)}>
+        <ShopButton to="/womens">
           Shop Womens
           <HiOutlineArrowNarrowRight />
         </ShopButton>

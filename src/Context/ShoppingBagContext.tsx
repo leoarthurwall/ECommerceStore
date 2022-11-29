@@ -11,9 +11,8 @@ type BagItem = {
 };
 
 type ShoppingBagContextProps = {
+  handleHomeClick: (val: any) => void;
   handleSidebarClick: (val: any) => void;
-  handleMenClick: (val: any) => void;
-  handleWomenClick: (val: any) => void;
   getItemQuantity: (id: number) => number;
   increaseBagQuantity: (id: number) => void;
   decreaseBagQuantity: (id: number) => void;
@@ -24,7 +23,6 @@ type ShoppingBagContextProps = {
   setResultsToggle: (val: Boolean) => void;
   isClosed: Boolean;
   setIsClosed: (val: Boolean) => void;
-  
   data: iClothes[];
   setData: (val: iClothes[]) => void;
 };
@@ -41,19 +39,14 @@ export function ShoppingBagProvider({ children }: ShoppingBagProviderProps) {
   const [isClosed, setIsClosed] = useState<Boolean>(true); // toggles sidebar between open and closed
   const [data, setData] = useState<iClothes[]>([]); // stores the api data
 
+  //CLOSES SIDEBAR WHEN HOME LOGO IS CLICKED
+  const handleHomeClick = () => {
+    setIsClosed(true);
+  };
+
   //TOGGLES SIDEBAR OPEN AND CLOSED
   const handleSidebarClick = () => {
     setIsClosed(!isClosed);
-  };
-
-  // WHEN YOU SELECT MENS CLOTHING BUTTON
-  const handleMenClick = () => {
-    setResultsToggle(true);
-  };
-
-  //WHEN YOU SELECT WOMENS CLOTHING BUTTON
-  const handleWomenClick = () => {
-    setResultsToggle(true);
   };
 
   // TOTAL BAG QUANTITY
@@ -84,6 +77,7 @@ export function ShoppingBagProvider({ children }: ShoppingBagProviderProps) {
     });
     console.log("bag items:", bagItems);
   }
+
   // DECREASE QUANTITY
   function decreaseBagQuantity(id: number) {
     setBagItems((currentItems) => {
@@ -112,9 +106,8 @@ export function ShoppingBagProvider({ children }: ShoppingBagProviderProps) {
   return (
     <ShoppingBagContext.Provider
       value={{
+        handleHomeClick,
         handleSidebarClick,
-        handleMenClick,
-        handleWomenClick,
         getItemQuantity,
         increaseBagQuantity,
         decreaseBagQuantity,
