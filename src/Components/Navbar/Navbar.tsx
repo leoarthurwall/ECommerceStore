@@ -123,7 +123,6 @@ const Navbar: React.FC = (): ReactElement => {
     setIsClosed,
     resultsToggle,
     setResultsToggle,
-    setCategory,
     handleMenClick,
     handleWomenClick,
     handleSidebarClick,
@@ -131,7 +130,6 @@ const Navbar: React.FC = (): ReactElement => {
 
   const handleHomeClick = () => {
     setResultsToggle(false);
-    setCategory("");
     setIsClosed(true);
   };
 
