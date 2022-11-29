@@ -128,23 +128,20 @@ const Navbar: React.FC = (): ReactElement => {
     handleSidebarClick,
   } = useShoppingBag();
 
- 
-
-
   //GETS CURRENT PATH AND SETS TO FALSE IF ROUTE PATH, OTHERWISE TO TRUE - USED FOR CONDITIONAL STYLING
   const location = useLocation();
   console.log(location);
-  if (location.pathname === "/"){
-    setResultsToggle(false)
+  if (location.pathname === "/") {
+    setResultsToggle(false);
   } else {
-    setResultsToggle(true)
+    setResultsToggle(true);
   }
-  console.log("resultsToggle:", resultsToggle)
+  console.log("resultsToggle:", resultsToggle);
 
   return (
     <>
       <NavContainer resultsToggle={resultsToggle}>
-        <Logo onClick={handleHomeClick} resultsToggle={resultsToggle} to="/" >
+        <Logo onClick={handleHomeClick} resultsToggle={resultsToggle} to="/">
           ASUS
         </Logo>
         {/* <LinkContainer>

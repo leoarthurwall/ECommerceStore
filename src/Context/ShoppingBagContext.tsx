@@ -44,7 +44,6 @@ export function ShoppingBagProvider({ children }: ShoppingBagProviderProps) {
 
   //CLOSES SIDEBAR WHEN HOME LOGO IS CLICKED
   const handleHomeClick = () => {
-    setResultsToggle(false);
     setIsClosed(true);
   };
 
@@ -55,12 +54,10 @@ export function ShoppingBagProvider({ children }: ShoppingBagProviderProps) {
 
   // WHEN YOU SELECT MENS CLOTHING BUTTON
   const handleMenClick = () => {
-    setResultsToggle(true);
   };
 
   //WHEN YOU SELECT WOMENS CLOTHING BUTTON
   const handleWomenClick = () => {
-    setResultsToggle(true);
   };
 
   // TOTAL BAG QUANTITY
