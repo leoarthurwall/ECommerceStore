@@ -26,6 +26,7 @@ const Logo = styled(NavLink)<IColor>`
   letter-spacing: -3px;
   font-size: 24px;
   text-decoration: none;
+  transition: 0.2s;
 `;
 const LinkContainer = styled.ul`
   display: flex;
