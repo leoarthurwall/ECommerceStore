@@ -127,13 +127,17 @@ const ItemPrice = styled.h3`
 export const Mens: React.FC = (): ReactElement => {
   const { increaseBagQuantity, data } = useShoppingBag();
 
+  //Array filter for MEN'S clothing
+  const MensData = data.filter(item => item.category === "men's clothing");
+  console.log("MensData:", MensData)
+
   return (
     <>
       <ResultsTitle>
-        Mens Clothing <TitleSpan>({data.length} results)</TitleSpan>
+        Mens Clothing <TitleSpan>({MensData.length} results)</TitleSpan>
       </ResultsTitle>
       <SearchResultsContainer>
-        {data.map((item) => (
+        {MensData.map((item) => (
           <ItemCard key={item.id}>
             <ImageContainer>
               <ItemImage src={item.image} alt={item.title}></ItemImage>
