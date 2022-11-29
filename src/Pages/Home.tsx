@@ -64,11 +64,11 @@ export const Home: React.FC = (): ReactElement => {
       <LeftContainer>
         <Header>The ultimate experience</Header>
         <ShopButton to="/men">
-          Shop Mens
+          Shop Men's
           <HiOutlineArrowNarrowRight />
         </ShopButton>
         <ShopButton to="/women">
-          Shop Womens
+          Shop Women's
           <HiOutlineArrowNarrowRight />
         </ShopButton>
       </LeftContainer>
