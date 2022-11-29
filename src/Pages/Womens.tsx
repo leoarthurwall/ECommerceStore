@@ -127,9 +127,11 @@ const ItemPrice = styled.h3`
 export const Womens: React.FC = (): ReactElement => {
   const { increaseBagQuantity, data } = useShoppingBag();
 
- //Array filter for WOMEN'S clothing
- const WomensData = data.filter(item => item.category === "women's clothing");
- console.log("WomensData:", WomensData)
+  //Array filter for WOMEN'S clothing
+  const WomensData = data.filter(
+    (item) => item.category === "women's clothing"
+  );
+  console.log("WomensData:", WomensData);
 
   return (
     <>

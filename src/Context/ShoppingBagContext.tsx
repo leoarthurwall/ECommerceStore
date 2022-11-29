@@ -23,7 +23,6 @@ type ShoppingBagContextProps = {
   setResultsToggle: (val: Boolean) => void;
   isClosed: Boolean;
   setIsClosed: (val: Boolean) => void;
-
   data: iClothes[];
   setData: (val: iClothes[]) => void;
 };
@@ -78,7 +77,7 @@ export function ShoppingBagProvider({ children }: ShoppingBagProviderProps) {
     });
     console.log("bag items:", bagItems);
   }
-  
+
   // DECREASE QUANTITY
   function decreaseBagQuantity(id: number) {
     setBagItems((currentItems) => {

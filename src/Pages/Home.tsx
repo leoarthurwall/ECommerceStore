@@ -59,16 +59,15 @@ const ShopButton = styled(NavLink)`
 `;
 
 export const Home: React.FC = (): ReactElement => {
-
   return (
     <SectionOneImage>
       <LeftContainer>
         <Header>The ultimate experience</Header>
-        <ShopButton to="/mens" >
+        <ShopButton to="/mens">
           Shop Mens
           <HiOutlineArrowNarrowRight />
         </ShopButton>
-        <ShopButton to="/womens" >
+        <ShopButton to="/womens">
           Shop Womens
           <HiOutlineArrowNarrowRight />
         </ShopButton>
