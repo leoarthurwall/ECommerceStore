@@ -11,6 +11,7 @@ type BagItem = {
 };
 
 type ShoppingBagContextProps = {
+  handleHomeClick: (val: any) => void;
   handleSidebarClick: (val: any) => void;
   handleMenClick: (val: any) => void;
   handleWomenClick: (val: any) => void;
@@ -41,7 +42,11 @@ export function ShoppingBagProvider({ children }: ShoppingBagProviderProps) {
   const [isClosed, setIsClosed] = useState<Boolean>(true); // toggles sidebar between open and closed
   const [data, setData] = useState<iClothes[]>([]); // stores the api data
 
-
+  //CLOSES SIDEBAR WHEN HOME LOGO IS CLICKED
+  const handleHomeClick = () => {
+    setResultsToggle(false);
+    setIsClosed(true);
+  };
 
   //TOGGLES SIDEBAR OPEN AND CLOSED
   const handleSidebarClick = () => {
@@ -114,6 +119,7 @@ export function ShoppingBagProvider({ children }: ShoppingBagProviderProps) {
   return (
     <ShoppingBagContext.Provider
       value={{
+        handleHomeClick,
         handleSidebarClick,
         handleMenClick,
         handleWomenClick,

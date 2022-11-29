@@ -3,7 +3,7 @@ import Navbar from "./Components/Navbar/Navbar";
 import SideBar from "./Components/SideBar/SideBar";
 import { useShoppingBag } from "./Context/ShoppingBagContext";
 import { useEffect } from "react";
-import { Routes, Route, useLocation } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import { Home } from "./Pages/Home";
 import { Mens } from "./Pages/Mens";
 import { Womens } from "./Pages/Womens";
@@ -16,11 +16,10 @@ const AppContainer = styled.div`
 `;
 
 function App() {
-  const { setData, setResultsToggle, resultsToggle} = useShoppingBag();
+  const { setData } = useShoppingBag();
 
   // API fetch
   useEffect(() => {
-
     fetch(`https://fakestoreapi.com/products`)
       .then((res) => res.json())
       .then((json) => {
@@ -28,15 +27,6 @@ function App() {
         setData(json);
       });
   }, [setData]);
-
-  const location = useLocation();
-  console.log(location);
-  if (location.pathname === "/"){
-    setResultsToggle(false)
-  } else {
-    setResultsToggle(true)
-  }
-  console.log("resultsToggle:", resultsToggle)
 
   return (
     <AppContainer>

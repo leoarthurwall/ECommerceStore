@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { HiOutlineShoppingBag } from "react-icons/hi";
 import { ReactElement } from "react";
 import { useShoppingBag } from "../../Context/ShoppingBagContext";
-import { NavLink } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 
 const NavContainer = styled.nav<IColor>`
   width: 100vw;
@@ -120,18 +120,26 @@ interface IColor {
 const Navbar: React.FC = (): ReactElement => {
   const {
     bagQuantity,
-    setIsClosed,
     resultsToggle,
     setResultsToggle,
+    handleHomeClick,
     handleMenClick,
     handleWomenClick,
     handleSidebarClick,
   } = useShoppingBag();
 
-  const handleHomeClick = () => {
-    setResultsToggle(false);
-    setIsClosed(true);
-  };
+ 
+
+
+  //GETS CURRENT PATH AND SETS TO FALSE IF ROUTE PATH, OTHERWISE TO TRUE - USED FOR CONDITIONAL STYLING
+  const location = useLocation();
+  console.log(location);
+  if (location.pathname === "/"){
+    setResultsToggle(false)
+  } else {
+    setResultsToggle(true)
+  }
+  console.log("resultsToggle:", resultsToggle)
 
   return (
     <>
