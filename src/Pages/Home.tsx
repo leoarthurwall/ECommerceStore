@@ -46,6 +46,7 @@ const ShopButton = styled(NavLink)`
   font-family: inter;
   max-width: fit-content;
   font-weight: 500;
+  transition: 0.2s;
 
   display: flex;
   align-items: center;
