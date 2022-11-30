@@ -14,6 +14,9 @@ const SectionOneImage = styled.div`
   display: flex;
   justify-content: left;
   align-items: center;
+  @media (max-width: 1024px) {
+    background-position: 40%;
+}
   @media (max-width: 500px) {
     justify-content: center;
     background-position: left;
@@ -24,27 +27,30 @@ const LeftContainer = styled.div`
   flex-direction: column;
   gap: 1rem;
   padding: 40px;
+  margin-bottom: 250px;
+
+
 
   @media (max-width: 500px) {
     align-items: center;
+    margin-bottom: 0;
   }
 `;
 const Header = styled.h1`
   color: white;
   font-family: inter;
-  font-weight: 500;
-  font-size: 3.8vw;
+  font-weight: 300;
+  font-size: 60px;
   text-align: left;
   margin: 0;
-  @media (max-width: 1024px) {
-    font-size: 60px;
-  }
+  margin-bottom: 50px;
+
+  
   @media (max-width: 500px) {
     font-weight: 200;
 
     font-size: 10vw;
     text-align: center;
-    margin-bottom: 50px;
   }
 `;
 const ShopButton = styled(NavLink)`
