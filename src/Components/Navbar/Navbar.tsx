@@ -12,7 +12,7 @@ const NavContainer = styled.nav<IColor>`
   position: fixed;
   align-items: center;
   justify-content: space-between;
-  padding: 0 50px;
+  padding: 0 40px;
   box-sizing: border-box;
   z-index: 5;
   background: ${({ resultsToggle }) => (resultsToggle ? "#fff" : "")};
