@@ -5,7 +5,6 @@ import { useShoppingBag } from "../../Context/ShoppingBagContext";
 import { iClothes } from "../../iClothes";
 
 const SearchResultsContainer = styled.section`
-  height: 100vh;
   width: auto;
   max-width: 1200px;
   margin: 0 auto;
@@ -21,7 +20,7 @@ const SearchResultsContainer = styled.section`
   }
 `;
 const ResultsTitle = styled.h1`
-  padding: 90px 40px 20px 40px;
+  padding: 90px 40px 20px 0px;
   width: 100%;
   max-width: 1100px;
   margin: 0 auto;
@@ -38,6 +37,7 @@ const ItemCard = styled.div`
   width: 25%;
   height: 400px;
   padding: 5px;
+  border: 2px solid red;
   //   border: 1px solid rgba(0, 0, 0, 0.1);
   box-sizing: border-box;
   @media (max-width: 1000px) {
@@ -135,10 +135,10 @@ export const Results: React.FC<GenderDataProps> = ({GenderData, Gender}): ReactE
 
   return (
     <>
+      <SearchResultsContainer>
       <ResultsTitle>
         {Gender} Clothing <TitleSpan>({GenderData.length} results)</TitleSpan>
       </ResultsTitle>
-      <SearchResultsContainer>
         {GenderData.map((item) => (
           <ItemCard key={item.id}>
             <ImageContainer>
