@@ -14,21 +14,24 @@ const SectionOneImage = styled.div`
   display: flex;
   justify-content: left;
   align-items: center;
+  @media (max-width: 500px) {
+    justify-content: center;
+  }
 `;
 const LeftContainer = styled.div`
   display: flex;
   flex-direction: column;
-  width: 40%;
   gap: 1rem;
   padding: 40px;
+
   @media (max-width: 500px) {
-    width: 80%;
+    align-items: center;
   }
 `;
 const Header = styled.h1`
   color: white;
   font-family: inter;
-  font-weight: 600;
+  font-weight: 500;
   font-size: 3.8vw;
   text-align: left;
   margin: 0;
@@ -37,6 +40,8 @@ const Header = styled.h1`
   }
   @media (max-width: 500px) {
     font-size: 42px;
+    text-align: center;
+    margin-top: 50px;
   }
 `;
 const ShopButton = styled(NavLink)`
@@ -68,7 +73,9 @@ export const Home: React.FC = (): ReactElement => {
   return (
     <SectionOneImage>
       <LeftContainer>
-        <Header>The ultimate experience</Header>
+        <Header>
+          The ultimate <br /> experience
+        </Header>
         <ShopButton to="/men">
           Shop Men's
           <HiOutlineArrowNarrowRight />

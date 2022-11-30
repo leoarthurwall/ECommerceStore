@@ -42,7 +42,6 @@ const ItemCard = styled.div`
   @media (max-width: 500px) {
     min-width: 100%;
     padding: 0px;
-
   }
 `;
 
