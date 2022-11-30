@@ -3,12 +3,8 @@ import { useShoppingBag } from "../Context/ShoppingBagContext";
 import { Results } from "../Components/Results/Results";
 // import { WomensClothes } from "../Data/items";
 
-
-
-
-export const Womens: React.FC  = (): ReactElement => {
+export const Womens: React.FC = (): ReactElement => {
   const { data } = useShoppingBag();
-  
 
   //Array filter for WOMEN'S clothing
   const WomensData = data.filter(
@@ -18,7 +14,7 @@ export const Womens: React.FC  = (): ReactElement => {
 
   return (
     <>
-      <Results GenderData={WomensData} Gender={"Women's"}/>
+      <Results GenderData={WomensData} Gender={"Women's"} />
     </>
   );
 };
