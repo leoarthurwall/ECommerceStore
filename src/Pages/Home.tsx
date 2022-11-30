@@ -20,7 +20,10 @@ const LeftContainer = styled.div`
   flex-direction: column;
   width: 40%;
   gap: 1rem;
-  padding: 50px;
+  padding: 40px;
+  @media (max-width: 500px) {
+    width: 80%;
+  }
 `;
 const Header = styled.h1`
   color: white;
@@ -30,6 +33,9 @@ const Header = styled.h1`
   text-align: left;
   margin: 0;
   @media (max-width: 1024px) {
+    font-size: 60px;
+  }
+  @media (max-width: 500px) {
     font-size: 42px;
   }
 `;
