@@ -13,11 +13,13 @@ const SectionOneImage = styled.div`
 
   display: flex;
   justify-content: left;
-  align-items: center;
+  align-items: start;
   @media (max-width: 1024px) {
     background-position: 40%;
   }
   @media (max-width: 500px) {
+    align-items: center;
+
     justify-content: center;
     background-position: left;
   }
@@ -27,7 +29,7 @@ const LeftContainer = styled.div`
   flex-direction: column;
   gap: 1rem;
   padding: 40px;
-  margin-bottom: 250px;
+  margin-top: 15vw;
 
   @media (max-width: 500px) {
     align-items: center;
