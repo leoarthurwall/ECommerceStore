@@ -141,11 +141,8 @@ export const Mens: React.FC = (): ReactElement => {
           <ItemCard key={item.id}>
             <ImageContainer>
               <ItemImage src={item.image} alt={item.title}></ItemImage>
-              <IconCircle>
-                <HiOutlineShoppingBag
-                  size={20}
-                  onClick={() => increaseBagQuantity(item.id)}
-                />
+              <IconCircle onClick={() => increaseBagQuantity(item.id)}>
+                <HiOutlineShoppingBag size={20} />
               </IconCircle>
               <PriceContainer>
                 <ItemPrice>£{Math.round(item.price)}</ItemPrice>
