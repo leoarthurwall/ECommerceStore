@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { HiOutlineShoppingBag } from "react-icons/hi";
 import { ReactElement } from "react";
-import { useShoppingBag } from "../../Context/ShoppingBagContext"; 
+import { useShoppingBag } from "../../Context/ShoppingBagContext";
 import { iClothes } from "../../iClothes";
 
 const SearchResultsContainer = styled.section`
@@ -13,14 +13,9 @@ const SearchResultsContainer = styled.section`
   flex-wrap: wrap;
   padding: 0 40px;
   box-sizing: border-box;
-
-  @media (max-width: 768px) {
-    display: flex;
-    justify-content: center;
-  }
 `;
 const ResultsTitle = styled.h1`
-  padding: 90px 40px 20px 0px;
+  padding: 90px 0px 20px 0px;
   width: 100%;
   max-width: 1100px;
   margin: 0 auto;
@@ -37,15 +32,15 @@ const ItemCard = styled.div`
   width: 25%;
   height: 400px;
   padding: 5px;
-  border: 2px solid red;
-  //   border: 1px solid rgba(0, 0, 0, 0.1);
   box-sizing: border-box;
   @media (max-width: 1000px) {
     width: 33%;
   }
-  @media (max-width: 768px) {
-    width: 50%;
-    min-width: 350px;
+  @media (max-width: 700px) {
+    min-width: 50%;
+  }
+  @media (max-width: 500px) {
+    min-width: 100%;
   }
 `;
 
@@ -125,20 +120,22 @@ const ItemPrice = styled.h3`
 `;
 
 type GenderDataProps = {
-    GenderData: iClothes[];
-    Gender: String
-}
+  GenderData: iClothes[];
+  Gender: String;
+};
 
-export const Results: React.FC<GenderDataProps> = ({GenderData, Gender}): ReactElement => {
+export const Results: React.FC<GenderDataProps> = ({
+  GenderData,
+  Gender,
+}): ReactElement => {
   const { increaseBagQuantity } = useShoppingBag();
-
 
   return (
     <>
       <SearchResultsContainer>
-      <ResultsTitle>
-        {Gender} Clothing <TitleSpan>({GenderData.length} results)</TitleSpan>
-      </ResultsTitle>
+        <ResultsTitle>
+          {Gender} Clothing <TitleSpan>({GenderData.length} results)</TitleSpan>
+        </ResultsTitle>
         {GenderData.map((item) => (
           <ItemCard key={item.id}>
             <ImageContainer>
