@@ -77,11 +77,11 @@ export const Home: React.FC = (): ReactElement => {
           The ultimate <br /> experience
         </Header>
         <ShopButton to="/men">
-          Shop Men's
+          Shop Men
           <HiOutlineArrowNarrowRight />
         </ShopButton>
         <ShopButton to="/women">
-          Shop Women's
+          Shop Women
           <HiOutlineArrowNarrowRight />
         </ShopButton>
       </LeftContainer>
