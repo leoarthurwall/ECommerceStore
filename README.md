@@ -29,6 +29,22 @@ Welome to the ASUS e-commerse store. Built using React.js, Typescript & Styled C
 - Object destructuring: select exactly what to import to each component when using useContext().
 - Tightly scripted code using typescript.
 
+## TOP CHALLENGE
+
+- Getting to grips with the JS array methods. The biggest head bang was working out how to select an item and add it to the bag. It sounds simple, right? But it involves a fair bit of of work. I invite you to check out the "increaseBagQuantity" function in the ShoppingBagContext file, and see if you can work it out.
+
+## BIGGEST WINS
+
+- Implementing useContext for the first time: it made state management so incredibly simple and tidy. I can't believe I didn't use it sooner!
+- React-router-dom: Another amazingly simple tool that enables you to easily implement multiple pages and link between them. Before this, I was conditionally rendering components. Another excellent tool for for the belt. 
+
+## FUTURE IMPLEMENTATIONS
+
+- Create a checkout modal notification
+- Add authentication with firebase
+- Run some unit tests with jest, and end-to-end tests with cypress
+- Find an AIP with more data results, so the page can feel more life-like
+  - If not possible, create own data set to answer above challenge.
 
 
 
