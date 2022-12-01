@@ -2,20 +2,16 @@
 
 Welome to the ASUS e-commerse store. Built using React.js, Typescript & Styled Components, the store includes a sleek and responsive UI with some cool features. Have a play around and enjoy.
 
-## CONTENTS
-
-- Features
-- Skills covered
-- Challenges
-- Future Implementations
-
 ## FEATURES
+
+Here is a list of some of the key features of the application:
 
 - Add to cart
 - Remove from cart
 - Increase and decrease item quantity
 - Shopping bag: open/close animation, close off-menu click
 - Bag icon quantity display
+- Linking Between Pages
 
 ## KEY SKILLS COVERED
 
