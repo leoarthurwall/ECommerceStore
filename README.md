@@ -19,6 +19,8 @@ Welome to the ASUS e-commerse store. Built using React.js, Typescript & Styled C
 
 ## KEY SKILLS COVERED
 
+
+
 - React-router-dom: multiple routes (pages) inside application, and linking routes between eachother
 - UseContext(): State management, excellent for keeping the code clean and readable.
 - More React Hooks: useState(), useEffect(), useLocation()
@@ -31,14 +33,20 @@ Welome to the ASUS e-commerse store. Built using React.js, Typescript & Styled C
 
 ## TOP CHALLENGE
 
+This project was filled with lots of exciting twist, turns and chellenges. For me, the number one challenge was:
+
 - Getting to grips with the JS array methods. The biggest head bang was working out how to select an item and add it to the bag. It sounds simple, right? But it involves a fair bit of of work. I invite you to check out the "increaseBagQuantity" function in the ShoppingBagContext file, and see if you can work it out.
 
 ## BIGGEST WINS
+
+With this being one of the more complex projects I've worked on, it enabled me to try out more advanced tools. For which I'm incredibly pleased to have learned. The two biggest wins for me were: 
 
 - Implementing useContext for the first time: it made state management so incredibly simple and tidy. I can't believe I didn't use it sooner!
 - React-router-dom: Another amazingly simple tool that enables you to easily implement multiple pages and link between them. Before this, I was conditionally rendering components. Another excellent tool for for the belt. 
 
 ## FUTURE IMPLEMENTATIONS
+
+The exciting thing about this project is that there is so much scope for further development. Some possible future implementions could include:
 
 - Create a checkout modal notification
 - Add authentication with firebase
