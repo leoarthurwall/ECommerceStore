@@ -1,4 +1,11 @@
-## TODO
+# The E-commerse store
+
+Welome to the ASUS e-commerse store. Built using React.js, Typescript & Styled Components, the store includes a sleek and responsive UI with some cool features. Have a play around and enjoy.
+
+##
+
+
+
 
 - style the nav bar for home page and then men's/women's - DONE
 - conditionally render the red bag icon (if  quantity === 0 &&) {return null} - DONE
