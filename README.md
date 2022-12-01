@@ -11,22 +11,22 @@ Welome to the ASUS e-commerse store. Built using React.js, Typescript & Styled C
 
 ## FEATURES
 
-- add to cart
-- remove from cart
-- increase and decrease item quantity
-- shopping bag: open/close animation, close off-menu click
-- bag icon quantity display
+- Add to cart
+- Remove from cart
+- Increase and decrease item quantity
+- Shopping bag: open/close animation, close off-menu click
+- Bag icon quantity display
 
 ## KEY SKILLS COVERED
 
+Being a more challenging project, I was able to develop a number of skills:
 
-
-- React-router-dom: multiple routes (pages) inside application, and linking routes between eachother
+- React-router-dom: multiple routes (pages) inside application, and linking routes between eachother.
 - UseContext(): State management, excellent for keeping the code clean and readable.
-- More React Hooks: useState(), useEffect(), useLocation()
+- More React Hooks: useState(), useEffect(), useLocation().
 - API fetch for the clothes data. 
-- Javascript array methods: .find(), .reduce(), .map(), .filter()
-- Responsive from mobile through to desktop
+- Javascript array methods: .find(), .reduce(), .map(), .filter().
+- Responsive from mobile through to desktop.
 - Reusable components: The results component is used on both the Men and Women pages, keeping them both very clean. 
 - Object destructuring: select exactly what to import to each component when using useContext().
 - Tightly scripted code using typescript.
