@@ -62,6 +62,7 @@ With this being one of the more complex projects I've worked on, it enabled me t
 The exciting thing about this project is that there is so much scope for further development. Some possible future implementions could include:
 
 - Create a checkout modal notification
+- Add burger menu for Mobile
 - Add Local Storage functionality: A simple solution to store user data locally and improve user experience
 - Add authentication with firebase
 - Run some unit tests with jest, and end-to-end tests with cypress
@@ -71,6 +72,3 @@ The exciting thing about this project is that there is so much scope for further
 
 
 
-
-- Add to Portfolio
-- Add to GitHub
