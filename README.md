@@ -1,5 +1,7 @@
 # The E-commerse store
 
+![Home Image](public/images/homeDesktop.png)
+
 Welome to the ASUS e-commerse store. Built using React.js, Typescript & Styled Components, the store includes a sleek and responsive UI with some cool features. Have a play around and enjoy.
 
 ## DEPLOYED SITE
@@ -17,6 +19,8 @@ Here is a list of some of the key features of the application:
 - Bag icon quantity display
 - Linking Between Pages
 
+![Results Image](public/images/womenDesktop.png)
+
 ## KEY SKILLS COVERED
 
 Being a more challenging project, I was able to develop a number of skills:
@@ -31,11 +35,17 @@ Being a more challenging project, I was able to develop a number of skills:
 - Object destructuring: select exactly what to import to each component when using useContext().
 - Tightly scripted code using typescript.
 
+![Bag Image](public/images/sidebarDesktop.png)
+
+
 ## TOP CHALLENGE
 
 This project was filled with lots of exciting twist, turns and chellenges. For me, the number one challenge was:
 
 - Getting to grips with the JS array methods. The biggest head bang was working out how to select an item and add it to the bag. It sounds simple, right? But it involves a fair bit of of work. I invite you to check out the "increaseBagQuantity" function in the ShoppingBagContext file, and see if you can work it out.
+
+![Results Mobile Image](public/images/menMobile.png)
+
 
 ## BIGGEST WINS
 
@@ -43,6 +53,9 @@ With this being one of the more complex projects I've worked on, it enabled me t
 
 - Implementing useContext for the first time: it made state management so incredibly simple and tidy. I can't believe I didn't use it sooner!
 - React-router-dom: Another amazingly simple tool that enables you to easily implement multiple pages and link between them. Before this, I was conditionally rendering components. Another excellent tool for for the belt.
+
+![Home Mobile Image](public/images/homeMobile.png)
+
 
 ## FUTURE IMPLEMENTATIONS
 
