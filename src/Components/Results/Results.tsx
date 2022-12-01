@@ -111,7 +111,7 @@ const ItemTitle = styled.h1`
   line-height: 1.4;
   margin: 0;
   height: 34px;
-  overflow: scroll;
+  overflow: hidden;
 `;
 const ItemPrice = styled.h3`
   font-size: 14px;
