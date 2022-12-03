@@ -23,6 +23,7 @@ const SectionOneImage = styled.div`
     justify-content: center;
     background-position: left;
   }
+
 `;
 const LeftContainer = styled.div`
   display: flex;
@@ -34,6 +35,10 @@ const LeftContainer = styled.div`
   @media (max-width: 500px) {
     align-items: center;
     margin-top: 0;
+  }
+  @media (max-height: 500px) {
+    align-items: center;
+    flex-direction: row;
   }
 `;
 const Header = styled.h1`
