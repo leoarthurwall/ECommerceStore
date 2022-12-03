@@ -23,6 +23,9 @@ const SectionOneImage = styled.div`
     justify-content: center;
     background-position: left;
   }
+  @media (max-height: 500px) {
+    align-items: center;
+  }
 
 `;
 const LeftContainer = styled.div`
