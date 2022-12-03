@@ -25,6 +25,8 @@ const SectionOneImage = styled.div`
   }
   @media (max-height: 500px) {
     align-items: center;
+    justify-content: center;
+
   }
 
 `;
@@ -42,6 +44,12 @@ const LeftContainer = styled.div`
   @media (max-height: 500px) {
     align-items: center;
     flex-direction: row;
+    justify-content: space-between;
+    margin-top: 5vw;
+    gap: 3rem;
+
+
+
   }
 `;
 const Header = styled.h1`
@@ -56,6 +64,11 @@ const Header = styled.h1`
   @media (max-width: 500px) {
     font-size: 10vw;
     text-align: center;
+  }
+  @media (max-height: 500px) {
+    font-size: 13vh;
+    margin-bottom: 0;
+
   }
 `;
 const ShopButton = styled(NavLink)`
