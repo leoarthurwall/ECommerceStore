@@ -66,7 +66,7 @@ const Header = styled.h1`
     text-align: center;
   }
   @media (max-height: 500px) {
-    font-size: 13vh;
+    font-size: 10vh;
     margin-bottom: 0;
 
   }
