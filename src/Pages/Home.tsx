@@ -26,9 +26,7 @@ const SectionOneImage = styled.div`
   @media (max-height: 500px) {
     align-items: center;
     justify-content: center;
-
   }
-
 `;
 const LeftContainer = styled.div`
   display: flex;
@@ -47,9 +45,6 @@ const LeftContainer = styled.div`
     justify-content: space-between;
     margin-top: 5vw;
     gap: 3rem;
-
-
-
   }
 `;
 const Header = styled.h1`
@@ -68,8 +63,12 @@ const Header = styled.h1`
   @media (max-height: 500px) {
     font-size: 10vh;
     margin-bottom: 0;
-
   }
+`;
+const ButtonWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
 `;
 const ShopButton = styled(NavLink)`
   background-color: white;
@@ -103,14 +102,16 @@ export const Home: React.FC = (): ReactElement => {
         <Header>
           The ultimate <br /> experience
         </Header>
-        <ShopButton to="/men">
-          Shop Men
-          <HiOutlineArrowNarrowRight />
-        </ShopButton>
-        <ShopButton to="/women">
-          Shop Women
-          <HiOutlineArrowNarrowRight />
-        </ShopButton>
+        <ButtonWrapper>
+          <ShopButton to="/men">
+            Shop Men
+            <HiOutlineArrowNarrowRight />
+          </ShopButton>
+          <ShopButton to="/women">
+            Shop Women
+            <HiOutlineArrowNarrowRight />
+          </ShopButton>
+        </ButtonWrapper>
       </LeftContainer>
     </SectionOneImage>
   );
