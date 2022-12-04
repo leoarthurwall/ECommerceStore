@@ -83,6 +83,11 @@ const ShopButton = styled(NavLink)`
   max-width: fit-content;
   font-weight: 500;
   transition: 0.2s;
+  clear: both;
+  display: inline-block;
+    overflow: hidden;
+    white-space: nowrap;
+
 
   display: flex;
   align-items: center;
