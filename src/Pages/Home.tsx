@@ -69,6 +69,7 @@ const ButtonWrapper = styled.div`
   display: flex;
   flex-direction: column;
   gap: 1rem;
+  align-items: center;
 `;
 const ShopButton = styled(NavLink)`
   background-color: white;
@@ -85,9 +86,8 @@ const ShopButton = styled(NavLink)`
   transition: 0.2s;
   clear: both;
   display: inline-block;
-    overflow: hidden;
-    white-space: nowrap;
-
+  overflow: hidden;
+  white-space: nowrap;
 
   display: flex;
   align-items: center;
