@@ -44,7 +44,7 @@ const LeftContainer = styled.div`
     flex-direction: row;
     justify-content: space-between;
     margin-top: 5vw;
-    gap: 3rem;
+    gap: 60vh;
   }
 `;
 const Header = styled.h1`
