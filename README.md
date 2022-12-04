@@ -72,3 +72,5 @@ The exciting thing about this project is that there is so much scope for further
 
 
 
+## TODO
+- make bag more responsive 
