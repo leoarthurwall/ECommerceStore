@@ -36,8 +36,12 @@ const CheckoutButton = styled.button`
   padding: 10px 0;
   font-weight: 300;
   font-size: 12px;
-
+  transition: 0.1s;
   cursor: pointer;
+
+  &:hover {
+    background: grey;
+  }
 `;
 const SideBarlower = () => {
   const { data, bagItems } = useShoppingBag();
@@ -48,10 +52,12 @@ const SideBarlower = () => {
         <SubtotalText>Bag Total:</SubtotalText>
         <SubtotalAmount>
           £
-          {Math.round(bagItems.reduce((total, bagItem) => {
-            const item = data.find((i) => i.id === bagItem.id);
-            return total + (item?.price || 0) * bagItem.quantity;
-          }, 0))}
+          {Math.round(
+            bagItems.reduce((total, bagItem) => {
+              const item = data.find((i) => i.id === bagItem.id);
+              return total + (item?.price || 0) * bagItem.quantity;
+            }, 0)
+          )}
         </SubtotalAmount>
       </SubtotalContainer>
       <CheckoutButton>CHECKOUT</CheckoutButton>
