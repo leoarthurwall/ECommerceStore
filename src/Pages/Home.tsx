@@ -69,7 +69,12 @@ const ButtonWrapper = styled.div`
   display: flex;
   flex-direction: column;
   gap: 1rem;
-  align-items: center;
+  @media (max-width: 500px) {
+    align-items: center;
+  }
+  @media (max-height: 500px) {
+    align-items: center;
+  }
 `;
 const ShopButton = styled(NavLink)`
   background-color: white;
