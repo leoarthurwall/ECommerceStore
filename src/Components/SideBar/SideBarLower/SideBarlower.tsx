@@ -54,7 +54,7 @@ const SideBarlower = () => {
   );
 
   const checkoutClick = () => {
-    alert(bagTotal);
+    alert(`You will be charged a total of £${bagTotal} for this purchace. Thank you for shopping with us`);
   };
 
   return (
