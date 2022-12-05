@@ -54,7 +54,7 @@ const SideBarlower = () => {
   );
 
   const checkoutClick = () => {
-    alert();
+    alert(bagTotal);
   };
 
   return (
