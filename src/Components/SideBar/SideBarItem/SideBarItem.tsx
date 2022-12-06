@@ -13,6 +13,7 @@ const ItemContainer = styled.div`
   padding: 10px;
   box-sizing: border-box;
   border-top: 1px solid #0c0b10;
+  gap: 5px;
   &:first-child {
     border-top: none;
   }
@@ -38,11 +39,11 @@ const ItemCenter = styled.div`
   justify-content: space-between;
 `;
 const ItemTitle = styled.h3`
-  font-size: 16px;
+  font-size: 14px;
   font-weight: 300;
   color: white;
   margin: 0;
-  max-height: 38px;
+  max-height: 36px;
   overflow: hidden;
 `;
 const QuantityContainer = styled.div`
@@ -58,7 +59,7 @@ const QuantityTotalWrapper = styled.div`
 `;
 const ItemTotalQuantity = styled.p`
   margin: 0;
-  font-size: 16px;
+  font-size: 14px;
   font-weight: 400;
   color: grey;
 `;
@@ -76,15 +77,14 @@ const ItemRight = styled.div`
   height: 100%;
   display: flex;
   flex-direction: column;
-  align-items: end;
-  justify-content: end;
+  align-items: center;
+  justify-content: start;
+  border: 2px solid blue;
 `;
 const ItemRemove = styled.button`
   background: none;
-  color: inherit;
   border: none;
   padding: 0;
-  font: inherit;
   cursor: pointer;
   outline: inherit;
   color: white;
@@ -92,7 +92,7 @@ const ItemRemove = styled.button`
 const ItemPrice = styled.p`
   color: white;
   margin: 0;
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 400;
 `;
 
