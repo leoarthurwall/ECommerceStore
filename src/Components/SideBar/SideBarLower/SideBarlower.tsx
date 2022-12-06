@@ -4,6 +4,7 @@ import { useShoppingBag } from "../../../Context/ShoppingBagContext";
 const SideBarlowerContainer = styled.div`
   width: 100%;
   height: 15%;
+  min-height: 100px;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
