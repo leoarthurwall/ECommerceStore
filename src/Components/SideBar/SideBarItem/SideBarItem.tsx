@@ -7,7 +7,7 @@ import { useShoppingBag } from "../../../Context/ShoppingBagContext";
 
 const ItemContainer = styled.div`
   width: 100%;
-  height: 130px;
+  height: auto;
   display: flex;
   justify-content: space-between;
   padding: 10px;
@@ -38,10 +38,12 @@ const ItemCenter = styled.div`
   justify-content: space-between;
 `;
 const ItemTitle = styled.h3`
-  font-size: 12px;
+  font-size: 16px;
   font-weight: 300;
   color: white;
   margin: 0;
+  max-height: 38px;
+  overflow: hidden;
 `;
 const QuantityContainer = styled.div`
   display: flex;
@@ -56,7 +58,7 @@ const QuantityTotalWrapper = styled.div`
 `;
 const ItemTotalQuantity = styled.p`
   margin: 0;
-  font-size: 12px;
+  font-size: 16px;
   font-weight: 400;
   color: grey;
 `;
@@ -90,7 +92,7 @@ const ItemRemove = styled.button`
 const ItemPrice = styled.p`
   color: white;
   margin: 0;
-  font-size: 14px;
+  font-size: 18px;
   font-weight: 400;
 `;
 
