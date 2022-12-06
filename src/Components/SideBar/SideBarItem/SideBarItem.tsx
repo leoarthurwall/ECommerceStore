@@ -7,7 +7,7 @@ import { useShoppingBag } from "../../../Context/ShoppingBagContext";
 
 const ItemContainer = styled.div`
   width: 100%;
-  height: auto;
+  height:120px;
   display: flex;
   justify-content: space-between;
   padding: 10px;
@@ -20,23 +20,23 @@ const ItemContainer = styled.div`
 `;
 const ImageContainer = styled.div`
   height: 100%;
-  width: 25%;
+  width: 30%;
   background-color: rgba(255,255,255, 0.8);
   display: flex; 
   justify-content: center;
   align-items: center;
 `;
 const ItemImage = styled.img`
-  width: 85%;
+  height: 85%;
   object-fit: contain;
   filter: brightness(80%);
 `;
 const ItemCenter = styled.div`
   display: flex;
   flex-direction: column;
-  width: 70%;
+  width: 50%;
   padding: 0 10px;
-  justify-content: space-between;
+  justify-content: start;
 `;
 const ItemTitle = styled.h3`
   font-size: 14px;
