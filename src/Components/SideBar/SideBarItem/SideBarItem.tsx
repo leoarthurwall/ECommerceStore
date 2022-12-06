@@ -7,7 +7,7 @@ import { useShoppingBag } from "../../../Context/ShoppingBagContext";
 
 const ItemContainer = styled.div`
   width: 100%;
-  height: 100px;
+  height: 130px;
   display: flex;
   justify-content: space-between;
   padding: 10px;
@@ -126,13 +126,13 @@ const SideBarItem: React.FC<BagItemProps> = (
 
           <ItemChangeQuantityContainer>
             <AiOutlinePlusCircle
-              size={16}
+              size={24}
               color={"white"}
               onClick={() => increaseBagQuantity(item.id)}
               style={{ cursor: "pointer" }}
             />
             <AiOutlineMinusCircle
-              size={16}
+              size={24}
               color={"white"}
               onClick={() => decreaseBagQuantity(item.id)}
               style={{ cursor: "pointer" }}
@@ -142,7 +142,7 @@ const SideBarItem: React.FC<BagItemProps> = (
       </ItemCenter>
       <ItemRight>
         <ItemRemove>
-          <HiOutlineTrash onClick={() => removeFromBag(item.id)} />
+          <HiOutlineTrash size={24} onClick={() => removeFromBag(item.id)} />
         </ItemRemove>
       </ItemRight>
     </ItemContainer>
