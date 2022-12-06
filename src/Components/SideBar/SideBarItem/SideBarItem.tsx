@@ -7,7 +7,7 @@ import { useShoppingBag } from "../../../Context/ShoppingBagContext";
 
 const ItemContainer = styled.div`
   width: 100%;
-  height:120px;
+  height: 120px;
   display: flex;
   justify-content: space-between;
   padding: 10px;
@@ -20,9 +20,9 @@ const ItemContainer = styled.div`
 `;
 const ImageContainer = styled.div`
   height: 100%;
-  width: 30%;
-  background-color: rgba(255,255,255, 0.8);
-  display: flex; 
+  width: 35%;
+  background-color: rgba(255, 255, 255, 0.8);
+  display: flex;
   justify-content: center;
   align-items: center;
 `;
@@ -34,9 +34,16 @@ const ItemImage = styled.img`
 const ItemCenter = styled.div`
   display: flex;
   flex-direction: column;
-  width: 50%;
+  width: 55%;
   padding: 0 10px;
-  justify-content: start;
+  justify-content: space-between; ;
+`;
+const Spacer = styled.div`
+display: flex:
+flex-grow: 1;
+flex-direction: column;
+justify-content: space-between;
+
 `;
 const ItemTitle = styled.h3`
   font-size: 14px;
@@ -78,8 +85,7 @@ const ItemRight = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: start;
-  border: 2px solid blue;
+  justify-content: end;
 `;
 const ItemRemove = styled.button`
   background: none;
@@ -116,16 +122,19 @@ const SideBarItem: React.FC<BagItemProps> = (
         <ItemImage src={item.image}></ItemImage>
       </ImageContainer>
       <ItemCenter>
-        <ItemPrice>£{Math.round(item.price)}</ItemPrice>
-        <ItemTitle>{item.title}</ItemTitle>
-        <QuantityContainer>
-          <QuantityTotalWrapper>
-            <ItemTotalQuantity>Qty: {quantity} </ItemTotalQuantity>
-            <ItemTotalQuantity>
-              Total: £{Math.round(item.price * quantity)}
-            </ItemTotalQuantity>
-          </QuantityTotalWrapper>
-
+        <Spacer>
+          <ItemPrice>£{Math.round(item.price)}</ItemPrice>
+          <ItemTitle>{item.title}</ItemTitle>
+          <QuantityContainer>
+            <QuantityTotalWrapper>
+              <ItemTotalQuantity>Qty: {quantity} </ItemTotalQuantity>
+              <ItemTotalQuantity>
+                Total: £{Math.round(item.price * quantity)}
+              </ItemTotalQuantity>
+            </QuantityTotalWrapper>
+          </QuantityContainer>
+        </Spacer>
+        <Spacer>
           <ItemChangeQuantityContainer>
             <AiOutlinePlusCircle
               size={24}
@@ -140,7 +149,7 @@ const SideBarItem: React.FC<BagItemProps> = (
               style={{ cursor: "pointer" }}
             />
           </ItemChangeQuantityContainer>
-        </QuantityContainer>
+        </Spacer>
       </ItemCenter>
       <ItemRight>
         <ItemRemove>
