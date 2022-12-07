@@ -4,11 +4,11 @@ import { ReactElement } from "react";
 import { RiCloseLine } from "react-icons/ri";
 import { useShoppingBag } from "../../Context/ShoppingBagContext";
 
-const SideBarContainer = styled.div<IisBagClosed>`
+const SideBarContainer = styled.div<IisMenuClosed>`
   position: fixed;
   top: 0px;
   bottom: 0px;
-  right: ${({ isBagClosed }) => (isBagClosed ? "-350px" : "0px")};
+  right: ${({ isMenuClosed }) => (isMenuClosed ? "-350px" : "0px")};
 
   transition: 0.5s;
   width: 350px;
@@ -24,7 +24,7 @@ const SideBarContainer = styled.div<IisBagClosed>`
 
   @media (max-width: 500px) {
     width: 100%;
-    right: ${({ isBagClosed }) => (isBagClosed ? "-100%" : "0px")};
+    right: ${({ isMenuClosed }) => (isMenuClosed ? "-100%" : "0px")};
   }
 `;
 const HeaderContainer = styled.div`
@@ -67,40 +67,40 @@ const SideBarMainSection = styled.div`
   overflow: scroll;
 `;
 
-const SideBarOverlay = styled.div<IisBagClosed>`
+const SideBarOverlay = styled.div<IisMenuClosed>`
   position: fixed;
-  background-color: ${({ isBagClosed }) =>
-    isBagClosed ? "rgba(0, 0, 0, 0)" : "rgba(0, 0, 0, 0.4)"};
+  background-color: ${({ isMenuClosed }) =>
+    isMenuClosed ? "rgba(0, 0, 0, 0)" : "rgba(0, 0, 0, 0.4)"};
   top: 0;
   bottom: 0;
   left: 0;
   right: 0;
   z-index: 8;
   transition: 0.5s;
-  visibility: ${({ isBagClosed }) => isBagClosed && "hidden"};
+  visibility: ${({ isMenuClosed }) => isMenuClosed && "hidden"};
 `;
 
-interface IisBagClosed {
-  isBagClosed: Boolean;
+interface IisMenuClosed {
+  isMenuClosed: Boolean;
 }
 
 const SideBar: React.FC = (): ReactElement => {
   const {
   
-    isBagClosed,
-    setIsBagClosed,
-    handleSidebarClick,
+    isMenuClosed,
+    setIsMenuClosed,
+    handleMenuClick,
   } = useShoppingBag();
 
   // closes menu when overlay clicked
   const handleOverlayClick = () => {
-    setIsBagClosed(!isBagClosed);
+    setIsMenuClosed(!isMenuClosed);
   };
   return (
     <>
-      <SideBarContainer isBagClosed={isBagClosed}>
+      <SideBarContainer isMenuClosed={isMenuClosed}>
         <SideBarUpperContainer>
-          <IconContainer onClick={(e) => handleSidebarClick(e)}>
+          <IconContainer onClick={(e) => handleMenuClick(e)}>
             <RiCloseLine size="30" />
           </IconContainer>
           <HeaderContainer>
@@ -109,7 +109,7 @@ const SideBar: React.FC = (): ReactElement => {
         </SideBarUpperContainer>
         <SideBarMainSection>Men, Women, Home, Bag</SideBarMainSection>
       </SideBarContainer>
-      <SideBarOverlay isBagClosed={isBagClosed} onClick={handleOverlayClick} />
+      <SideBarOverlay isMenuClosed={isMenuClosed} onClick={handleOverlayClick} />
     </>
   );
 };

@@ -13,6 +13,7 @@ type BagItem = {
 type ShoppingBagContextProps = {
   handleHomeClick: (val: any) => void;
   handleSidebarClick: (val: any) => void;
+  handleMenuClick: (val: any) => void;
   getItemQuantity: (id: number) => number;
   increaseBagQuantity: (id: number) => void;
   decreaseBagQuantity: (id: number) => void;
@@ -51,6 +52,11 @@ export function ShoppingBagProvider({ children }: ShoppingBagProviderProps) {
   const handleSidebarClick = () => {
     setIsBagClosed(!isBagClosed);
   };
+
+    //TOGGLES MENU OPEN AND CLOSED
+    const handleMenuClick = () => {
+      setIsBagClosed(!isBagClosed);
+    };
 
   // TOTAL BAG QUANTITY
   const bagQuantity = bagItems.reduce(
@@ -111,6 +117,7 @@ export function ShoppingBagProvider({ children }: ShoppingBagProviderProps) {
       value={{
         handleHomeClick,
         handleSidebarClick,
+        handleMenuClick,
         getItemQuantity,
         increaseBagQuantity,
         decreaseBagQuantity,
