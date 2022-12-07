@@ -34,8 +34,8 @@ const HeaderContainer = styled.div`
   gap: 0.5rem;
 `;
 const HeaderText = styled.h2`
-  font-weight: 300;
-  font-size: 22px;
+  font-weight: 500;
+  font-size: 24px;
 `;
 
 const IconContainer = styled.div`
@@ -54,10 +54,36 @@ const MenuBarUpperContainer = styled.div`
   color: #fff;
 `;
 const MenuBarMainSection = styled.div`
-  height: 65%;
+  height: 100%;
   width: 100%;
 
-  border: 1px solid white;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 0.5rem;
+`;
+const MenuText = styled.h2`
+  font-size: 36px;
+  color: #fff;
+
+  font-weight: 200;
+  text-align: center;
+  font-family: inter ;
+  margin: 0;
+  transition: color 0.2s;
+
+  cursor: pointer;
+
+  &:hover {
+    color: #9bad97;
+  }
+
+  @media (max-width: 768px) {
+    font-size: 32px;
+    line-height: 48px;
+  }
 `;
 
 const MenuBarOverlay = styled.div<IisMenuClosed>`
@@ -95,7 +121,12 @@ const MenuBar: React.FC = (): ReactElement => {
             <HeaderText>Menu</HeaderText>
           </HeaderContainer>
         </MenuBarUpperContainer>
-        <MenuBarMainSection>Men, Women, Home, Bag</MenuBarMainSection>
+        <MenuBarMainSection>
+          <MenuText>MEN</MenuText>
+          <MenuText>WOMEN</MenuText>
+          <MenuText>HOME</MenuText>
+          <MenuText>BAG</MenuText>
+        </MenuBarMainSection>
       </MenuBarContainer>
       <MenuBarOverlay
         isMenuClosed={isMenuClosed}
