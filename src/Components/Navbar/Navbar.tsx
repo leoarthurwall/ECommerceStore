@@ -16,6 +16,10 @@ const NavContainer = styled.nav<IColor>`
   box-sizing: border-box;
   z-index: 5;
   background: ${({ resultsToggle }) => (resultsToggle ? "#fff" : "")};
+
+  @media (max-width: 500px) {
+    padding: 0 15px;
+  }
 `;
 
 const Logo = styled(NavLink)<IColor>`
@@ -27,20 +31,6 @@ const Logo = styled(NavLink)<IColor>`
   font-size: 24px;
   text-decoration: none;
   transition: 0.2s;
-`;
-const LinkContainer = styled.ul`
-  display: flex;
-  justify-content: space-evenly;
-  position: absolute;
-  width: 150px;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-
-  list-style-type: none;
-  font-size: 18px;
-  padding: 0;
-  margin: 0;
 `;
 
 const RightContainer = styled.div<IColor>`

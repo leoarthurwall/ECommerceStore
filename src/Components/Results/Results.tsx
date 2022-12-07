@@ -13,6 +13,9 @@ const SearchResultsContainer = styled.section`
   flex-wrap: wrap;
   padding: 0 40px;
   box-sizing: border-box;
+  @media (max-width: 500px) {
+    padding: 0 15px;
+  }
 `;
 const ResultsTitle = styled.h1`
   padding: 90px 0px 20px 0px;
