@@ -25,6 +25,8 @@ type ShoppingBagContextProps = {
   setIsBagClosed: (val: Boolean) => void;
   data: iClothes[];
   setData: (val: iClothes[]) => void;
+  isMenuClosed: Boolean;
+  setIsMenuClosed: (val: Boolean) => void;
 };
 
 const ShoppingBagContext = createContext({} as ShoppingBagContextProps);
@@ -38,6 +40,7 @@ export function ShoppingBagProvider({ children }: ShoppingBagProviderProps) {
   const [resultsToggle, setResultsToggle] = useState<Boolean>(false); // toggles navbar styles depending on active path
   const [isBagClosed, setIsBagClosed] = useState<Boolean>(true); // toggles sidebar between open and closed
   const [data, setData] = useState<iClothes[]>([]); // stores the api data
+  const [isMenuClosed, setIsMenuClosed] = useState<Boolean>(true); // toggles sidebar between open and closed
 
   //CLOSES SIDEBAR WHEN HOME LOGO IS CLICKED
   const handleHomeClick = () => {
@@ -120,6 +123,8 @@ export function ShoppingBagProvider({ children }: ShoppingBagProviderProps) {
         setIsBagClosed,
         data,
         setData,
+        isMenuClosed,
+        setIsMenuClosed,
       }}
     >
       {children}
