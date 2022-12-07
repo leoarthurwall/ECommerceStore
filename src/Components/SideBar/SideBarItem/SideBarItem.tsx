@@ -86,6 +86,7 @@ const ItemRight = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: end;
+  color: white;
 `;
 const ItemRemove = styled.button`
   background: none;
@@ -152,9 +153,11 @@ const SideBarItem: React.FC<BagItemProps> = (
         </Spacer>
       </ItemCenter>
       <ItemRight>
-        <ItemRemove>
-          <HiOutlineTrash size={24} onClick={() => removeFromBag(item.id)} />
-        </ItemRemove>
+        <HiOutlineTrash
+          size={24}
+          onClick={() => removeFromBag(item.id)}
+          style={{ cursor: "pointer" }}
+        />
       </ItemRight>
     </ItemContainer>
   );
