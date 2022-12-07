@@ -21,8 +21,8 @@ type ShoppingBagContextProps = {
   bagQuantity: number;
   resultsToggle: Boolean;
   setResultsToggle: (val: Boolean) => void;
-  isClosed: Boolean;
-  setIsClosed: (val: Boolean) => void;
+  isBagClosed: Boolean;
+  setIsBagClosed: (val: Boolean) => void;
   data: iClothes[];
   setData: (val: iClothes[]) => void;
 };
@@ -36,17 +36,17 @@ export function useShoppingBag() {
 export function ShoppingBagProvider({ children }: ShoppingBagProviderProps) {
   const [bagItems, setBagItems] = useState<BagItem[]>([]); // array where the bag items are stored
   const [resultsToggle, setResultsToggle] = useState<Boolean>(false); // toggles navbar styles depending on active path
-  const [isClosed, setIsClosed] = useState<Boolean>(true); // toggles sidebar between open and closed
+  const [isBagClosed, setIsBagClosed] = useState<Boolean>(true); // toggles sidebar between open and closed
   const [data, setData] = useState<iClothes[]>([]); // stores the api data
 
   //CLOSES SIDEBAR WHEN HOME LOGO IS CLICKED
   const handleHomeClick = () => {
-    setIsClosed(true);
+    setIsBagClosed(true);
   };
 
   //TOGGLES SIDEBAR OPEN AND CLOSED
   const handleSidebarClick = () => {
-    setIsClosed(!isClosed);
+    setIsBagClosed(!isBagClosed);
   };
 
   // TOTAL BAG QUANTITY
@@ -116,8 +116,8 @@ export function ShoppingBagProvider({ children }: ShoppingBagProviderProps) {
         bagQuantity,
         resultsToggle,
         setResultsToggle,
-        isClosed,
-        setIsClosed,
+        isBagClosed,
+        setIsBagClosed,
         data,
         setData,
       }}
