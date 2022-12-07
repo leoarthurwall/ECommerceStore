@@ -66,7 +66,28 @@ const MenuBarMainSection = styled.div`
   flex-direction: column;
   gap: 0.5rem;
 `;
-const MenuText = styled(NavLink)`
+const MenuText = styled.h2`
+  font-size: 36px;
+  color: #fff;
+
+  font-weight: 200;
+  text-align: center;
+  font-family: inter ;
+  margin: 0;
+  transition: color 0.2s;
+
+  cursor: pointer;
+
+  &:hover {
+    color: #9bad97;
+  }
+
+  @media (max-width: 768px) {
+    font-size: 32px;
+    line-height: 48px;
+  }
+`;
+const MenuLink = styled(NavLink)`
   font-size: 36px;
   color: #fff;
 
@@ -106,12 +127,18 @@ interface IisMenuClosed {
 }
 
 const MenuBar: React.FC = (): ReactElement => {
-  const { isMenuClosed, setIsMenuClosed, handleMenuClick } = useShoppingBag();
+  const { isMenuClosed, setIsMenuClosed, handleMenuClick, isBagClosed, setIsBagClosed } = useShoppingBag();
 
   // closes menu when overlay clicked
   const handleOverlayClick = () => {
     setIsMenuClosed(!isMenuClosed);
   };
+
+  const handleChangeSidebar = () => {
+    setIsMenuClosed(!isMenuClosed)
+    setIsBagClosed(!isBagClosed)
+  }
+
   return (
     <>
       <MenuBarContainer isMenuClosed={isMenuClosed}>
@@ -124,10 +151,10 @@ const MenuBar: React.FC = (): ReactElement => {
           </HeaderContainer>
         </MenuBarUpperContainer>
         <MenuBarMainSection>
-          <MenuText to="/men" onClick={(e) => handleMenuClick(e)}>MEN</MenuText>
-          <MenuText to="/women" onClick={(e) => handleMenuClick(e)}>WOMEN</MenuText>
-          <MenuText to="/" onClick={(e) => handleMenuClick(e)}>HOME</MenuText>
-          <MenuText to="/men" onClick={(e) => handleMenuClick(e)}>BAG</MenuText>
+          <MenuLink to="/men" onClick={(e) => handleMenuClick(e)}>MEN</MenuLink>
+          <MenuLink to="/women" onClick={(e) => handleMenuClick(e)}>WOMEN</MenuLink>
+          <MenuLink to="/" onClick={(e) => handleMenuClick(e)}>HOME</MenuLink>
+          <MenuText onClick={(e) => handleChangeSidebar()}>BAG</MenuText>
         </MenuBarMainSection>
       </MenuBarContainer>
       <MenuBarOverlay
