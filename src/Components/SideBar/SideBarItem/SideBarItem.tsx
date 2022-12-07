@@ -111,7 +111,11 @@ const SideBarItem: React.FC<BagItemProps> = (
   const item = data.find((i) => i.id === id);
   if (item == null) return null;
 
+  //price of singal item, as integer
   const itemPrice = Math.round(item.price)
+
+  //sum of item price times quantity
+  const totalItemPrice = Math.round(item.price * quantity)
 
   return (
     <ItemContainer>
@@ -126,7 +130,7 @@ const SideBarItem: React.FC<BagItemProps> = (
             <QuantityTotalWrapper>
               <ItemTotalQuantity>Qty: {quantity} </ItemTotalQuantity>
               <ItemTotalQuantity>
-                Total: £{Math.round(item.price * quantity)}
+                Total: £{totalItemPrice}
               </ItemTotalQuantity>
             </QuantityTotalWrapper>
           </QuantityContainer>
