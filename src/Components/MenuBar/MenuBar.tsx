@@ -5,7 +5,6 @@ import { RiCloseLine } from "react-icons/ri";
 import { useShoppingBag } from "../../Context/ShoppingBagContext";
 import { NavLink } from "react-router-dom";
 
-
 const MenuBarContainer = styled.div<IisMenuClosed>`
   position: fixed;
   top: 0px;
@@ -59,7 +58,6 @@ const MenuBarMainSection = styled.div`
   height: 100%;
   width: 100%;
 
-
   display: flex;
   justify-content: center;
   align-items: center;
@@ -72,7 +70,7 @@ const MenuText = styled.h2`
 
   font-weight: 200;
   text-align: center;
-  font-family: inter ;
+  font-family: inter;
   margin: 0;
   transition: color 0.2s;
 
@@ -93,7 +91,7 @@ const MenuLink = styled(NavLink)`
 
   font-weight: 200;
   text-align: center;
-  font-family: inter ;
+  font-family: inter;
   margin: 0;
   transition: color 0.2s;
 
@@ -128,7 +126,13 @@ interface IisMenuClosed {
 }
 
 const MenuBar: React.FC = (): ReactElement => {
-  const { isMenuClosed, setIsMenuClosed, handleMenuClick, isBagClosed, setIsBagClosed } = useShoppingBag();
+  const {
+    isMenuClosed,
+    setIsMenuClosed,
+    handleMenuClick,
+    isBagClosed,
+    setIsBagClosed,
+  } = useShoppingBag();
 
   // closes menu when overlay clicked
   const handleOverlayClick = () => {
@@ -136,9 +140,9 @@ const MenuBar: React.FC = (): ReactElement => {
   };
 
   const handleChangeSidebar = () => {
-    setIsMenuClosed(!isMenuClosed)
-    setIsBagClosed(!isBagClosed)
-  }
+    setIsMenuClosed(!isMenuClosed);
+    setIsBagClosed(!isBagClosed);
+  };
 
   return (
     <>
@@ -152,10 +156,16 @@ const MenuBar: React.FC = (): ReactElement => {
           </HeaderContainer>
         </MenuBarUpperContainer>
         <MenuBarMainSection>
-          <MenuLink to="/men" onClick={(e) => handleMenuClick(e)}>MEN</MenuLink>
-          <MenuLink to="/women" onClick={(e) => handleMenuClick(e)}>WOMEN</MenuLink>
+          <MenuLink to="/men" onClick={(e) => handleMenuClick(e)}>
+            MEN
+          </MenuLink>
+          <MenuLink to="/women" onClick={(e) => handleMenuClick(e)}>
+            WOMEN
+          </MenuLink>
           <MenuText onClick={(e) => handleChangeSidebar()}>BAG</MenuText>
-          <MenuLink to="/" onClick={(e) => handleMenuClick(e)}>HOME</MenuLink>
+          <MenuLink to="/" onClick={(e) => handleMenuClick(e)}>
+            HOME
+          </MenuLink>
         </MenuBarMainSection>
       </MenuBarContainer>
       <MenuBarOverlay
