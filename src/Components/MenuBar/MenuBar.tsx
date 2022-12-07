@@ -98,6 +98,7 @@ const MenuLink = styled(NavLink)`
   transition: color 0.2s;
 
   cursor: pointer;
+  text-decoration: none;
 
   &:hover {
     color: #9bad97;
@@ -147,7 +148,7 @@ const MenuBar: React.FC = (): ReactElement => {
             <RiCloseLine size="30" />
           </IconContainer>
           <HeaderContainer>
-            <HeaderText>Menu</HeaderText>
+            <HeaderText>ASUS</HeaderText>
           </HeaderContainer>
         </MenuBarUpperContainer>
         <MenuBarMainSection>
