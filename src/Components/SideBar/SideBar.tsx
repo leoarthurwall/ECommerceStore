@@ -29,6 +29,13 @@ const SideBarContainer = styled.div<IisBagClosed>`
     width: 100%;
     right: ${({ isBagClosed }) => (isBagClosed ? "-100%" : "0px")};
 
+    left: 0px;
+
+    transform: ${({ isBagClosed }) =>
+      isBagClosed ? "scale(1.1)" : "scale(1)"};
+    opacity: ${({ isBagClosed }) => (isBagClosed ? "0" : "1")};
+    transition: all 0.5s;
+    visibility: ${({ isBagClosed }) => (isBagClosed ? "hidden" : "visible")};
   }
 `;
 const HeaderContainer = styled.div`
