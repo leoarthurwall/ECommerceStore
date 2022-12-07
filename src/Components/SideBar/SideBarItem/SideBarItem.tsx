@@ -88,14 +88,7 @@ const ItemRight = styled.div`
   justify-content: end;
   color: white;
 `;
-const ItemRemove = styled.button`
-  background: none;
-  border: none;
-  padding: 0;
-  cursor: pointer;
-  outline: inherit;
-  color: white;
-`;
+
 const ItemPrice = styled.p`
   color: white;
   margin: 0;
@@ -117,6 +110,9 @@ const SideBarItem: React.FC<BagItemProps> = (
 
   const item = data.find((i) => i.id === id);
   if (item == null) return null;
+
+  const itemPrice = Math.round(item.price)
+
   return (
     <ItemContainer>
       <ImageContainer>
@@ -124,7 +120,7 @@ const SideBarItem: React.FC<BagItemProps> = (
       </ImageContainer>
       <ItemCenter>
         <Spacer>
-          <ItemPrice>£{Math.round(item.price)}</ItemPrice>
+          <ItemPrice>£{itemPrice}</ItemPrice>
           <ItemTitle>{item.title}</ItemTitle>
           <QuantityContainer>
             <QuantityTotalWrapper>
