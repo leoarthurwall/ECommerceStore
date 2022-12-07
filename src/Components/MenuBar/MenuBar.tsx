@@ -37,9 +37,6 @@ const HeaderText = styled.h2`
   font-weight: 300;
   font-size: 22px;
 `;
-const HeaderSpan = styled.span`
-  font-size: 14px;
-`;
 
 const IconContainer = styled.div`
   cursor: pointer;
@@ -60,11 +57,7 @@ const MenuBarMainSection = styled.div`
   height: 65%;
   width: 100%;
 
-  border-top: 1px solid #0c0b10;
-  border-bottom: 1px solid #0c0b10;
-
-  border-radius: 5px;
-  overflow: scroll;
+  border: 1px solid white;
 `;
 
 const MenuBarOverlay = styled.div<IisMenuClosed>`
@@ -85,12 +78,7 @@ interface IisMenuClosed {
 }
 
 const MenuBar: React.FC = (): ReactElement => {
-  const {
-  
-    isMenuClosed,
-    setIsMenuClosed,
-    handleMenuClick,
-  } = useShoppingBag();
+  const { isMenuClosed, setIsMenuClosed, handleMenuClick } = useShoppingBag();
 
   // closes menu when overlay clicked
   const handleOverlayClick = () => {
@@ -109,7 +97,10 @@ const MenuBar: React.FC = (): ReactElement => {
         </MenuBarUpperContainer>
         <MenuBarMainSection>Men, Women, Home, Bag</MenuBarMainSection>
       </MenuBarContainer>
-      <MenuBarOverlay isMenuClosed={isMenuClosed} onClick={handleOverlayClick} />
+      <MenuBarOverlay
+        isMenuClosed={isMenuClosed}
+        onClick={handleOverlayClick}
+      />
     </>
   );
 };
