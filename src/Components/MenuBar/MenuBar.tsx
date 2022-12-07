@@ -3,6 +3,8 @@ import styled from "styled-components";
 import { ReactElement } from "react";
 import { RiCloseLine } from "react-icons/ri";
 import { useShoppingBag } from "../../Context/ShoppingBagContext";
+import { NavLink } from "react-router-dom";
+
 
 const MenuBarContainer = styled.div<IisMenuClosed>`
   position: fixed;
@@ -34,8 +36,8 @@ const HeaderContainer = styled.div`
   gap: 0.5rem;
 `;
 const HeaderText = styled.h2`
-  font-weight: 500;
-  font-size: 24px;
+  font-weight: 300;
+  font-size: 22px;
 `;
 
 const IconContainer = styled.div`
@@ -64,7 +66,7 @@ const MenuBarMainSection = styled.div`
   flex-direction: column;
   gap: 0.5rem;
 `;
-const MenuText = styled.h2`
+const MenuText = styled(NavLink)`
   font-size: 36px;
   color: #fff;
 
@@ -122,10 +124,10 @@ const MenuBar: React.FC = (): ReactElement => {
           </HeaderContainer>
         </MenuBarUpperContainer>
         <MenuBarMainSection>
-          <MenuText>MEN</MenuText>
-          <MenuText>WOMEN</MenuText>
-          <MenuText>HOME</MenuText>
-          <MenuText>BAG</MenuText>
+          <MenuText to="/men" onClick={(e) => handleMenuClick(e)}>MEN</MenuText>
+          <MenuText to="/women" onClick={(e) => handleMenuClick(e)}>WOMEN</MenuText>
+          <MenuText to="/" onClick={(e) => handleMenuClick(e)}>HOME</MenuText>
+          <MenuText to="/men" onClick={(e) => handleMenuClick(e)}>BAG</MenuText>
         </MenuBarMainSection>
       </MenuBarContainer>
       <MenuBarOverlay
