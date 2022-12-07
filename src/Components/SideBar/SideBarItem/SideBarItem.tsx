@@ -138,13 +138,13 @@ const SideBarItem: React.FC<BagItemProps> = (
         <Spacer>
           <ItemChangeQuantityContainer>
             <AiOutlinePlusCircle
-              size={24}
+              size={22}
               color={"white"}
               onClick={() => increaseBagQuantity(item.id)}
               style={{ cursor: "pointer" }}
             />
             <AiOutlineMinusCircle
-              size={24}
+              size={22}
               color={"white"}
               onClick={() => decreaseBagQuantity(item.id)}
               style={{ cursor: "pointer" }}
@@ -154,7 +154,7 @@ const SideBarItem: React.FC<BagItemProps> = (
       </ItemCenter>
       <ItemRight>
         <HiOutlineTrash
-          size={24}
+          size={22}
           onClick={() => removeFromBag(item.id)}
           style={{ cursor: "pointer" }}
         />
