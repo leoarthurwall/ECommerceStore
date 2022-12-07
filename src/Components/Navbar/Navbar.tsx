@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { HiOutlineShoppingBag } from "react-icons/hi";
+import { HiOutlineShoppingBag, HiMenu } from "react-icons/hi";
 import { ReactElement } from "react";
 import { useShoppingBag } from "../../Context/ShoppingBagContext";
 import { NavLink, useLocation } from "react-router-dom";
@@ -74,6 +74,7 @@ const RightContainer = styled.div<IColor>`
 
 const IconContainer = styled.div<IColor>`
   cursor: pointer;
+  color: ${({ resultsToggle }) => (resultsToggle ? "black" : "#fff")};
 
   position: relative;
   display: flex;
@@ -140,23 +141,12 @@ const Navbar: React.FC = (): ReactElement => {
   return (
     <>
       <NavContainer resultsToggle={resultsToggle}>
+        <IconContainer resultsToggle={resultsToggle}>
+          <HiMenu size="auto" />
+        </IconContainer>
         <Logo onClick={handleHomeClick} resultsToggle={resultsToggle} to="/">
           ASUS
         </Logo>
-        {/* <LinkContainer>
-          <Links
-            resultsToggle={resultsToggle}
-            onClick={(e) => handleMenClick(e)}
-          >
-            Men
-          </Links>
-          <Links
-            resultsToggle={resultsToggle}
-            onClick={(e) => handleWomenClick(e)}
-          >
-            Women
-          </Links>
-        </LinkContainer> */}
         <LinkContainer>
           <Links to="/men" resultsToggle={resultsToggle}>
             Men
