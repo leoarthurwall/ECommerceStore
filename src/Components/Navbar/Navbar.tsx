@@ -101,19 +101,6 @@ const IconCount = styled.div`
   bottom: -4px;
   right: -4px;
 `;
-const Links = styled(NavLink)<IColor>`
-  margin: 0;
-  padding: 0;
-  color: ${({ resultsToggle }) => (resultsToggle ? "black" : "#fff")};
-
-  cursor: pointer;
-  transition: 0.2s;
-  text-decoration: none;
-
-  &:hover {
-    color: ${({ resultsToggle }) => (resultsToggle ? "grey" : "#e8eaed")};
-  }
-`;
 
 interface IColor {
   resultsToggle: Boolean;
@@ -142,20 +129,16 @@ const Navbar: React.FC = (): ReactElement => {
   return (
     <>
       <NavContainer resultsToggle={resultsToggle}>
-        <IconContainer resultsToggle={resultsToggle} onClick={(e) => handleMenuClick(e)}>
+        <IconContainer
+          resultsToggle={resultsToggle}
+          onClick={(e) => handleMenuClick(e)}
+        >
           <HiMenu size="auto" />
         </IconContainer>
         <Logo onClick={handleHomeClick} resultsToggle={resultsToggle} to="/">
           ASUS
         </Logo>
-        {/* <LinkContainer>
-          <Links to="/men" resultsToggle={resultsToggle}>
-            Men
-          </Links>
-          <Links to="/women" resultsToggle={resultsToggle}>
-            Women
-          </Links>
-        </LinkContainer> */}
+
         <RightContainer resultsToggle={resultsToggle}>
           {/* <SearchBar
             type="text"
