@@ -4,11 +4,11 @@ import { ReactElement } from "react";
 import { RiCloseLine } from "react-icons/ri";
 import { useShoppingBag } from "../../Context/ShoppingBagContext";
 
-const SideBarContainer = styled.div<IisMenuClosed>`
+const MenuBarContainer = styled.div<IisMenuClosed>`
   position: fixed;
   top: 0px;
   bottom: 0px;
-  right: ${({ isMenuClosed }) => (isMenuClosed ? "-350px" : "0px")};
+  left: ${({ isMenuClosed }) => (isMenuClosed ? "-350px" : "0px")};
 
   transition: 0.5s;
   width: 350px;
@@ -24,7 +24,7 @@ const SideBarContainer = styled.div<IisMenuClosed>`
 
   @media (max-width: 500px) {
     width: 100%;
-    right: ${({ isMenuClosed }) => (isMenuClosed ? "-100%" : "0px")};
+    left: ${({ isMenuClosed }) => (isMenuClosed ? "-100%" : "0px")};
   }
 `;
 const HeaderContainer = styled.div`
@@ -47,7 +47,7 @@ const IconContainer = styled.div`
   justify-content: center;
   align-items: center;
 `;
-const SideBarUpperContainer = styled.div`
+const MenuBarUpperContainer = styled.div`
   height: 80px;
   display: flex;
   flex-direction: row;
@@ -56,7 +56,7 @@ const SideBarUpperContainer = styled.div`
   gap: 1rem;
   color: #fff;
 `;
-const SideBarMainSection = styled.div`
+const MenuBarMainSection = styled.div`
   height: 65%;
   width: 100%;
 
@@ -67,7 +67,7 @@ const SideBarMainSection = styled.div`
   overflow: scroll;
 `;
 
-const SideBarOverlay = styled.div<IisMenuClosed>`
+const MenuBarOverlay = styled.div<IisMenuClosed>`
   position: fixed;
   background-color: ${({ isMenuClosed }) =>
     isMenuClosed ? "rgba(0, 0, 0, 0)" : "rgba(0, 0, 0, 0.4)"};
@@ -84,7 +84,7 @@ interface IisMenuClosed {
   isMenuClosed: Boolean;
 }
 
-const SideBar: React.FC = (): ReactElement => {
+const MenuBar: React.FC = (): ReactElement => {
   const {
   
     isMenuClosed,
@@ -98,20 +98,20 @@ const SideBar: React.FC = (): ReactElement => {
   };
   return (
     <>
-      <SideBarContainer isMenuClosed={isMenuClosed}>
-        <SideBarUpperContainer>
+      <MenuBarContainer isMenuClosed={isMenuClosed}>
+        <MenuBarUpperContainer>
           <IconContainer onClick={(e) => handleMenuClick(e)}>
             <RiCloseLine size="30" />
           </IconContainer>
           <HeaderContainer>
             <HeaderText>Menu</HeaderText>
           </HeaderContainer>
-        </SideBarUpperContainer>
-        <SideBarMainSection>Men, Women, Home, Bag</SideBarMainSection>
-      </SideBarContainer>
-      <SideBarOverlay isMenuClosed={isMenuClosed} onClick={handleOverlayClick} />
+        </MenuBarUpperContainer>
+        <MenuBarMainSection>Men, Women, Home, Bag</MenuBarMainSection>
+      </MenuBarContainer>
+      <MenuBarOverlay isMenuClosed={isMenuClosed} onClick={handleOverlayClick} />
     </>
   );
 };
 
-export default SideBar;
+export default MenuBar;

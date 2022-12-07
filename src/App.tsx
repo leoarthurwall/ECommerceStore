@@ -7,6 +7,7 @@ import { Routes, Route } from "react-router-dom";
 import { Home } from "./Pages/Home";
 import { Mens } from "./Pages/Mens";
 import { Womens } from "./Pages/Womens";
+import MenuBar from "./Components/MenuBar/MenuBar";
 
 const AppContainer = styled.div`
   display: flex;
@@ -36,6 +37,7 @@ function App() {
         <Route path="/men" element={<Mens />} />
         <Route path="/women" element={<Womens />} />
       </Routes>
+      <MenuBar />
       <SideBar />
     </AppContainer>
   );

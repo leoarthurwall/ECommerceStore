@@ -125,6 +125,7 @@ const Navbar: React.FC = (): ReactElement => {
     resultsToggle,
     setResultsToggle,
     handleHomeClick,
+    handleMenuClick,
     handleSidebarClick,
   } = useShoppingBag();
 
@@ -141,7 +142,7 @@ const Navbar: React.FC = (): ReactElement => {
   return (
     <>
       <NavContainer resultsToggle={resultsToggle}>
-        <IconContainer resultsToggle={resultsToggle}>
+        <IconContainer resultsToggle={resultsToggle} onClick={(e) => handleMenuClick(e)}>
           <HiMenu size="auto" />
         </IconContainer>
         <Logo onClick={handleHomeClick} resultsToggle={resultsToggle} to="/">
