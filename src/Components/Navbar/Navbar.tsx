@@ -18,7 +18,7 @@ const NavContainer = styled.nav<IColor>`
   background: ${({ resultsToggle }) => (resultsToggle ? "#fff" : "")};
 
   @media (max-width: 500px) {
-    
+
     padding: 0 15px;
   }
 `;
@@ -75,7 +75,7 @@ const IconContainer = styled.div<IColor>`
   transition: 0.2s;
 
   &:hover {
-    color: ${({ resultsToggle }) => (resultsToggle ? "grey" : "#e8eaed")};
+    color: ${({ resultsToggle }) => (resultsToggle ? "#9bad97" : "#e8eaed")};
   }
 `;
 const IconCount = styled.div`

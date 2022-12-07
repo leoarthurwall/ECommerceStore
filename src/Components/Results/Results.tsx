@@ -88,7 +88,7 @@ const IconCircle = styled.div`
 
   cursor: pointer;
   &:hover {
-    color: grey;
+    color: #9bad97;
   }
 `;
 const PriceContainer = styled.div`

@@ -39,9 +39,10 @@ const CheckoutButton = styled.button`
   font-size: 12px;
   transition: 0.1s;
   cursor: pointer;
+  transition: 0.2s;
 
   &:hover {
-    background: grey;
+    background: #9bad97;
   }
 `;
 const SideBarlower = () => {

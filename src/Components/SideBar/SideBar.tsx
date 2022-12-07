@@ -54,6 +54,7 @@ const IconContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  
 `;
 const SideBarUpperContainer = styled.div`
   height: 80px;
@@ -87,6 +88,7 @@ const SideBarOverlay = styled.div<IisBagClosed>`
   transition: 0.5s;
   visibility: ${({ isBagClosed }) => isBagClosed && "hidden"};
 `;
+
 
 interface IisBagClosed {
   isBagClosed: Boolean;
