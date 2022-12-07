@@ -27,9 +27,8 @@ const SideBarContainer = styled.div<IisBagClosed>`
 
   @media (max-width: 500px) {
     width: 100%;
-    right: ${({ isBagClosed }) => (isBagClosed ? "-100%" : "0px")};
 
-    left: 0px;
+    right: 0px;
 
     transform: ${({ isBagClosed }) =>
       isBagClosed ? "scale(1.1)" : "scale(1)"};
