@@ -24,6 +24,12 @@ const SideBarContainer = styled.div<IisClosed>`
 
   padding: 0 25px 40px 25px;
   box-sizing: border-box;
+
+  @media (max-width: 500px) {
+    width: 100%;
+    right: ${({ isClosed }) => (isClosed ? "-100%" : "0px")};
+
+  }
 `;
 const HeaderContainer = styled.div`
   display: flex;
