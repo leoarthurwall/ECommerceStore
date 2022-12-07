@@ -4,7 +4,6 @@ import { ReactElement } from "react";
 import { RiCloseLine } from "react-icons/ri";
 import { useShoppingBag } from "../../Context/ShoppingBagContext";
 import { NavLink } from "react-router-dom";
-import { useMediaQuery } from "react-responsive";
 
 const MenuBarContainer = styled.div<IisMenuClosed>`
   position: fixed;
@@ -31,10 +30,10 @@ const MenuBarContainer = styled.div<IisMenuClosed>`
     left: 0px;
 
     transform: ${({ isMenuClosed }) =>
-      !isMenuClosed ? "scale(1.1)" : "scale(1)"};
-    opacity: ${({ isMenuClosed }) => (!isMenuClosed ? "0" : "1")};
+      isMenuClosed ? "scale(1.1)" : "scale(1)"};
+    opacity: ${({ isMenuClosed }) => (isMenuClosed ? "0" : "1")};
     transition: all 0.5s;
-    visibility: ${({ isMenuClosed }) => (!isMenuClosed ? "hidden" : "visible")};
+    visibility: ${({ isMenuClosed }) => (isMenuClosed ? "hidden" : "visible")};
   }
 `;
 const HeaderContainer = styled.div`
@@ -142,9 +141,6 @@ const MenuBar: React.FC = (): ReactElement => {
     setIsBagClosed,
   } = useShoppingBag();
 
-  const isTabletOrAbove = useMediaQuery({
-    query: "(min-width: 501px)",
-  });
 
   // closes menu when overlay clicked
   const handleOverlayClick = () => {
@@ -180,12 +176,10 @@ const MenuBar: React.FC = (): ReactElement => {
           </MenuLink>
         </MenuBarMainSection>
       </MenuBarContainer>
-      {isTabletOrAbove && (
-        <MenuBarOverlay
-          isMenuClosed={isMenuClosed}
-          onClick={handleOverlayClick}
-        />
-      )}
+      <MenuBarOverlay
+        isMenuClosed={isMenuClosed}
+        onClick={handleOverlayClick}
+      />
     </>
   );
 };
