@@ -147,14 +147,14 @@ const Navbar: React.FC = (): ReactElement => {
         <Logo onClick={handleHomeClick} resultsToggle={resultsToggle} to="/">
           ASUS
         </Logo>
-        <LinkContainer>
+        {/* <LinkContainer>
           <Links to="/men" resultsToggle={resultsToggle}>
             Men
           </Links>
           <Links to="/women" resultsToggle={resultsToggle}>
             Women
           </Links>
-        </LinkContainer>
+        </LinkContainer> */}
         <RightContainer resultsToggle={resultsToggle}>
           {/* <SearchBar
             type="text"
