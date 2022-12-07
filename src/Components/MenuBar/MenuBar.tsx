@@ -25,7 +25,16 @@ const MenuBarContainer = styled.div<IisMenuClosed>`
 
   @media (max-width: 500px) {
     width: 100%;
-    left: ${({ isMenuClosed }) => (isMenuClosed ? "-100%" : "0px")};
+    // left: ${({ isMenuClosed }) => (isMenuClosed ? "-100%" : "0px")};
+
+    left: 0px;
+
+
+    transform: ${({ isMenuClosed }) =>
+      !isMenuClosed ? "scale(1.1)" : "scale(1)"};
+    opacity: ${({ isMenuClosed }) => (!isMenuClosed ? "0" : "1")};
+    transition: all 0.5s;
+    visibility: ${({ isMenuClosed }) => (!isMenuClosed ? "hidden" : "visible")};
   }
 `;
 const HeaderContainer = styled.div`

@@ -18,6 +18,7 @@ const NavContainer = styled.nav<IColor>`
   background: ${({ resultsToggle }) => (resultsToggle ? "#fff" : "")};
 
   @media (max-width: 500px) {
+    
     padding: 0 15px;
   }
 `;
