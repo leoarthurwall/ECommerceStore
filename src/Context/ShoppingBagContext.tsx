@@ -55,7 +55,7 @@ export function ShoppingBagProvider({ children }: ShoppingBagProviderProps) {
 
     //TOGGLES MENU OPEN AND CLOSED
     const handleMenuClick = () => {
-      setIsBagClosed(!isBagClosed);
+      setIsMenuClosed(!isMenuClosed);
     };
 
   // TOTAL BAG QUANTITY
