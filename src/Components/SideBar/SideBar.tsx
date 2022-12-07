@@ -12,6 +12,7 @@ const SideBarContainer = styled.div<IisBagClosed>`
   top: 0px;
   bottom: 0px;
   right: ${({ isBagClosed }) => (isBagClosed ? "-350px" : "0px")};
+  opacity: ${({ isBagClosed }) => (isBagClosed ? "0" : "1")};
 
   transition: 0.5s;
   width: 350px;
@@ -27,13 +28,10 @@ const SideBarContainer = styled.div<IisBagClosed>`
 
   @media (max-width: 500px) {
     width: 100%;
-
     right: 0px;
 
     transform: ${({ isBagClosed }) =>
       isBagClosed ? "scale(1.1)" : "scale(1)"};
-    opacity: ${({ isBagClosed }) => (isBagClosed ? "0" : "1")};
-    transition: all 0.5s;
     visibility: ${({ isBagClosed }) => (isBagClosed ? "hidden" : "visible")};
   }
 `;

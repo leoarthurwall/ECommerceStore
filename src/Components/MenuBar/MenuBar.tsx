@@ -10,6 +10,8 @@ const MenuBarContainer = styled.div<IisMenuClosed>`
   top: 0px;
   bottom: 0px;
   left: ${({ isMenuClosed }) => (isMenuClosed ? "-350px" : "0px")};
+  opacity: ${({ isMenuClosed }) => (isMenuClosed ? "0" : "1")};
+
 
   transition: 0.5s;
   width: 350px;
@@ -31,7 +33,6 @@ const MenuBarContainer = styled.div<IisMenuClosed>`
 
     transform: ${({ isMenuClosed }) =>
       isMenuClosed ? "scale(1.1)" : "scale(1)"};
-    opacity: ${({ isMenuClosed }) => (isMenuClosed ? "0" : "1")};
     transition: all 0.5s;
     visibility: ${({ isMenuClosed }) => (isMenuClosed ? "hidden" : "visible")};
   }
