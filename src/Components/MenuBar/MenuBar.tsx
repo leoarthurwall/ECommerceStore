@@ -154,8 +154,8 @@ const MenuBar: React.FC = (): ReactElement => {
         <MenuBarMainSection>
           <MenuLink to="/men" onClick={(e) => handleMenuClick(e)}>MEN</MenuLink>
           <MenuLink to="/women" onClick={(e) => handleMenuClick(e)}>WOMEN</MenuLink>
-          <MenuLink to="/" onClick={(e) => handleMenuClick(e)}>HOME</MenuLink>
           <MenuText onClick={(e) => handleChangeSidebar()}>BAG</MenuText>
+          <MenuLink to="/" onClick={(e) => handleMenuClick(e)}>HOME</MenuLink>
         </MenuBarMainSection>
       </MenuBarContainer>
       <MenuBarOverlay
