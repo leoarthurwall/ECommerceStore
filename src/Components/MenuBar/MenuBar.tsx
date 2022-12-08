@@ -89,7 +89,7 @@ const MenuText = styled.h2`
     color: #9bad97;
   }
 
-  @media (max-width: 768px) {
+  @media (max-width: 382px) {
     font-size: 32px;
   }
 `;
@@ -110,7 +110,7 @@ const MenuLink = styled(NavLink)`
     color: #9bad97;
   }
 
-  @media (max-width: 768px) {
+  @media (max-width: 382px) {
     font-size: 32px;
   }
 `;
