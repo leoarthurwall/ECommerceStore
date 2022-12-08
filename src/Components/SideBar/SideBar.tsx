@@ -37,7 +37,8 @@ const SideBarContainer = styled.div<IisBagClosed>`
 `;
 
 const SideBarWrapper = styled.div`
-width: 400px;
+width: auto;
+max-width: 400px;
 margin: 0 auto;
 height: 100%
 `
