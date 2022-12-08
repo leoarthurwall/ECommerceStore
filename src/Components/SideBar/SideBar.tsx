@@ -79,6 +79,9 @@ const SideBarUpperContainer = styled.div`
 const SideBarMainSection = styled.div`
   height: 70%;
   width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
   border-top: 1px solid #0c0b10;
   border-bottom: 1px solid #0c0b10;
@@ -87,6 +90,9 @@ const SideBarMainSection = styled.div`
   overflow: scroll;
 `;
 
+const EmptyBagText = styled.p`
+  color: white;
+`;
 const SideBarOverlay = styled.div<IisBagClosed>`
   position: fixed;
   background-color: ${({ isBagClosed }) =>
@@ -134,10 +140,16 @@ const SideBar: React.FC = (): ReactElement => {
           </IconContainer>
         </SideBarUpperContainer>
         <SideBarWrapper>
-          <SideBarMainSection>
+          {/* <SideBarMainSection>
+            <>
             {bagItems.map((item) => (
               <SideBarItem key={item.id} {...item} />
             ))}
+            </>
+
+          </SideBarMainSection> */}
+          <SideBarMainSection>
+            <EmptyBagText>You bag is currently empty...</EmptyBagText>
           </SideBarMainSection>
           <SideBarlower />
         </SideBarWrapper>

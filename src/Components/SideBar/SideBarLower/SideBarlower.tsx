@@ -55,13 +55,14 @@ const SideBarlower = () => {
     }, 0)
   );
 
+  //Alert that displays when checkout button is clicked
   const checkoutClick = () => {
     if (bagTotal > 0) {
       alert(
         `You will be charged a total of £${bagTotal} for this purchace. Thank you for shopping with us`
       );
     } else {
-      alert("Your bag is currently empty, go put something in it.");
+      alert("Your bag is currently empty, go put something in it :)");
     }
   };
 

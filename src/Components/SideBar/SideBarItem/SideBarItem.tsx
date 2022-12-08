@@ -18,6 +18,8 @@ const ItemContainer = styled.div`
     border-top: none;
   }
 `;
+
+
 const ImageContainer = styled.div`
   height: 100%;
   width: 35%;
@@ -105,17 +107,21 @@ const SideBarItem: React.FC<BagItemProps> = (
   Props
 ): ReactElement<any> | null => {
   const { id, quantity } = Props;
-  const { increaseBagQuantity, decreaseBagQuantity, removeFromBag, data } =
-    useShoppingBag();
+  const {
+    increaseBagQuantity,
+    decreaseBagQuantity,
+    removeFromBag,
+    data,
+  } = useShoppingBag();
 
   const item = data.find((i) => i.id === id);
   if (item == null) return null;
 
   //price of singal item, as integer
-  const itemPrice = Math.round(item.price)
+  const itemPrice = Math.round(item.price);
 
   //sum of item price times quantity
-  const totalItemPrice = Math.round(item.price * quantity)
+  const totalItemPrice = Math.round(item.price * quantity);
 
   return (
     <ItemContainer>
@@ -129,9 +135,7 @@ const SideBarItem: React.FC<BagItemProps> = (
           <QuantityContainer>
             <QuantityTotalWrapper>
               <ItemTotalQuantity>Qty: {quantity} </ItemTotalQuantity>
-              <ItemTotalQuantity>
-                Total: £{totalItemPrice}
-              </ItemTotalQuantity>
+              <ItemTotalQuantity>Total: £{totalItemPrice}</ItemTotalQuantity>
             </QuantityTotalWrapper>
           </QuantityContainer>
         </Spacer>
