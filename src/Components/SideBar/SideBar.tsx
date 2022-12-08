@@ -69,9 +69,12 @@ const SideBarUpperContainer = styled.div`
   justify-content: space-between;
   gap: 1rem;
   color: #fff;
+  @media (max-width: 768px) {
+    margin-bottom: 5%;
+  }
 `;
 const SideBarMainSection = styled.div`
-  height: 65%;
+  height: 80%;
   width: 100%;
 
   border-top: 1px solid #0c0b10;
