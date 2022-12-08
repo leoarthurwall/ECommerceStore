@@ -26,8 +26,6 @@ const SideBarContainer = styled.div<IisBagClosed>`
   padding: 0 25px 40px 25px;
   box-sizing: border-box;
 
-
-
   @media (max-width: 768px) {
     width: 100%;
     right: 0px;
@@ -48,7 +46,6 @@ const SideBarWrapper = styled.div`
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
-
 `;
 const HeaderContainer = styled.div`
   display: flex;
@@ -78,10 +75,6 @@ const SideBarUpperContainer = styled.div`
   justify-content: space-between;
   gap: 1rem;
   color: #fff;
-
-  @media (max-width: 768px) {
-    margin-bottom: 5%;
-  }
 `;
 const SideBarMainSection = styled.div`
   height: 70%;
@@ -92,7 +85,6 @@ const SideBarMainSection = styled.div`
 
   border-radius: 5px;
   overflow: scroll;
-
 `;
 
 const SideBarOverlay = styled.div<IisBagClosed>`
