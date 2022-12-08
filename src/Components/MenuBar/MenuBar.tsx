@@ -156,12 +156,12 @@ const MenuBar: React.FC = (): ReactElement => {
     <>
       <MenuBarContainer isMenuClosed={isMenuClosed}>
         <MenuBarUpperContainer>
-          <IconContainer onClick={(e) => handleMenuClick(e)}>
-            <RiCloseLine size="30" />
-          </IconContainer>
           <HeaderContainer>
             <HeaderText>ASUS</HeaderText>
           </HeaderContainer>
+          <IconContainer onClick={(e) => handleMenuClick(e)}>
+            <RiCloseLine size="30" />
+          </IconContainer>
         </MenuBarUpperContainer>
         <MenuBarMainSection>
           <MenuLink to="/men" onClick={(e) => handleMenuClick(e)}>
