@@ -25,7 +25,7 @@ const MenuBarContainer = styled.div<IisMenuClosed>`
   padding: 0 25px 40px 25px;
   box-sizing: border-box;
 
-  @media (max-width: 500px) {
+  @media (max-width: 768px) {
     width: 100%;
     // left: ${({ isMenuClosed }) => (isMenuClosed ? "-100%" : "0px")};
 
