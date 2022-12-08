@@ -37,11 +37,16 @@ const SideBarContainer = styled.div<IisBagClosed>`
 `;
 
 const SideBarWrapper = styled.div`
-width: auto;
-max-width: 400px;
-margin: 0 auto;
-height: 100%
-`
+  width: auto;
+  max-width: 400px;
+  margin: 0 auto;
+  height: 100%;
+
+  display: flex;
+  flex-direction: column;
+  justify-contnet: space-between;
+  align-items: center;
+`;
 const HeaderContainer = styled.div`
   display: flex;
   flex-direction: row;
@@ -75,7 +80,7 @@ const SideBarUpperContainer = styled.div`
   }
 `;
 const SideBarMainSection = styled.div`
-  height: 80%;
+  height: 70%;
   width: 100%;
 
   border-top: 1px solid #0c0b10;
@@ -118,19 +123,19 @@ const SideBar: React.FC = (): ReactElement => {
   return (
     <>
       <SideBarContainer isBagClosed={isBagClosed}>
-          <SideBarUpperContainer>
-            <HeaderContainer>
-              <HiOutlineShoppingBag size="24" color="white" />
-              <HeaderText>
-                {" "}
-                Your Bag <HeaderSpan>({bagQuantity})</HeaderSpan>
-              </HeaderText>
-            </HeaderContainer>
+        <SideBarUpperContainer>
+          <HeaderContainer>
+            <HiOutlineShoppingBag size="24" color="white" />
+            <HeaderText>
+              {" "}
+              Your Bag <HeaderSpan>({bagQuantity})</HeaderSpan>
+            </HeaderText>
+          </HeaderContainer>
 
-            <IconContainer onClick={(e) => handleSidebarClick(e)}>
-              <RiCloseLine size="30" />
-            </IconContainer>
-          </SideBarUpperContainer>
+          <IconContainer onClick={(e) => handleSidebarClick(e)}>
+            <RiCloseLine size="30" />
+          </IconContainer>
+        </SideBarUpperContainer>
         <SideBarWrapper>
           <SideBarMainSection>
             {bagItems.map((item) => (
