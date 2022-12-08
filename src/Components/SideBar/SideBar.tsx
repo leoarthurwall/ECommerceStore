@@ -26,7 +26,7 @@ const SideBarContainer = styled.div<IisBagClosed>`
   padding: 0 25px 40px 25px;
   box-sizing: border-box;
 
-  @media (max-width: 500px) {
+  @media (max-width: 768px) {
     width: 100%;
     right: 0px;
 
@@ -35,6 +35,12 @@ const SideBarContainer = styled.div<IisBagClosed>`
     visibility: ${({ isBagClosed }) => (isBagClosed ? "hidden" : "visible")};
   }
 `;
+
+const SideBarWrapper = styled.div`
+width: 400px;
+margin: 0 auto;
+height: 100%
+`
 const HeaderContainer = styled.div`
   display: flex;
   flex-direction: row;
@@ -54,7 +60,6 @@ const IconContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  
 `;
 const SideBarUpperContainer = styled.div`
   height: 80px;
@@ -89,7 +94,6 @@ const SideBarOverlay = styled.div<IisBagClosed>`
   visibility: ${({ isBagClosed }) => isBagClosed && "hidden"};
 `;
 
-
 interface IisBagClosed {
   isBagClosed: Boolean;
 }
@@ -110,25 +114,27 @@ const SideBar: React.FC = (): ReactElement => {
   return (
     <>
       <SideBarContainer isBagClosed={isBagClosed}>
-        <SideBarUpperContainer>
-          <HeaderContainer>
-            <HiOutlineShoppingBag size="24" color="white" />
-            <HeaderText>
-              {" "}
-              Your Bag <HeaderSpan>({bagQuantity})</HeaderSpan>
-            </HeaderText>
-          </HeaderContainer>
+          <SideBarUpperContainer>
+            <HeaderContainer>
+              <HiOutlineShoppingBag size="24" color="white" />
+              <HeaderText>
+                {" "}
+                Your Bag <HeaderSpan>({bagQuantity})</HeaderSpan>
+              </HeaderText>
+            </HeaderContainer>
 
-          <IconContainer onClick={(e) => handleSidebarClick(e)}>
-            <RiCloseLine size="30" />
-          </IconContainer>
-        </SideBarUpperContainer>
-        <SideBarMainSection>
-          {bagItems.map((item) => (
-            <SideBarItem key={item.id} {...item} />
-          ))}
-        </SideBarMainSection>
-        <SideBarlower />
+            <IconContainer onClick={(e) => handleSidebarClick(e)}>
+              <RiCloseLine size="30" />
+            </IconContainer>
+          </SideBarUpperContainer>
+        <SideBarWrapper>
+          <SideBarMainSection>
+            {bagItems.map((item) => (
+              <SideBarItem key={item.id} {...item} />
+            ))}
+          </SideBarMainSection>
+          <SideBarlower />
+        </SideBarWrapper>
       </SideBarContainer>
       <SideBarOverlay isBagClosed={isBagClosed} onClick={handleOverlayClick} />
     </>
