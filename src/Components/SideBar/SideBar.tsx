@@ -34,6 +34,9 @@ const SideBarContainer = styled.div<IisBagClosed>`
       isBagClosed ? "scale(1.1)" : "scale(1)"};
     visibility: ${({ isBagClosed }) => (isBagClosed ? "hidden" : "visible")};
   }
+  @media (max-width: 500px) {
+    padding: 0 15px 40px 15px;
+  }
 `;
 
 const SideBarWrapper = styled.div`
@@ -79,12 +82,17 @@ const SideBarUpperContainer = styled.div`
 const SideBarMainSection = styled.div`
   height: 70%;
   width: 100%;
+  min-width: 280px;
 
   border-top: 1px solid #0c0b10;
   border-bottom: 1px solid #0c0b10;
 
   border-radius: 5px;
   overflow: scroll;
+
+  @media (max-width: 500px) {
+    min-width: 250px;
+  }
 `;
 
 const EmptyBagText = styled.p`
