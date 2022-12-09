@@ -44,7 +44,7 @@ const HeaderContainer = styled.div`
 `;
 const HeaderText = styled.h2`
   font-weight: 800;
-  font-family: sans-serif;
+  font-family: inter;
   font-size: 24px;
   letter-spacing: -3px;
 `;

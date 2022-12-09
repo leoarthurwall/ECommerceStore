@@ -27,7 +27,7 @@ const Logo = styled(NavLink)<IColor>`
   color: ${({ resultsToggle }) => (resultsToggle ? "black" : "#fff")};
   cursor: pointer;
   font-weight: 800;
-  font-family: sans-serif;
+  font-family: inter;
   letter-spacing: -3px;
   font-size: 24px;
   text-decoration: none;

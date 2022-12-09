@@ -49,7 +49,8 @@ const LeftContainer = styled.div`
 `;
 const Header = styled.h1`
   color: white;
-  font-family: sans-serif;
+  font-family: inter;
+  letter-spacing: -2px;
   font-weight: 200;
   font-size: 60px;
   text-align: left;
