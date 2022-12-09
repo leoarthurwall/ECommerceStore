@@ -17,7 +17,7 @@ const SubtotalContainer = styled.div`
   width: 100%;
 `;
 const SubtotalText = styled.h2`
-  color: grey;
+  color: #9bad97;
   font-size: 20px;
   font-weight: 300;
   margin: 0;

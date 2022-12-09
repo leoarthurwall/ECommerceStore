@@ -12,7 +12,6 @@ const MenuBarContainer = styled.div<IisMenuClosed>`
   left: ${({ isMenuClosed }) => (isMenuClosed ? "-350px" : "0px")};
   opacity: ${({ isMenuClosed }) => (isMenuClosed ? "0" : "1")};
 
-
   transition: 0.5s;
   width: 350px;
   background: #1e1e1e;
@@ -44,8 +43,10 @@ const HeaderContainer = styled.div`
   gap: 0.5rem;
 `;
 const HeaderText = styled.h2`
-  font-weight: 300;
-  font-size: 22px;
+  font-weight: 800;
+  font-family: sans-serif;
+  font-size: 24px;
+  letter-spacing: -3px;
 `;
 
 const IconContainer = styled.div`
@@ -140,7 +141,6 @@ const MenuBar: React.FC = (): ReactElement => {
     isBagClosed,
     setIsBagClosed,
   } = useShoppingBag();
-
 
   // closes menu when overlay clicked
   const handleOverlayClick = () => {

@@ -70,7 +70,7 @@ const ItemTotalQuantity = styled.p`
   margin: 0;
   font-size: 14px;
   font-weight: 400;
-  color: grey;
+  color: #9bad97;
 `;
 
 const ItemChangeQuantityContainer = styled.div`
