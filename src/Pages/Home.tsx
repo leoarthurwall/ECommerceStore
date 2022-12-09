@@ -49,7 +49,7 @@ const LeftContainer = styled.div`
 `;
 const Header = styled.h1`
   color: white;
-  font-family: inter;
+  font-family: sans-serif;
   font-weight: 200;
   font-size: 60px;
   text-align: left;
